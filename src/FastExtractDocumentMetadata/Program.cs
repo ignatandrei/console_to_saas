@@ -12,15 +12,10 @@ namespace FastExtractDocumentMetadata
     {
         private static void Main(string[] args)
         {
-            Console.WriteLine("please enter the folder with financial Word documents");
-            string folderWithWordDocs = Console.ReadLine();
-            if (string.IsNullOrWhiteSpace(folderWithWordDocs))
-            {
-                folderWithWordDocs = "data";
-            }
+            var settings = Settings.From("app.json");
 
-            string[] files = Directory.GetFiles(folderWithWordDocs, "*.docx");
-            Console.WriteLine($"processing {files?.Length} word documents");
+            string[] files = Directory.GetFiles(settings.DocumentSLocation, "*.docx");
+            Console.WriteLine($"processing {files.Length} word documents");
             List<object[]> allContractors = new List<object[]>();
             foreach (string file in files)
             {
@@ -36,24 +31,24 @@ namespace FastExtractDocumentMetadata
                 allContractors.Add(contractorDetails);
 
                 Console.WriteLine($"end processing {file}");
+            }
 
-            }
+            var wb = new XSSFWorkbook();
+            var sheet = wb.CreateSheet("Contractors");
+            for (int i = 0; i < allContractors.Count; i++)
             {
-                var wb = new XSSFWorkbook();
-                var sheet = wb.CreateSheet("Contractors");
-                for (int i = 0; i < allContractors.Count; i++)
+                var contractor = allContractors[i];
+                IRow row = sheet.CreateRow(i);
+                for (int j = 0; j < contractor.Length; j++)
                 {
-                    var contractor = allContractors[i];
-                    IRow row = sheet.CreateRow(i);
-                    for (int j = 0; j < contractor.Length; j++)
-                    {
-                        var cell = row.CreateCell(j);
-                        cell.SetCellValue(contractor[j].ToString());
-                    }
+                    var cell = row.CreateCell(j);
+                    cell.SetCellValue(contractor[j].ToString());
                 }
-                wb.Write(File.OpenWrite("Contractors.xlsx"));
             }
+
+            wb.Write(File.OpenWrite("Contractors.xlsx"));
         }
+
         private static object[] ExactContractorDetails(XWPFTable table)
         {
             var rowItems = new List<object>();
