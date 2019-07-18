@@ -16,7 +16,7 @@ namespace FastExtractDocumentMetadata
             string folderWithWordDocs = Console.ReadLine();
             if (string.IsNullOrWhiteSpace(folderWithWordDocs))
             {
-                folderWithWordDocs = ".";
+                folderWithWordDocs = "data";
             }
 
             string[] files = Directory.GetFiles(folderWithWordDocs, "*.docx");
