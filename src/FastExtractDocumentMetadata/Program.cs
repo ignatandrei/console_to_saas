@@ -1,4 +1,6 @@
-﻿using NPOI.SS.UserModel;
+﻿using ContractExtractor;
+using NLog;
+using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
 using NPOI.XWPF.UserModel;
 using System;
@@ -12,57 +14,20 @@ namespace FastExtractDocumentMetadata
     {
         private static void Main(string[] args)
         {
-            var settings = Settings.From("app.json");
+			var config = new NLog.Config.LoggingConfiguration();
 
-            string[] files = Directory.GetFiles(settings.DocumentSLocation, "*.docx");
-            Console.WriteLine($"processing {files.Length} word documents");
-            List<object[]> allContractors = new List<object[]>();
-            foreach (string file in files)
-            {
-                Console.WriteLine($"start processing {file}");
-                XWPFDocument document = new XWPFDocument(File.OpenRead(file));
+			var logfile = new NLog.Targets.FileTarget("logfile") { FileName = "file.txt" };
+			var logconsole = new NLog.Targets.ConsoleTarget("logconsole");
 
-                if (document.Tables.Count < 2)
-                {
-                    throw new InvalidOperationException("Expected at least 2 tables");
-                }
+			config.AddRule(LogLevel.Info, LogLevel.Fatal, logconsole);
+			config.AddRule(LogLevel.Debug, LogLevel.Fatal, logfile);
 
-                var contractorDetails = ExactContractorDetails(document.Tables[0]);
-                allContractors.Add(contractorDetails);
+			NLog.LogManager.Configuration = config;
 
-                Console.WriteLine($"end processing {file}");
-            }
 
-            var wb = new XSSFWorkbook();
-            var sheet = wb.CreateSheet("Contractors");
-            for (int i = 0; i < allContractors.Count; i++)
-            {
-                var contractor = allContractors[i];
-                IRow row = sheet.CreateRow(i);
-                for (int j = 0; j < contractor.Length; j++)
-                {
-                    var cell = row.CreateCell(j);
-                    cell.SetCellValue(contractor[j].ToString());
-                }
-            }
-
-            wb.Write(File.OpenWrite("Contractors.xlsx"));
-        }
-
-        private static object[] ExactContractorDetails(XWPFTable table)
-        {
-            var rowItems = new List<object>();
-
-            foreach (XWPFTableRow row in table.Rows)
-            {
-                List<XWPFTableCell> cells = row.GetTableCells();
-                for (int i = 1; i < cells.Count; i += 2)
-                {
-                    rowItems.Add(cells[i].GetText());
-                }
-            }
-
-            return rowItems.ToArray();
+			var settings = Settings.From("app.json");
+			var extractor = new WordContractExtractor(settings.DocumentsLocation);
+			extractor.Start();
         }
     }
 }

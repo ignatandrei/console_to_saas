@@ -4,12 +4,12 @@ using System.Text;
 using System.IO;
 using Newtonsoft.Json;
 
-namespace FastExtractDocumentMetadata
+namespace ContractExtractor
 {
     public class Settings
     {
         [JsonProperty("documentsLocation")]
-        public string DocumentSLocation { get; set; }
+        public string DocumentsLocation { get; set; }
 
         private Settings()
         {

@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.29025.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastExtractDocumentMetadata", "FastExtractDocumentMetadata\FastExtractDocumentMetadata.csproj", "{EB3EFC4F-C8AE-4E88-A8D8-6F132B5EAFF7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContractExtractor.GUI", "ContractExtractor.GUI\ContractExtractor.GUI.csproj", "{AAD37D04-703D-49C7-9771-50142D9A0BA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContractExtractor", "ContractExtractor\ContractExtractor.csproj", "{6E6B6730-56DE-4BEC-94CF-72B0C85E394D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{EB3EFC4F-C8AE-4E88-A8D8-6F132B5EAFF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB3EFC4F-C8AE-4E88-A8D8-6F132B5EAFF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB3EFC4F-C8AE-4E88-A8D8-6F132B5EAFF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAD37D04-703D-49C7-9771-50142D9A0BA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAD37D04-703D-49C7-9771-50142D9A0BA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAD37D04-703D-49C7-9771-50142D9A0BA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAD37D04-703D-49C7-9771-50142D9A0BA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E6B6730-56DE-4BEC-94CF-72B0C85E394D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E6B6730-56DE-4BEC-94CF-72B0C85E394D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E6B6730-56DE-4BEC-94CF-72B0C85E394D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E6B6730-56DE-4BEC-94CF-72B0C85E394D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
