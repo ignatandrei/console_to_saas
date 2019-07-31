@@ -14,16 +14,7 @@ namespace FastExtractDocumentMetadata
     {
         private static void Main(string[] args)
         {
-			var config = new NLog.Config.LoggingConfiguration();
-
-			var logfile = new NLog.Targets.FileTarget("logfile") { FileName = "file.txt" };
-			var logconsole = new NLog.Targets.ConsoleTarget("logconsole");
-
-			config.AddRule(LogLevel.Info, LogLevel.Fatal, logconsole);
-			config.AddRule(LogLevel.Debug, LogLevel.Fatal, logfile);
-
-			NLog.LogManager.Configuration = config;
-
+			
 
 			var settings = Settings.From("app.json");
 			var extractor = new WordContractExtractor(settings.DocumentsLocation);

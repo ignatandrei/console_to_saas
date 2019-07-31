@@ -1,6 +1,6 @@
 ﻿namespace ContractExtractor.GUI
 {
-	partial class Form
+	partial class frmExtractor
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -28,54 +28,71 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.startButton = new System.Windows.Forms.Button();
-			this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
-			this.label1 = new System.Windows.Forms.Label();
-			this.folderPath = new System.Windows.Forms.TextBox();
-			this.SuspendLayout();
-			// 
-			// startButton
-			// 
-			this.startButton.Location = new System.Drawing.Point(229, 81);
-			this.startButton.Name = "startButton";
-			this.startButton.Size = new System.Drawing.Size(75, 23);
-			this.startButton.TabIndex = 0;
-			this.startButton.Text = "Start";
-			this.startButton.UseVisualStyleBackColor = true;
-			this.startButton.Click += new System.EventHandler(this.StartButton_Click);
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(12, 19);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(76, 13);
-			this.label1.TabIndex = 1;
-			this.label1.Text = "Folder location";
-			// 
-			// folderPath
-			// 
-			this.folderPath.Location = new System.Drawing.Point(12, 35);
-			this.folderPath.Name = "folderPath";
-			this.folderPath.ReadOnly = true;
-			this.folderPath.Size = new System.Drawing.Size(292, 20);
-			this.folderPath.TabIndex = 2;
-			// 
-			// Form
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(318, 120);
-			this.Controls.Add(this.folderPath);
-			this.Controls.Add(this.label1);
-			this.Controls.Add(this.startButton);
-			this.MaximizeBox = false;
-			this.MinimizeBox = false;
-			this.Name = "Form";
-			this.Text = "Form1";
-			this.Load += new System.EventHandler(this.Form_Load);
-			this.ResumeLayout(false);
-			this.PerformLayout();
+            this.startButton = new System.Windows.Forms.Button();
+            this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.label1 = new System.Windows.Forms.Label();
+            this.folderPath = new System.Windows.Forms.TextBox();
+            this.chooseFolderbutton = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // startButton
+            // 
+            this.startButton.Location = new System.Drawing.Point(353, 144);
+            this.startButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.startButton.Name = "startButton";
+            this.startButton.Size = new System.Drawing.Size(150, 44);
+            this.startButton.TabIndex = 0;
+            this.startButton.Text = "Start";
+            this.startButton.UseVisualStyleBackColor = true;
+            this.startButton.Click += new System.EventHandler(this.StartButton_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(24, 37);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(154, 25);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Folder location";
+            // 
+            // folderPath
+            // 
+            this.folderPath.Location = new System.Drawing.Point(24, 67);
+            this.folderPath.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.folderPath.Name = "folderPath";
+            this.folderPath.ReadOnly = true;
+            this.folderPath.Size = new System.Drawing.Size(432, 31);
+            this.folderPath.TabIndex = 2;
+            // 
+            // chooseFolderbutton
+            // 
+            this.chooseFolderbutton.Location = new System.Drawing.Point(465, 67);
+            this.chooseFolderbutton.Name = "chooseFolderbutton";
+            this.chooseFolderbutton.Size = new System.Drawing.Size(38, 31);
+            this.chooseFolderbutton.TabIndex = 3;
+            this.chooseFolderbutton.Text = "...";
+            this.chooseFolderbutton.UseVisualStyleBackColor = true;
+            this.chooseFolderbutton.Click += new System.EventHandler(this.ChooseFolderbutton_Click);
+            // 
+            // frmExtractor
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(535, 216);
+            this.Controls.Add(this.chooseFolderbutton);
+            this.Controls.Add(this.folderPath);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.startButton);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "frmExtractor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Extractor";
+            this.Load += new System.EventHandler(this.Form_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
 		}
 
@@ -85,6 +102,7 @@
 		private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.TextBox folderPath;
-	}
+        private System.Windows.Forms.Button chooseFolderbutton;
+    }
 }
 

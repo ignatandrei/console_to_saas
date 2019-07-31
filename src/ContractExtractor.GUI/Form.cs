@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,26 +11,49 @@ using System.Windows.Forms;
 
 namespace ContractExtractor.GUI
 {
-	public partial class Form : System.Windows.Forms.Form
+	public partial class frmExtractor : System.Windows.Forms.Form
 	{
-		public Form()
+        private readonly ILogger _logger;
+        public frmExtractor()
 		{
 			InitializeComponent();
-		}
+            _logger = NLog.LogManager.GetLogger(nameof(WordContractExtractor));
+        }
 
 		private void StartButton_Click(object sender, EventArgs e)
 		{
-			if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
-			{
-			}
-		}
+            try
+            {
+                string folder = folderPath.Text;
+                if(string.IsNullOrWhiteSpace(folder))
+                {
+                    MessageBox.Show("please choose a folder");
+                    return;
 
-		private void Form_Load(object sender, EventArgs e)
+                }
+                var extractor = new WordContractExtractor(folder);
+                extractor.Start();
+            }
+            catch(Exception ex)
+            {
+                _logger.Error(ex,$"exception in  {nameof(StartButton_Click)}");
+                MessageBox.Show("an error occured. See the log file for details");
+            }
+        }
+
+        private void Form_Load(object sender, EventArgs e)
 		{
-			// TODO: This is not tested
-			//var extractor = new WordContractExtractor(settings.DocumentsLocation);
-			//extractor.Start();
+            var settings = Settings.From("app.json");
+            folderPath.Text = settings.DocumentsLocation;
 
 		}
-	}
+
+        private void ChooseFolderbutton_Click(object sender, EventArgs e)
+        {
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                folderPath.Text = folderBrowserDialog.SelectedPath;
+            }
+        }
+    }
 }
