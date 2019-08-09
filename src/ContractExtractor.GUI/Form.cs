@@ -1,4 +1,5 @@
-﻿using NLog;
+﻿using ContractExtractor.IO;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,9 +30,10 @@ namespace ContractExtractor.GUI
                 {
                     MessageBox.Show("please choose a folder");
                     return;
-
                 }
-                var extractor = new WordContractExtractor(folder);
+
+                var fileSystem = new LocalFileSystem(folder);
+                var extractor = new WordContractExtractor(fileSystem);
                 extractor.Start();
             }
             catch(Exception ex)

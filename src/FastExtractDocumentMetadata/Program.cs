@@ -1,4 +1,5 @@
 ﻿using ContractExtractor;
+using ContractExtractor.IO;
 using NLog;
 using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
@@ -14,10 +15,10 @@ namespace FastExtractDocumentMetadata
     {
         private static void Main(string[] args)
         {
-			
-
 			var settings = Settings.From("app.json");
-			var extractor = new WordContractExtractor(settings.DocumentsLocation);
+
+            var fileSystem = new LocalFileSystem(settings.DocumentsLocation);
+            var extractor = new WordContractExtractor(fileSystem);
 			extractor.Start();
         }
     }

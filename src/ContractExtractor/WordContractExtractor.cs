@@ -1,4 +1,5 @@
-﻿using NLog;
+﻿using ContractExtractor.IO;
+using NLog;
 using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
 using NPOI.XWPF.UserModel;
@@ -6,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Linq;
 
 namespace ContractExtractor
 {
@@ -13,23 +15,24 @@ namespace ContractExtractor
 	{
 		private readonly string _documentLocation;
 		private readonly ILogger _logger;
+        private readonly IFileSystem _fileSystem;
 
-		public WordContractExtractor(string documentLocation)
+        public WordContractExtractor(IFileSystem fileSystem)
 		{
-			this._documentLocation = documentLocation;
+            _fileSystem = fileSystem;
 			_logger = NLog.LogManager.GetLogger(nameof(WordContractExtractor));
 		}
 
 		public void Start()
 		{
-			string[] files = Directory.GetFiles(_documentLocation, "*.docx");
-			_logger.Info($"processing {files.Length} word documents");
+            var files = _fileSystem.ListAsync("*.docx").ToList();
+			_logger.Info($"processing {files.Count} word documents");
 
 			var allContractors = new List<object[]>();
-			foreach (string file in files)
+			foreach (var file in files)
 			{
-				_logger.Info($"start processing {file}");
-				var document = new XWPFDocument(File.OpenRead(file));
+				_logger.Info($"start processing {file.Name}");
+				var document = new XWPFDocument(file.Read());
 				if (document.Tables.Count < 2)
 					throw new InvalidOperationException("Expected at least 2 tables");
 
