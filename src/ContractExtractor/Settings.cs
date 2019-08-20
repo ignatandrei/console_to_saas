@@ -8,9 +8,11 @@ namespace ContractExtractor
 {
     public class Settings
     {
-        [JsonProperty("documentsLocation")]
-        public string DocumentsLocation { get; set; }
+        //[JsonProperty("documentsLocation")]
+        //public string DocumentsLocation { get; set; }
 
+        [JsonProperty("filesystem")]
+        public FileSystemProvider FileSystemProvider { get; set; }
         private Settings()
         {
         }
@@ -19,7 +21,12 @@ namespace ContractExtractor
         {
             try
             {
-                return JsonConvert.DeserializeObject<Settings>(File.ReadAllText(configurationFilePath));
+                var settingsJson = new JsonSerializerSettings()
+                {
+                    TypeNameHandling = TypeNameHandling.All
+                };
+
+                return JsonConvert.DeserializeObject<Settings>(File.ReadAllText(configurationFilePath),settingsJson);
             }
             catch (JsonException ex)
             {

@@ -1,19 +1,29 @@
 {
-  "currentFileSystem": "localFileSystems/appFolder",
+  "filesystem": {
 
-  "fileSystems": {
-    "localFileSystems": {
-      "appFolder": {
-        "documentsLocation": "data"
-      }
-    },
-
-    "ftpFileSystems": {
-      "livehosting": {
-        "address": "",
-        "user": "",
-        "password": ""
-      }
+    "$type": "ContractExtractor.FileSystemProvider, ContractExtractor",
+    "currentFileSystem": "local1",
+    "FileSystems": {
+      "$type": "System.Collections.Generic.List`1[[System.Tuple`2[[System.String, System.Private.CoreLib],[ContractExtractor.IO.IFileSystem, ContractExtractor]], System.Private.CoreLib]], System.Private.CoreLib",
+      "$values": [
+        {
+          "$type": "System.Tuple`2[[System.String, System.Private.CoreLib],[ContractExtractor.IO.IFileSystem, ContractExtractor]], System.Private.CoreLib",
+          "Item1": "local1",
+          "Item2": {
+            "$type": "ContractExtractor.IO.LocalFileSystem, ContractExtractor",
+            "path": "data"
+          }
+        },
+        {
+          "$type": "System.Tuple`2[[System.String, System.Private.CoreLib],[ContractExtractor.IO.IFileSystem, ContractExtractor]], System.Private.CoreLib",
+          "Item1": "zip1",
+          "Item2": {
+            "$type": "ContractExtractor.IO.ZipFileSystem, ContractExtractor",
+            "pathZipFile": "data\\Painting-Contract.zip"
+          }
+        }
+      ]
     }
+
   }
 }

@@ -8,7 +8,7 @@ namespace ContractExtractor.IO
 {
     public class LocalFileSystem : IFileSystem
     {
-        private readonly string path;
+        public string path { get; private set; }
 
         public LocalFileSystem(string path)
         {

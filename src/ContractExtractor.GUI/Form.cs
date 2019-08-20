@@ -46,7 +46,7 @@ namespace ContractExtractor.GUI
         private void Form_Load(object sender, EventArgs e)
 		{
             var settings = Settings.From("app.json");
-            folderPath.Text = settings.DocumentsLocation;
+            //folderPath.Text = settings.DocumentsLocation;
 
 		}
 

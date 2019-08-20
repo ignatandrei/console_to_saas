@@ -8,7 +8,7 @@ namespace ContractExtractor.IO
 {
     public class ZipFileSystem : IFileSystem
     {
-        private readonly string pathZipFile;
+        public string pathZipFile { get; private set; }
 
         public ZipFileSystem(string pathZipFile)
         {
