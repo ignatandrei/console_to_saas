@@ -17,7 +17,8 @@ namespace FastExtractDocumentMetadata
         {
 			var settings = Settings.From("app.json");
 
-            var fileSystem = new LocalFileSystem(settings.DocumentsLocation);
+            //var fileSystem = new LocalFileSystem(settings.DocumentsLocation);
+            var fileSystem = new ZipFileSystem(@"data\Painting-Contract.zip");
             var extractor = new WordContractExtractor(fileSystem);
 			extractor.Start();
         }
