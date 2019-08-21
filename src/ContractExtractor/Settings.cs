@@ -11,8 +11,8 @@ namespace ContractExtractor
         //[JsonProperty("documentsLocation")]
         //public string DocumentsLocation { get; set; }
 
-        [JsonProperty("filesystem")]
-        public FileSystemProvider FileSystemProvider { get; set; }
+        [JsonProperty("fileSystem")]
+        public FileSystemSettings FileSystemProvider { get; set; }
         private Settings()
         {
         }

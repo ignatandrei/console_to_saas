@@ -13,7 +13,6 @@ namespace ContractExtractor
 {
 	public class WordContractExtractor
 	{
-		private readonly string _documentLocation;
 		private readonly ILogger _logger;
         private readonly IFileSystem _fileSystem;
 

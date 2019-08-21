@@ -1,6 +1,7 @@
 ﻿using ContractExtractor;
 using ContractExtractor.IO;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using NLog;
 using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
@@ -16,20 +17,29 @@ namespace FastExtractDocumentMetadata
     {
         private static void Main(string[] args)
         {
-			var settings = Settings.From("app.json");
+            var settings = Settings.From("app.json");
             //var fileSystem = new LocalFileSystem(settings.DocumentsLocation);
             //var fileSystem = new ZipFileSystem(@"data\Painting-Contract.zip");
-            //var indented = Formatting.Indented;
-            //var settingsJson = new JsonSerializerSettings()
-            //{
-            //    TypeNameHandling = TypeNameHandling.All
-            //};
-
-            //var s = JsonConvert.SerializeObject(new FileSystemProvider(), indented,settingsJson);
-            //var q = s;
-            var fileSystem = settings.FileSystemProvider.ActualFileSystem();
+            var fileSystem = settings.FileSystemProvider.CurrentFileSystem();
             var extractor = new WordContractExtractor(fileSystem);
-			extractor.Start();
+            extractor.Start();
+        }
+
+        private static void Serialization()
+        {
+            var indented = Formatting.Indented;
+            var settingsJson = new JsonSerializerSettings()
+            {
+                TypeNameHandling = TypeNameHandling.All,
+            };
+            settingsJson.ContractResolver = new DefaultContractResolver { NamingStrategy = new CamelCaseNamingStrategy() };
+
+            var settings = new FileSystemSettings();
+            settings.FileSystems.Add(new FileSystemSettings.Definition("local1", new LocalFileSystem("data")));
+            settings.FileSystems.Add(new FileSystemSettings.Definition("zip1", new ZipFileSystem("data/Painting-Contract.zip")));
+            settings.CurrentFileSystemKey = "local1";
+            var s = JsonConvert.SerializeObject(settings, indented, settingsJson);
+            var q = s;
         }
     }
 }
