@@ -16,11 +16,11 @@ string folderWithWordDocs = Console.ReadLine();
             
 //omitted code for clarity
 foreach (string file in Directory.GetFiles(folderWithWordDocs, "*.docx"))
-            {
-//omitted code for clarity
-                var contractorDetails = ExactContractorDetails(document.Tables[0]);
-                allContractors.Add(contractorDetails);
-            }
+{
+    //omitted code for clarity
+    var contractorDetails = ExactContractorDetails(document.Tables[0]);
+    allContractors.Add(contractorDetails);
+}
 ```
 As you can see, we were facing resolving the solution for the particular client for the specific situation without having an overview of the overall process or any thoughts to going this idea further. The whole process is a sequence of operations without any control flow involved.
 
