@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="..\..\..\..\data\Painting-Contract.docx" Link="Painting-Contract.docx">
+    <Content Include="..\..\..\data\Painting-Contract.docx" Link="Painting-Contract.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
