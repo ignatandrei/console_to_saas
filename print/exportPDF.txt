@@ -5,4 +5,4 @@ RUN npm install ./print/
 COPY . .
 RUN ls -l print/*.* 
 RUN node print/server.js
-CMD [ "node", "server.js" ]
+CMD tail -f /dev/null
