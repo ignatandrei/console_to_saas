@@ -1,0 +1,8 @@
+FROM node:10
+WORKDIR /usr/src/
+COPY print/package.json ./print/
+RUN npm install ./print/
+COPY . .
+RUN ls -l print/*.* 
+RUN node print/server.js
+CMD [ "node", "server.js" ]

@@ -1,0 +1,12 @@
+{
+  "name": "print",
+  "version": "1.0.0",
+  "description": "print on Docker",
+  "author": "Andrei Ignat",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "markdown-pdf": "10.0.0"
+  }
+}
