@@ -28,5 +28,5 @@ jobs:
     - name: print pdf
       run: |
         cd print
-        getBook.bat
+        ./getBook.bat
       
