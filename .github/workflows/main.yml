@@ -37,6 +37,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
+          git pull
           mkdir output
           
       - uses: docker://pandoc/latex:2.9
