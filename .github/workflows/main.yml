@@ -14,13 +14,11 @@ jobs:
         chmod +x ./print/getBook.bat
         cd print        
         ./getBook.bat
-        ls -l
 
-    - name: upload book
-        uses: actions/upload-artifact@v1
-        with:
-          name: book.pdf
-          path: ./print/book.pdf
+    - uses: actions/upload-artifact@v1
+      with:
+        name: book.pdf
+        path: ./print/book.pdf
 
   # build_pdf:
     
