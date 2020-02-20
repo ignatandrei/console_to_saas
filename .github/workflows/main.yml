@@ -15,8 +15,10 @@ jobs:
         cd print        
         ./getBook.bat
         ls -l
-    - uses: actions/upload-artifact@v1
-    - name: UploadBook        
+
+
+     - name: upload book
+        uses: actions/upload-artifact@v1
         with:
           name: book.pdf
           path: ./print/book.pdf
