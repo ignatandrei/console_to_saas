@@ -9,29 +9,29 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
     - name: print pdf
       run: |
         chmod +x ./print/getBook.bat
         cd print        
         ./getBook.bat
+        ls -l
+    - uses: actions/upload-artifact@v1
+    - name: UploadBook        
+        with:
+          name: book.pdf
+          path: ./print/book.pdf
 
-  build_pdf:
+  # build_pdf:
     
-    runs-on: windows-latest   
-    # runs:
-    #   using: 'docker'
-    #   image: 'print/exportPDF.txt'
+  #   runs-on: windows-latest   
+  #   # runs:
+  #   #   using: 'docker'
+  #   #   image: 'print/exportPDF.txt'
     
-    steps:
-    - uses: actions/checkout@v2
-    - name: print pdf
-      run: |
-        cd print
-        ./getBook.bat
+  #   steps:
+  #   - uses: actions/checkout@v2
+  #   - name: print pdf
+  #     run: |
+  #       cd print
+  #       ./getBook.bat
       
