@@ -17,7 +17,7 @@ jobs:
 
     - uses: actions/upload-artifact@v1
       with:
-        name: book.pdf
+        name: ConsoleToSaas.pdf
         path: ./print/book.pdf
 
   # build_pdf:

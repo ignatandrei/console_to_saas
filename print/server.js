@@ -4,7 +4,7 @@ console.log(`start print`);
 var markdownpdf = require("markdown-pdf")
 
 var mdDocs = [
-	"Chapter01/readme.md", "Chapter02/readme.md"
+	"readme.md,Chapter01/readme.md", "Chapter02/readme.md"
 	]
   , bookPath = "book.pdf"
 
