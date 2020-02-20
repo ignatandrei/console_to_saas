@@ -41,7 +41,7 @@ jobs:
           cp Chapter01/readme.md ./output/Chapter01.md
           
       - uses: docker://pandoc/latex:2.9
-        with:
+        with: # convert to html
           args: "--standalone --metadata title="Console2Saas" --output=output/README.html README.md"
       - uses: actions/upload-artifact@master
         with:
