@@ -37,13 +37,11 @@ jobs:
       - uses: actions/checkout@v2
       - run: |
           mkdir output
-          cp README.md ./output/README.md
-          cp Chapter01/readme.md ./output/Chapter01.md
           
       - uses: docker://pandoc/latex:2.9
         with: # needs a README in your repo root!
           #args: "--standalone --output=output/README.html README.md"
-          args: "./output/README.md ./output/Chapter01.md --standalone -f markdown -t html --number-sections --toc -o output/output.html"
+          args: "./README.md ./Chapter01/readme.md --standalone -f markdown -t html --number-sections --toc -o output/output.html"
       - uses: actions/upload-artifact@master
         with:
           name: output
