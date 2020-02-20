@@ -15,5 +15,12 @@ jobs:
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
-        
+
+  build_pdf:
+    
+    runs-on: ubuntu-latest   
+    
+    runs:
+      using: 'docker'
+      image: 'print/exportPDF.txt'
       
