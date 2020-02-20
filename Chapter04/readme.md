@@ -5,7 +5,7 @@ The presentation ended up with some Q&A and several clients they were interested
 Selling the application to multiple clients means to have configurable the word extracting and location of the documents. We ended up creating a GUI to allow the user to configure himself the automation parameters. This was a valuable feature for our users since most of them could be non technical. 
 Transfer the ownership of the paths from the config file to more appropriate user interface
 
-# Technical analysis
+## Technical analysis
 
 Sharing code source from console application to the GUI application in order to not duplicate code
 Transfer the ownership of the hardcoded paths to an external location. In our case we have the user interface for this
@@ -14,10 +14,10 @@ Adding logging for knowing what happens if an error occurs
 Adding exception handling to not crash the application
 Maybe add some specific code per project ( in our case, assert that user have not entered any folder /  maybe list what documents have been successfully processed and what not)
 
-# Exercise 3
+## Exercise 
 Modify the existing solution to support both Console and GUI.
 
-# Impact to the solution
+## Impact to the solution
 From a solution with a single project, we have now a solution with 3 projects
 Business Layer (BL) -  logic for the application  - in our case, processing documents from a folder
 Console ( referencing BL) 
@@ -27,7 +27,7 @@ Desktop ( referencing  BL)
 
 The BL has the code that was previous in the console application( loading settings, doing extraction) + some new code ( logging, others)
 
-# Code 
+## Code 
 The business logic is now  more simple:
 ```csharp
 public void Start()
@@ -65,7 +65,7 @@ catch(Exception ex)
 }
 ```
 
-# Technical Reading Box
+## Further reading
 
 .NET Core 3.0 Windows application ( WPF, WinForms): https://docs.microsoft.com/en-us/dotnet/core/whats-new/dotnet-core-3-0
 

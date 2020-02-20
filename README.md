@@ -4,14 +4,14 @@ This book will guide you step-by-step how you can build a scalable product from 
 Any development done will start from a business need: this will make things clear for the team what is the impact of the delivery. 
 You will see different arhitecture patterns for [separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns) and why some of them fit well and some of them not. Everything will happen incrementally and the product development history will be easy to be seen by analyzing commits.
 To have our finished product, we will see the two development directions:
-### On premise solution
+## On premise solution
 - how the idea get a shape
 - creating the PoC
 - bug fixing 
 - componentization / testing / refactoring
 - unit and integration testing
 - extending functionalities 
-### Scaling
+## Scaling
 - authentication
 - load testing
 - profiling and optimisations
