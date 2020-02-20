@@ -30,6 +30,8 @@ You can read online this book at  https://ignatandrei.github.io/console_to_saas/
 You can read offline by downloading the PDF
  https://ignatandrei.github.io/console_to_saas/ConsoleToSaas.pdf
    
+## Feedback
 
+Please share feedback by opening an issue or pull request at https://github.com/ignatandrei/console_to_saas/
 
 
