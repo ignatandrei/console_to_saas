@@ -1,6 +1,9 @@
-name: CI
+name: 'CD for generate book and docs folder'
 
-on: [push]
+on:
+  push:
+    paths:
+    - '**.md'
 
 jobs:
   build:
