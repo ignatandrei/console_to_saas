@@ -41,7 +41,7 @@ jobs:
           cp Chapter01/readme.md ./output/Chapter01.md
       - uses: docker://pandoc/latex:2.9
         with: # needs a README in your repo root!
-          args: "--standalone -t html -f gfm  --output=output/README.html README.md Chapter01.md"
+          args: "--standalone -t html -f gfm  --output=output/README.html *.md"
       - uses: actions/upload-artifact@master
         with:
           name: output
