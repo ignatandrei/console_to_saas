@@ -42,27 +42,27 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          echo Hello world $ChaptersMD
+          echo chapters to generate $ChaptersMD
           git pull
           mkdir output
 
       - uses: docker://pandoc/latex:2.9
         with: # needs a README in your repo root!
-          args: "README.md Chapter01/readme.md Chapter02/readme.md  Chapter03/readme.md Chapter04/readme.md --standalone -f gfm -t odt --number-sections --toc -o output/output.odt --metadata title=Console2SAAS"
+          args: "README.md $ChaptersMD --standalone -f gfm -t odt --number-sections --toc -o output/output.odt --metadata title=Console2SAAS"
 
       
       - uses: docker://pandoc/latex:2.9
         with: # needs a README in your repo root!
-          args: "README.md Chapter01/readme.md Chapter02/readme.md  Chapter03/readme.md Chapter04/readme.md --standalone -f gfm -t epub --number-sections --toc -o output/output.epub --metadata title=Console2SAAS"
+          args: "README.md $ChaptersMD --standalone -f gfm -t epub --number-sections --toc -o output/output.epub --metadata title=Console2SAAS"
 
       - uses: docker://pandoc/latex:2.9
         with: # needs a README in your repo root!
-          args: "README.md Chapter01/readme.md Chapter02/readme.md  Chapter03/readme.md Chapter04/readme.md --standalone -f gfm -t docx --number-sections --toc -o output/output.docx --metadata title=Console2SAAS"
+          args: "README.md $ChaptersMD --standalone -f gfm -t docx --number-sections --toc -o output/output.docx --metadata title=Console2SAAS"
 
       - uses: docker://pandoc/latex:2.9
         with: # needs a README in your repo root!
           #args: "--standalone --output=output/README.html README.md"
-          args: "README.md Chapter01/readme.md Chapter02/readme.md  Chapter03/readme.md Chapter04/readme.md --standalone -f gfm -t html --number-sections --toc -o output/output.html --metadata title=Console2SAAS"
+          args: "README.md $ChaptersMD --standalone -f gfm -t html --number-sections --toc -o output/output.html --metadata title=Console2SAAS"
       - uses: actions/upload-artifact@master
         with:
           name: output
