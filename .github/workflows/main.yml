@@ -14,7 +14,7 @@ jobs:
         chmod +x ./print/getBook.bat
         cd print        
         ./getBook.bat
-        copy book.pdf ../docs/ConsoleToSaas.pdf
+        cp ./book.pdf ../docs/ConsoleToSaas.pdf
 
     - uses: actions/upload-artifact@v1
       with:
