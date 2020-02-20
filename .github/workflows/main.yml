@@ -1,5 +1,6 @@
 name: 'CD for generate book and docs folder'
-
+env:
+      ChaptersMD : Chapter01/readme.md Chapter02/readme.md  Chapter03/readme.md Chapter04/readme.md 
 on:
   push:
     paths:
@@ -41,6 +42,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
+          echo Hello world $ChaptersMD
           git pull
           mkdir output
 
