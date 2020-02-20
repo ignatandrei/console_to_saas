@@ -14,17 +14,18 @@ jobs:
         chmod +x ./print/getBook.bat
         cd print        
         ./getBook.bat
+        copy book.pdf ../docs/ConsoleToSaas.pdf
 
     - uses: actions/upload-artifact@v1
       with:
         name: ConsoleToSaas.pdf
         path: ./print/book.pdf
-        
+
     - name: Commit files
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git commit -m "Add changes" -a
+        git commit -m "from GitHub actions" -a
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
