@@ -19,8 +19,12 @@ jobs:
   build_pdf:
     
     runs-on: ubuntu-latest   
+    # runs:
+    #   using: 'docker'
+    #   image: 'print/exportPDF.txt'
     
-    runs:
-      using: 'docker'
-      image: 'print/exportPDF.txt'
+    steps:
+    - uses: actions/checkout@v2
+    - name: print pdf
+      run: print/getBook.bat
       
