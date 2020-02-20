@@ -1,3 +1,14 @@
+---
+title:  'This is the title: it contains a colon'
+author:
+- Andrei Ignat
+- Daniel Tila
+keywords: [Console, SAAS]
+abstract: |
+  This is the abstract.
+
+  It consists of two paragraphs.
+---
 # Console to SAAS
 
 This book will guide you step-by-step how you can build a scalable product from a [proof of concept](https://en.wikipedia.org/wiki/Proof_of_concept) to a production ready [SAAS](https://en.wikipedia.org/wiki/Software_as_a_service). 
