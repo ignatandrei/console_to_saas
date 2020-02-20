@@ -17,7 +17,8 @@ jobs:
         echo test, and deploy your project.
     - name: print pdf
       run: |
-        cd print
+        chmod +x ./print/getBook.bat
+        cd print        
         ./getBook.bat
 
   build_pdf:
