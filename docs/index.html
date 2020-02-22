@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Console2SAAS</title>
+  <title>CLI/Console2SAAS</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -81,11 +81,11 @@
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">Console2SAAS</h1>
+<h1 class="title">CLI/Console2SAAS</h1>
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
-<li><a href="#console-to-saas">Console to SAAS</a>
+<li><a href="#console-to-saas---book-description">Console to SAAS - book description</a>
 <ul>
 <li><a href="#on-premise-solution">On premise solution</a></li>
 <li><a href="#scaling">Scaling</a></li>
@@ -139,14 +139,12 @@
 <li><a href="#chapter-05---the-first-real-client-zip-folder--componentization--testing--refactoring">Chapter 05 - The first real client: Zip Folder =&gt; Componentization / Testing / Refactoring</a>
 <ul>
 <li><a href="#technical-analysis-4">Technical analysis</a></li>
-</ul></li>
-<li><a href="#exercise-4">Exercise 4</a>
-<ul>
+<li><a href="#exercise-4">Exercise 4</a></li>
 <li><a href="#impact-to-the-solution-2">Impact to the solution</a></li>
 </ul></li>
 </ul>
 </nav>
-<h1 id="console-to-saas">Console to SAAS</h1>
+<h1 id="console-to-saas---book-description">Console to SAAS - book description</h1>
 <p>This book will guide you step-by-step how you can build a scalable product from a <a href="https://en.wikipedia.org/wiki/Proof_of_concept">proof of concept</a> to a production ready <a href="https://en.wikipedia.org/wiki/Software_as_a_service">SAAS</a>. Any development done will start from a business need: this will make things clear for the team what is the impact of the delivery. You will see different arhitecture patterns for <a href="https://en.wikipedia.org/wiki/Separation_of_concerns">separation of concerns</a> and why some of them fit well and some of them not. Everything will happen incrementally and the product development history will be easy to be seen by analyzing commits. To have our finished product, we will see the two development directions:</p>
 <h2 id="on-premise-solution">On premise solution</h2>
 <ul>
@@ -286,8 +284,8 @@
 <p>A client which was interested mentioned that they were using zip files for backup the documents for company service. They were interested in having our product, but we didn’t support zip files. We shared our vision to create a product that is highly customizable, so implementing reading files from zip would be an additional feature. He agreed to pay for it and we started the product development.</p>
 <h2 id="technical-analysis-4">Technical analysis</h2>
 <p>Changing the business core, requires refactoring which usually involves regression testing. Before every refactoring is started, we need to define the supported test scenarios from the business perspective. This is a list which usually includes inputs, appropriate action and the expected output. The easiest way to achieve this is to add unit tests which does the checking automatically.</p>
-<h1 id="exercise-4">Exercise 4</h1>
-<p>Starting from the solution , add support for reading either from local folder, either from zip file</p>
+<h2 id="exercise-4">Exercise 4</h2>
+<p>Starting from the solution , add support for reading either from local folder, either from zip file.</p>
 <h2 id="impact-to-the-solution-2">Impact to the solution</h2>
 <p>Altering pretty much the entire core, adds some regression risks. To compensate for that, we will add tests (unit and/or integration and/or component and/or system) which verifies the already old behavior and the new one. The tests will make sure that our core (reading and parsing) outputs the expected output using various file systems. We will add a new project for unit/component test and we will reference the business core project and inject different components (in our case, file system). This core modification, will also impact the other projects, including GUI and console application. In our case we want to make sure that the contract parsing success if we use both file systems.</p>
 <p>We already identified the operations that needs to be abstract, so let’s write the interfaces that allows this:</p>
