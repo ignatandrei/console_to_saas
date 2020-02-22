@@ -5,7 +5,7 @@ A client which was interested mentioned that they were using zip files for backu
 ## Technical analysis
 Changing the business core, requires refactoring which usually involves regression testing. Before every refactoring is started, we need to define the supported test scenarios from the business perspective. This is a list which usually includes inputs, appropriate action and the expected output. The easiest way to achieve this is to add unit tests which does the checking automatically. 
 
-## Exercise 4
+## Exercise 
 
 Starting from the solution , add support for reading either from local folder, either from zip file.
 

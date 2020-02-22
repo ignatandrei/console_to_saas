@@ -1,5 +1,7 @@
 # Chapter 06 - Our second external client: Ecosystem/ Versioning / CI 
 
+The second client
+
 
 ## Technical Box
 1.	Design Pattern - strategy
