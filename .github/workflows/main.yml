@@ -104,11 +104,12 @@ jobs:
         filename: ./docs/sources/Chapter01.zip        
         path: ./Chapter01/FastExtractDocumentMetadata  
 
-     - name: Zip Release
+    - name: Zip Release
       uses: TheDoctor0/zip-release@v0.2.1
       with:        
         filename: ./docs/sources/Chapter02.zip        
         path: ./Chapter02/FastExtractDocumentMetadata
+
     - name: Commit files
       run: |
         
