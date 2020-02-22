@@ -294,8 +294,8 @@
 <section id="code-3" data-number="5.4">
 <h2 data-number="5.4"><span class="header-section-number">5.4</span> Code</h2>
 <p>The business logic is now more simple:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">Start</span>()</span>
-<span id="cb4-2"><a href="#cb4-2"></a>{   </span>
+<div class="sourceCode" id="cb4"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">ExtractToFile</span>(<span class="dt">string</span> excelFileOutput)</span>
+<span id="cb4-2"><a href="#cb4-2"></a>{       </span>
 <span id="cb4-3"><a href="#cb4-3"></a><span class="dt">string</span>[] files = Directory.<span class="fu">GetFiles</span>(_documentLocation, <span class="st">&quot;*.docx&quot;</span>);</span>
 <span id="cb4-4"><a href="#cb4-4"></a>_logger.<span class="fu">Info</span>($<span class="st">&quot;processing {files.Length} word documents&quot;</span>);</span>
 <span id="cb4-5"><a href="#cb4-5"></a><span class="co">//code omitted for brevity</span></span></code></pre></div>
