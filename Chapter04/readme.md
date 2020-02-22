@@ -1,4 +1,4 @@
-# Transform to product: making a GUI 
+# Chapter 04- Transform to product: making a GUI 
 
 At our Digital Transformation Center Department we have recurring meetings with clients that are part of our continuous iterative process to identify things that needs to be improved. In one of the meetups that we hosted on our desk, we invited the financial department to leave feedback on the process that we helped. We talked about how the process evolved and how by adopting Digital Solutions decreased manual work. 
 The presentation ended up with some Q&A and several clients they were interested to have the application installed. At that point we realised that this is real a missing point in the current market and we planned to develop a product around this. At this point we had a validated idea by the market and we decided to evolve based on the client needs.

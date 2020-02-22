@@ -1,4 +1,4 @@
-# The first real client: Zip Folder =>  Componentization / Testing / Refactoring
+# Chapter 05 - The first real client: Zip Folder =>  Componentization / Testing / Refactoring
 
 A client which was interested mentioned that they were using zip files for backup the documents for company service. They were interested in having our product, but we didn’t support zip files. We shared our vision to create a product that is highly customizable, so implementing reading files from zip would be an additional feature. He agreed to pay for it and we started the product development.
 

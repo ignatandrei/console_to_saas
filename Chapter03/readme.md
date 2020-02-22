@@ -1,4 +1,4 @@
-# Second internal customer: sharing code source + settings for client
+# Chapter 03 - Second internal customer: sharing code source + settings for client
 
 It has been a few months since our financial department is using the application and they were happy with it. On a morning coffee break where we were discussing the new automation trends, they mention the tool that we developed. Sales department was willing to see since they had themselves some similar situation.
 We configured and deployed on a separate machine for them and we saw great feedback and real usage on a daily basis. They were so excited to see how they decreased the paperwork hours and had more time to pay attention to the clients needs.

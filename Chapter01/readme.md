@@ -1,4 +1,4 @@
-# The boss that is hurrying up: proof of concept + source code
+# Chapter 01- The boss that is hurrying up: proof of concept + source code
 
 
 True story: one day my boss came and he asked me to have a discussion about how can we help our colleagues from the financial department since they are thinking about automation process. We found a spare place and scheduled a meeting where we find out that 3 employees were manually extracting the client information (name, identity information, address) and contract agreement details (fee, payment schedule) to an Excel file and saving the document in a protected area. 
@@ -17,7 +17,7 @@ string folderWithWordDocs = Console.ReadLine();
             
 //omitted code for clarity
 foreach (string file in Directory.GetFiles(folderWithWordDocs, "*.docx"))
-{
+{        
     //omitted code for clarity
     var contractorDetails = ExactContractorDetails(document.Tables[0]);
     allContractors.Add(contractorDetails);

@@ -1,4 +1,4 @@
-# Our second external client: Ecosystem/ Versioning / CI 
+# Chapter 06 - Our second external client: Ecosystem/ Versioning / CI 
 
 
 ## Technical Box

@@ -1,4 +1,4 @@
-# Financial department last tweaks: MVP + fixing bugs, source control
+# Chapter 02 - Financial department last tweaks: MVP + fixing bugs, source control
 
 We installed our console app on one of the computers of an employee in the financial department, we set it up and we let it running. After a few days we had some bug fixing and some new requests that came in. We saw an enthusiastic behavior on our colleagues by using our solution and that was our first real feedback that we were resolving a customer pain. We anticipated that we will get more feedback and to track what we have done we needed a source control. After a few iterations, we had our financial department happy and we are ready with our first MVP.
 
