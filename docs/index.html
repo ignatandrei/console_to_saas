@@ -142,11 +142,7 @@
 </ul></li>
 <li><a href="#exercise-4">Exercise 4</a>
 <ul>
-<li><a href="#impact-to-the-solution-2">Impact to the solution</a>
-<ul>
-<li><a href="#download-code-4">Download code</a></li>
-</ul></li>
-<li><a href="#technical-reading-box">Technical Reading Box</a></li>
+<li><a href="#impact-to-the-solution-2">Impact to the solution</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -311,19 +307,27 @@
 <li>ZipFileSystem</li>
 </ol>
 <p>A zip file can have inside folders and files, similar to a directory. Hence, we can do the same operations just like in the actual file system (listing files and reading a file from it).</p>
-<p>var settings = Settings.From("app.json"); var fileSystem = settings.FileSystemProvider.CurrentFileSystem(); var extractor = new WordContractExtractor(fileSystem); extractor.Start();</p>
-<h3 id="download-code-4">Download code</h3>
-<p>Code at <a href="https://ignatandrei.github.io/console_to_saas/sources/Chapter05.zip">Chapter05</a></p>
-<h2 id="technical-reading-box">Technical Reading Box</h2>
-<ol>
-<li>Interfaces vs Abstract Classes</li>
-<li>IDisposable (for zip extracting)</li>
-<li>FileSystem Abstraction ( exists already: <a href="https://github.com/System-IO-Abstractions/System.IO.Abstractions">https://github.com/System-IO-Abstractions/System.IO.Abstractions</a> <a href="http://dontcodetired.com/blog/post/Unit-Testing-C-File-Access-Code-with-SystemIOAbstractions">http://dontcodetired.com/blog/post/Unit-Testing-C-File-Access-Code-with-SystemIOAbstractions</a>)</li>
-<li>How to Serialize interfaces to restore classes</li>
-<li>Unit Test vs Integration Test vs Component Test vs System Test vs Load Test</li>
-<li>ArrangeActAssert vs GWT</li>
-<li>Mock vs Fakes vs Stubs : <a href="https://martinfowler.com/articles/mocksArentStubs.html">https://martinfowler.com/articles/mocksArentStubs.html</a></li>
-<li>Technical Debt</li>
-</ol>
+<div class="sourceCode" id="cb7"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb7-1"><a href="#cb7-1"></a><span class="dt">var</span> settings = Settings.<span class="fu">From</span>(<span class="st">&quot;app.json&quot;</span>);</span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="dt">var</span> fileSystem = settings.<span class="fu">FileSystemProvider</span>.<span class="fu">CurrentFileSystem</span>();</span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="dt">var</span> extractor = <span class="kw">new</span> <span class="fu">WordContractExtractor</span>(fileSystem);</span>
+<span id="cb7-4"><a href="#cb7-4"></a>extractor.<span class="fu">Start</span>();</span>
+<span id="cb7-5"><a href="#cb7-5"></a>```csharp</span>
+<span id="cb7-6"><a href="#cb7-6"></a>### Download code </span>
+<span id="cb7-7"><a href="#cb7-7"></a></span>
+<span id="cb7-8"><a href="#cb7-8"></a>Code at [Chapter05](https:<span class="co">//ignatandrei.github.io/console_to_saas/sources/Chapter05.zip)</span></span>
+<span id="cb7-9"><a href="#cb7-9"></a></span>
+<span id="cb7-10"><a href="#cb7-10"></a>## Technical Reading Box</span>
+<span id="cb7-11"><a href="#cb7-11"></a></span>
+<span id="cb7-12"><a href="#cb7-12"></a><span class="fl">1.</span> Interfaces vs Abstract Classes</span>
+<span id="cb7-13"><a href="#cb7-13"></a><span class="fl">1.</span> <span class="fu">IDisposable</span> (<span class="kw">for</span> zip extracting)</span>
+<span id="cb7-14"><a href="#cb7-14"></a><span class="fl">1.</span> FileSystem <span class="fu">Abstraction</span> ( exists already:  https:<span class="co">//github.com/System-IO-Abstractions/System.IO.Abstractions</span></span>
+<span id="cb7-15"><a href="#cb7-15"></a>http:<span class="co">//dontcodetired.com/blog/post/Unit-Testing-C-File-Access-Code-with-SystemIOAbstractions) </span></span>
+<span id="cb7-16"><a href="#cb7-16"></a><span class="fl">1.</span> How to Serialize interfaces to restore classes</span>
+<span id="cb7-17"><a href="#cb7-17"></a><span class="fl">1.</span> Unit Test vs Integration Test vs Component Test vs System Test vs Load Test</span>
+<span id="cb7-18"><a href="#cb7-18"></a><span class="fl">1.</span> ArrangeActAssert vs GWT</span>
+<span id="cb7-19"><a href="#cb7-19"></a><span class="fl">1.</span> Mock vs Fakes vs Stubs : https:<span class="co">//martinfowler.com/articles/mocksArentStubs.html</span></span>
+<span id="cb7-20"><a href="#cb7-20"></a><span class="fl">1.</span> Technical Debt</span>
+<span id="cb7-21"><a href="#cb7-21"></a></span>
+<span id="cb7-22"><a href="#cb7-22"></a></span></code></pre></div>
 </body>
 </html>
