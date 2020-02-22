@@ -1,7 +1,8 @@
 # Introduction
 
 ## For who is this book
-
+This book is aimed to thenprogrammers that have some experience - at least, to make a console/CLI application.
+They can learn what are the steps to transform the CLI application to a SAAS one.
 ## How this book is made
 
 ## Where to find code
