@@ -83,6 +83,31 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+
+  zipSources:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    - name: pulling latest
+      run: |
+        echo chapters to generate $ChaptersMD
+        git pull      
+    - uses: montudor/action-zip@v0.1.0
+        with:
+          args: zip -qq -r ./Chapter01.zip ./docs/sources/Chapter01.zip
+
+    - name: Commit files
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git commit -m "generate zip files" -a --allow-empty
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+
   #   runs-on: windows-latest   
   #   # runs:
   #   #   using: 'docker'
