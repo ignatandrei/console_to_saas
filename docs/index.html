@@ -93,7 +93,7 @@
 <li><a href="#source-codes">Source codes</a></li>
 <li><a href="#feedback">Feedback</a></li>
 </ul></li>
-<li><a href="#the-boss-that-is-hurrying-up-proof-of-concept--source-code">The boss that is hurrying up: proof of concept + source code</a>
+<li><a href="#chapter-01--the-boss-that-is-hurrying-up-proof-of-concept--source-code">Chapter 01- The boss that is hurrying up: proof of concept + source code</a>
 <ul>
 <li><a href="#technical-analysis">Technical analysis</a></li>
 <li><a href="#exercise">Exercise</a></li>
@@ -104,7 +104,7 @@
 </ul></li>
 <li><a href="#further-reading">Further reading</a></li>
 </ul></li>
-<li><a href="#financial-department-last-tweaks-mvp--fixing-bugs-source-control">Financial department last tweaks: MVP + fixing bugs, source control</a>
+<li><a href="#chapter-02---financial-department-last-tweaks-mvp--fixing-bugs-source-control">Chapter 02 - Financial department last tweaks: MVP + fixing bugs, source control</a>
 <ul>
 <li><a href="#technical-analysis-1">Technical analysis</a></li>
 <li><a href="#exercise-1">Exercise</a></li>
@@ -114,7 +114,7 @@
 </ul></li>
 <li><a href="#further-reading-1">Further reading</a></li>
 </ul></li>
-<li><a href="#second-internal-customer-sharing-code-source--settings-for-client">Second internal customer: sharing code source + settings for client</a>
+<li><a href="#chapter-03---second-internal-customer-sharing-code-source--settings-for-client">Chapter 03 - Second internal customer: sharing code source + settings for client</a>
 <ul>
 <li><a href="#technical-analysis-2">Technical analysis</a></li>
 <li><a href="#exercise-2">Exercise</a></li>
@@ -125,7 +125,7 @@
 </ul></li>
 <li><a href="#further-reading-2">Further reading</a></li>
 </ul></li>
-<li><a href="#transform-to-product-making-a-gui">Transform to product: making a GUI</a>
+<li><a href="#chapter-04--transform-to-product-making-a-gui">Chapter 04- Transform to product: making a GUI</a>
 <ul>
 <li><a href="#technical-analysis-3">Technical analysis</a></li>
 <li><a href="#exercise-3">Exercise</a></li>
@@ -136,7 +136,7 @@
 </ul></li>
 <li><a href="#further-reading-3">Further reading</a></li>
 </ul></li>
-<li><a href="#the-first-real-client-zip-folder--componentization--testing--refactoring">The first real client: Zip Folder =&gt; Componentization / Testing / Refactoring</a>
+<li><a href="#chapter-05---the-first-real-client-zip-folder--componentization--testing--refactoring">Chapter 05 - The first real client: Zip Folder =&gt; Componentization / Testing / Refactoring</a>
 <ul>
 <li><a href="#technical-analysis-4">Technical analysis</a></li>
 </ul></li>
@@ -181,7 +181,7 @@
 <p>You can find source codes at <a href="https://github.com/ignatandrei/console_to_saas/">Console2SAAS</a> or after each chapter.</p>
 <h2 id="feedback">Feedback</h2>
 <p>Please share feedback by opening an issue or pull request at <a href="https://github.com/ignatandrei/console_to_saas/">https://github.com/ignatandrei/console_to_saas/</a></p>
-<h1 id="the-boss-that-is-hurrying-up-proof-of-concept--source-code">The boss that is hurrying up: proof of concept + source code</h1>
+<h1 id="chapter-01--the-boss-that-is-hurrying-up-proof-of-concept--source-code">Chapter 01- The boss that is hurrying up: proof of concept + source code</h1>
 <p>True story: one day my boss came and he asked me to have a discussion about how can we help our colleagues from the financial department since they are thinking about automation process. We found a spare place and scheduled a meeting where we find out that 3 employees were manually extracting the client information (name, identity information, address) and contract agreement details (fee, payment schedule) to an Excel file and saving the document in a protected area.</p>
 <h2 id="technical-analysis">Technical analysis</h2>
 <p>After putting some brainstorming and analyzing the constraint we ended up developing a solution that reads from a folder share and continue the process without any human intervention. This would allow to have all our employees to continue their work simultaneously with less effort than before. The prototype solution that we developed was a console app written in C# where we were able to fulfill our requirements in a minimum amount of time.</p>
@@ -194,7 +194,7 @@
 <span id="cb1-2"><a href="#cb1-2"></a>            </span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="co">//omitted code for clarity</span></span>
 <span id="cb1-4"><a href="#cb1-4"></a><span class="kw">foreach</span> (<span class="dt">string</span> file <span class="kw">in</span> Directory.<span class="fu">GetFiles</span>(folderWithWordDocs, <span class="st">&quot;*.docx&quot;</span>))</span>
-<span id="cb1-5"><a href="#cb1-5"></a>{</span>
+<span id="cb1-5"><a href="#cb1-5"></a>{        </span>
 <span id="cb1-6"><a href="#cb1-6"></a>    <span class="co">//omitted code for clarity</span></span>
 <span id="cb1-7"><a href="#cb1-7"></a>    <span class="dt">var</span> contractorDetails = <span class="fu">ExactContractorDetails</span>(document.<span class="fu">Tables</span>[<span class="dv">0</span>]);</span>
 <span id="cb1-8"><a href="#cb1-8"></a>    allContractors.<span class="fu">Add</span>(contractorDetails);</span>
@@ -206,7 +206,7 @@
 <p>Read about Gui.cs - <a href="https://github.com/migueldeicaza/gui.cs">https://github.com/migueldeicaza/gui.cs</a></p>
 <p>Read about the difference between EnumerateFiles and GetFiles.</p>
 <p>Read about Async Enumerable in .NET 3.0</p>
-<h1 id="financial-department-last-tweaks-mvp--fixing-bugs-source-control">Financial department last tweaks: MVP + fixing bugs, source control</h1>
+<h1 id="chapter-02---financial-department-last-tweaks-mvp--fixing-bugs-source-control">Chapter 02 - Financial department last tweaks: MVP + fixing bugs, source control</h1>
 <p>We installed our console app on one of the computers of an employee in the financial department, we set it up and we let it running. After a few days we had some bug fixing and some new requests that came in. We saw an enthusiastic behavior on our colleagues by using our solution and that was our first real feedback that we were resolving a customer pain. We anticipated that we will get more feedback and to track what we have done we needed a source control. After a few iterations, we had our financial department happy and we are ready with our first MVP.</p>
 <h2 id="technical-analysis-1">Technical analysis</h2>
 <p>We decided to have 2 separate projects (a business logic and console) because it is not taking so much time and can be beneficial in the long run. Also, because of the modifications , we need to have a source control - or, at least, to can go back to some version.</p>
@@ -222,7 +222,7 @@
 <p>Version Control : <a href="https://en.wikipedia.org/wiki/Version_control">https://en.wikipedia.org/wiki/Version_control</a></p>
 <p>Set also a repository at <a href="http://github.com/">http://github.com/</a> , <a href="https://azure.microsoft.com/en-us/services/devops/">https://azure.microsoft.com/en-us/services/devops/</a> or other online source control.</p>
 <p>Refactoring: <a href="https://www.amazon.com/Refactoring-Improving-Design-Existing-Code/dp/0201485672">https://www.amazon.com/Refactoring-Improving-Design-Existing-Code/dp/0201485672</a></p>
-<h1 id="second-internal-customer-sharing-code-source--settings-for-client">Second internal customer: sharing code source + settings for client</h1>
+<h1 id="chapter-03---second-internal-customer-sharing-code-source--settings-for-client">Chapter 03 - Second internal customer: sharing code source + settings for client</h1>
 <p>It has been a few months since our financial department is using the application and they were happy with it. On a morning coffee break where we were discussing the new automation trends, they mention the tool that we developed. Sales department was willing to see since they had themselves some similar situation. We configured and deployed on a separate machine for them and we saw great feedback and real usage on a daily basis. They were so excited to see how they decreased the paperwork hours and had more time to pay attention to the clients needs. They want to use the application as an example of automation and we find more suitable as a product development.</p>
 <h2 id="technical-analysis-2">Technical analysis</h2>
 <p>Creating a configuration file with all the settings that a client can particular change. For now we have just the directory path. Along with the config, we have added also a class that manages the reading operation to move the reading operation</p>
@@ -239,7 +239,7 @@
 <h2 id="further-reading-2">Further reading</h2>
 <p>An application can have multiple sources of configuration. Read about .NET Core endpoint configuration (<a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-2.2">https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-2.2</a> ) : Environment, command line, configuration file, code ( in this order)</p>
 <p>Read also about IOptionSnapshot and IOptionMonitor at <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options?view=aspnetcore-3.1">https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options?view=aspnetcore-3.1</a></p>
-<h1 id="transform-to-product-making-a-gui">Transform to product: making a GUI</h1>
+<h1 id="chapter-04--transform-to-product-making-a-gui">Chapter 04- Transform to product: making a GUI</h1>
 <p>At our Digital Transformation Center Department we have recurring meetings with clients that are part of our continuous iterative process to identify things that needs to be improved. In one of the meetups that we hosted on our desk, we invited the financial department to leave feedback on the process that we helped. We talked about how the process evolved and how by adopting Digital Solutions decreased manual work. The presentation ended up with some Q&amp;A and several clients they were interested to have the application installed. At that point we realised that this is real a missing point in the current market and we planned to develop a product around this. At this point we had a validated idea by the market and we decided to evolve based on the client needs. Selling the application to multiple clients means to have configurable the word extracting and location of the documents. We ended up creating a GUI to allow the user to configure himself the automation parameters. This was a valuable feature for our users since most of them could be non technical. Transfer the ownership of the paths from the config file to more appropriate user interface</p>
 <h2 id="technical-analysis-3">Technical analysis</h2>
 <p>Sharing code source from console application to the GUI application in order to not duplicate code Transfer the ownership of the hardcoded paths to an external location. In our case we have the user interface for this Define a user interface (maybe with the progress of the operations ?) Adding logging for knowing what happens if an error occurs Adding exception handling to not crash the application Maybe add some specific code per project ( in our case, assert that user have not entered any folder / maybe list what documents have been successfully processed and what not)</p>
@@ -282,7 +282,7 @@
 <h2 id="further-reading-3">Further reading</h2>
 <p>.NET Core 3.0 Windows application ( WPF, WinForms): <a href="https://docs.microsoft.com/en-us/dotnet/core/whats-new/dotnet-core-3-0">https://docs.microsoft.com/en-us/dotnet/core/whats-new/dotnet-core-3-0</a></p>
 <p>MultiTier architecture : <a href="https://en.wikipedia.org/wiki/Multitier_architecture">https://en.wikipedia.org/wiki/Multitier_architecture</a></p>
-<h1 id="the-first-real-client-zip-folder--componentization--testing--refactoring">The first real client: Zip Folder =&gt; Componentization / Testing / Refactoring</h1>
+<h1 id="chapter-05---the-first-real-client-zip-folder--componentization--testing--refactoring">Chapter 05 - The first real client: Zip Folder =&gt; Componentization / Testing / Refactoring</h1>
 <p>A client which was interested mentioned that they were using zip files for backup the documents for company service. They were interested in having our product, but we didn’t support zip files. We shared our vision to create a product that is highly customizable, so implementing reading files from zip would be an additional feature. He agreed to pay for it and we started the product development.</p>
 <h2 id="technical-analysis-4">Technical analysis</h2>
 <p>Changing the business core, requires refactoring which usually involves regression testing. Before every refactoring is started, we need to define the supported test scenarios from the business perspective. This is a list which usually includes inputs, appropriate action and the expected output. The easiest way to achieve this is to add unit tests which does the checking automatically.</p>
@@ -330,7 +330,7 @@
 <span id="cb7-21"><a href="#cb7-21"></a></span>
 <span id="cb7-22"><a href="#cb7-22"></a></span>
 <span id="cb7-23"><a href="#cb7-23"></a></span>
-<span id="cb7-24"><a href="#cb7-24"></a># Our second external client: Ecosystem/ Versioning / CI </span>
+<span id="cb7-24"><a href="#cb7-24"></a># Chapter <span class="dv">06</span> - Our second external client: Ecosystem/ Versioning / CI </span>
 <span id="cb7-25"><a href="#cb7-25"></a></span>
 <span id="cb7-26"><a href="#cb7-26"></a></span>
 <span id="cb7-27"><a href="#cb7-27"></a>## Technical Box</span>
