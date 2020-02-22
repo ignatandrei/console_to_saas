@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContractExtractor", "Contra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContractExtractor.GUI", "ContractExtractor.GUI\ContractExtractor.GUI.csproj", "{C895D759-CD07-4AA5-B079-70B03C3AD56D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "test\test.csproj", "{76F75C1A-61EA-4C55-A059-7396C895787B}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{C895D759-CD07-4AA5-B079-70B03C3AD56D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C895D759-CD07-4AA5-B079-70B03C3AD56D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C895D759-CD07-4AA5-B079-70B03C3AD56D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{76F75C1A-61EA-4C55-A059-7396C895787B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{76F75C1A-61EA-4C55-A059-7396C895787B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{76F75C1A-61EA-4C55-A059-7396C895787B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{76F75C1A-61EA-4C55-A059-7396C895787B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

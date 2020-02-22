@@ -31,13 +31,13 @@ One implementation is from the actual file system (an existing directory) and th
 1. DirectoryFileSystem
 2. ZipFileSystem
  
-A zip file can have inside folders and files, similar to a directory. Hence, we can do the same operations just like in the actual file system (listing files and reading a file from it).
-
+A zip file can have inside folders and files, similar to a directory. Hence, we can do the same operations just like in the actual file system (listing files and reading a file from it). 
+```csharp
 var settings = Settings.From("app.json");
 var fileSystem = settings.FileSystemProvider.CurrentFileSystem();
 var extractor = new WordContractExtractor(fileSystem);
 extractor.Start();
-
+```csharp
 ### Download code 
 
 Code at [Chapter05](https://ignatandrei.github.io/console_to_saas/sources/Chapter05.zip)
