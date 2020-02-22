@@ -102,7 +102,7 @@ jobs:
       uses: TheDoctor0/zip-release@v0.2.1
       with:        
         filename: ./docs/sources/Chapter01.zip        
-        path: ./docs/sources/Chapter01.zip        
+        path: ./Chapter01        
     
     - name: Commit files
       run: |
