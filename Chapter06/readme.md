@@ -2,8 +2,8 @@
 
 The second client
 
-
 ## Technical Box
+
 1.	Design Pattern - strategy
 2.  Versioning - show the production version. SemVer, CalVer
 3.  AutoUpdate application
