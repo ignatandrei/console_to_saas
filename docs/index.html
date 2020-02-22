@@ -139,7 +139,7 @@
 <li><a href="#chapter-05---the-first-real-client-zip-folder--componentization--testing--refactoring">Chapter 05 - The first real client: Zip Folder =&gt; Componentization / Testing / Refactoring</a>
 <ul>
 <li><a href="#technical-analysis-4">Technical analysis</a></li>
-<li><a href="#exercise-4">Exercise 4</a></li>
+<li><a href="#exercise-4">Exercise</a></li>
 <li><a href="#impact-to-the-solution-2">Impact to the solution</a></li>
 </ul></li>
 </ul>
@@ -284,7 +284,7 @@
 <p>A client which was interested mentioned that they were using zip files for backup the documents for company service. They were interested in having our product, but we didn’t support zip files. We shared our vision to create a product that is highly customizable, so implementing reading files from zip would be an additional feature. He agreed to pay for it and we started the product development.</p>
 <h2 id="technical-analysis-4">Technical analysis</h2>
 <p>Changing the business core, requires refactoring which usually involves regression testing. Before every refactoring is started, we need to define the supported test scenarios from the business perspective. This is a list which usually includes inputs, appropriate action and the expected output. The easiest way to achieve this is to add unit tests which does the checking automatically.</p>
-<h2 id="exercise-4">Exercise 4</h2>
+<h2 id="exercise-4">Exercise</h2>
 <p>Starting from the solution , add support for reading either from local folder, either from zip file.</p>
 <h2 id="impact-to-the-solution-2">Impact to the solution</h2>
 <p>Altering pretty much the entire core, adds some regression risks. To compensate for that, we will add tests (unit and/or integration and/or component and/or system) which verifies the already old behavior and the new one. The tests will make sure that our core (reading and parsing) outputs the expected output using various file systems. We will add a new project for unit/component test and we will reference the business core project and inject different components (in our case, file system). This core modification, will also impact the other projects, including GUI and console application. In our case we want to make sure that the contract parsing success if we use both file systems.</p>
@@ -330,11 +330,13 @@
 <span id="cb7-23"><a href="#cb7-23"></a></span>
 <span id="cb7-24"><a href="#cb7-24"></a># Chapter <span class="dv">06</span> - Our second external client: Ecosystem/ Versioning / CI </span>
 <span id="cb7-25"><a href="#cb7-25"></a></span>
-<span id="cb7-26"><a href="#cb7-26"></a></span>
-<span id="cb7-27"><a href="#cb7-27"></a>## Technical Box</span>
-<span id="cb7-28"><a href="#cb7-28"></a><span class="fl">1.</span>  Design Pattern - strategy</span>
-<span id="cb7-29"><a href="#cb7-29"></a><span class="fl">2.</span>  Versioning - show the production version. SemVer, CalVer</span>
-<span id="cb7-30"><a href="#cb7-30"></a><span class="fl">3.</span>  AutoUpdate application</span>
-<span id="cb7-31"><a href="#cb7-31"></a><span class="fl">4.</span>  .<span class="fu">NET</span> Core <span class="dv">3</span> Self Container Application per platform: https:<span class="co">//docs.microsoft.com/en-us/dotnet/core/deploying/</span></span></code></pre></div>
+<span id="cb7-26"><a href="#cb7-26"></a>The second client</span>
+<span id="cb7-27"><a href="#cb7-27"></a></span>
+<span id="cb7-28"><a href="#cb7-28"></a></span>
+<span id="cb7-29"><a href="#cb7-29"></a>## Technical Box</span>
+<span id="cb7-30"><a href="#cb7-30"></a><span class="fl">1.</span>  Design Pattern - strategy</span>
+<span id="cb7-31"><a href="#cb7-31"></a><span class="fl">2.</span>  Versioning - show the production version. SemVer, CalVer</span>
+<span id="cb7-32"><a href="#cb7-32"></a><span class="fl">3.</span>  AutoUpdate application</span>
+<span id="cb7-33"><a href="#cb7-33"></a><span class="fl">4.</span>  .<span class="fu">NET</span> Core <span class="dv">3</span> Self Container Application per platform: https:<span class="co">//docs.microsoft.com/en-us/dotnet/core/deploying/</span></span></code></pre></div>
 </body>
 </html>
