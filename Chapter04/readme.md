@@ -48,15 +48,15 @@ The Desktop is calling the same BL , with some increased feedback for the user:
 ```csharp
 try
 {
-    string folder = folderPath.Text;
-    if(string.IsNullOrWhiteSpace(folder))
+    string folderWithWordDocs = folderPath.Text;
+    if (string.IsNullOrWhiteSpace(folderWithWordDocs))
     {
         MessageBox.Show("please choose a folder");
         return;
-
     }
-    var extractor = new WordContractExtractor(folder);
-    extractor.Start();
+    string excelResultsFile = "Contractors.xlsx";
+    var wordExtractor = new WordContractExtractor(folderWithWordDocs);
+    wordExtractor.ExtractToFile(excelResultsFile);
 }
 catch(Exception ex)
 {

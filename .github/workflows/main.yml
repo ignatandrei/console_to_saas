@@ -122,6 +122,12 @@ jobs:
       with:        
         filename: ./docs/sources/Chapter03.zip        
         path: ./Chapter03/FastExtractDocumentMetadata
+     
+    - name: Zip Release Chapter04
+      uses: TheDoctor0/zip-release@v0.2.1
+      with:        
+        filename: ./docs/sources/Chapter04.zip        
+        path: ./Chapter04/FastExtractDocumentMetadata
   
     - name: Commit files
       run: |
