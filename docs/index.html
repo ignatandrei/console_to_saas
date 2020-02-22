@@ -136,6 +136,18 @@
 </ul></li>
 <li><a href="#further-reading-3">Further reading</a></li>
 </ul></li>
+<li><a href="#the-first-real-client-zip-folder--componentization--testing--refactoring">The first real client: Zip Folder =&gt; Componentization / Testing / Refactoring</a>
+<ul>
+<li><a href="#technical-analysis-4">Technical analysis</a></li>
+</ul></li>
+<li><a href="#exercise-4">Exercise 4</a>
+<ul>
+<li><a href="#impact-to-the-solution-2">Impact to the solution</a>
+<ul>
+<li><a href="#download-code-4">Download code</a></li>
+</ul></li>
+<li><a href="#technical-reading-box">Technical Reading Box</a></li>
+</ul></li>
 </ul>
 </nav>
 <h1 id="console-to-saas">Console to SAAS</h1>
@@ -274,5 +286,44 @@
 <h2 id="further-reading-3">Further reading</h2>
 <p>.NET Core 3.0 Windows application ( WPF, WinForms): <a href="https://docs.microsoft.com/en-us/dotnet/core/whats-new/dotnet-core-3-0">https://docs.microsoft.com/en-us/dotnet/core/whats-new/dotnet-core-3-0</a></p>
 <p>MultiTier architecture : <a href="https://en.wikipedia.org/wiki/Multitier_architecture">https://en.wikipedia.org/wiki/Multitier_architecture</a></p>
+<h1 id="the-first-real-client-zip-folder--componentization--testing--refactoring">The first real client: Zip Folder =&gt; Componentization / Testing / Refactoring</h1>
+<p>A client which was interested mentioned that they were using zip files for backup the documents for company service. They were interested in having our product, but we didn’t support zip files. We shared our vision to create a product that is highly customizable, so implementing reading files from zip would be an additional feature. He agreed to pay for it and we started the product development.</p>
+<h2 id="technical-analysis-4">Technical analysis</h2>
+<p>Changing the business core, requires refactoring which usually involves regression testing. Before every refactoring is started, we need to define the supported test scenarios from the business perspective. This is a list which usually includes inputs, appropriate action and the expected output. The easiest way to achieve this is to add unit tests which does the checking automatically.</p>
+<h1 id="exercise-4">Exercise 4</h1>
+<p>Starting from the solution , add support for reading either from local folder, either from zip file</p>
+<h2 id="impact-to-the-solution-2">Impact to the solution</h2>
+<p>Altering pretty much the entire core, adds some regression risks. To compensate for that, we will add tests (unit and/or integration and/or component and/or system) which verifies the already old behavior and the new one. The tests will make sure that our core (reading and parsing) outputs the expected output using various file systems. We will add a new project for unit/component test and we will reference the business core project and inject different components (in our case, file system). This core modification, will also impact the other projects, including GUI and console application. In our case we want to make sure that the contract parsing success if we use both file systems.</p>
+<p>We already identified the operations that needs to be abstract, so let’s write the interfaces that allows this:</p>
+<ol>
+<li>An interface for the file system which supports listing files (IFIleSystem)</li>
+<li>An interface the actual file. This needs to have a Name and to read the content from either a zip file, either a folder into the system (IFile).</li>
+</ol>
+<p>Our core program needs to:</p>
+<ol>
+<li>find Word documents</li>
+<li>extract information from it</li>
+</ol>
+<p>These two operations are part of the actual business flow. We need to abstract the finding operation and reading from a file operation and allow different implementations.</p>
+<p>Code One implementation is from the actual file system (an existing directory) and the other one from the zip archive, hence:</p>
+<ol>
+<li>DirectoryFileSystem</li>
+<li>ZipFileSystem</li>
+</ol>
+<p>A zip file can have inside folders and files, similar to a directory. Hence, we can do the same operations just like in the actual file system (listing files and reading a file from it).</p>
+<p>var settings = Settings.From("app.json"); var fileSystem = settings.FileSystemProvider.CurrentFileSystem(); var extractor = new WordContractExtractor(fileSystem); extractor.Start();</p>
+<h3 id="download-code-4">Download code</h3>
+<p>Code at <a href="https://ignatandrei.github.io/console_to_saas/sources/Chapter05.zip">Chapter05</a></p>
+<h2 id="technical-reading-box">Technical Reading Box</h2>
+<ol>
+<li>Interfaces vs Abstract Classes</li>
+<li>IDisposable (for zip extracting)</li>
+<li>FileSystem Abstraction ( exists already: <a href="https://github.com/System-IO-Abstractions/System.IO.Abstractions">https://github.com/System-IO-Abstractions/System.IO.Abstractions</a> <a href="http://dontcodetired.com/blog/post/Unit-Testing-C-File-Access-Code-with-SystemIOAbstractions">http://dontcodetired.com/blog/post/Unit-Testing-C-File-Access-Code-with-SystemIOAbstractions</a>)</li>
+<li>How to Serialize interfaces to restore classes</li>
+<li>Unit Test vs Integration Test vs Component Test vs System Test vs Load Test</li>
+<li>ArrangeActAssert vs GWT</li>
+<li>Mock vs Fakes vs Stubs : <a href="https://martinfowler.com/articles/mocksArentStubs.html">https://martinfowler.com/articles/mocksArentStubs.html</a></li>
+<li>Technical Debt</li>
+</ol>
 </body>
 </html>
