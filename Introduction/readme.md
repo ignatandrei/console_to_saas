@@ -21,5 +21,8 @@ You can use this book in three ways.
 
 ## About Authors 
 
+Andrei Ignat : http://msprogrammer.serviciipeweb.ro/personal-trainer-in-net-asp-net-mvc-vba-sql-server/
+
+
 ## Technical details about how this book was made
 
