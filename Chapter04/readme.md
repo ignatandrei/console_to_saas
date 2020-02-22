@@ -30,8 +30,8 @@ The BL has the code that was previous in the console application( loading settin
 ## Code 
 The business logic is now  more simple:
 ```csharp
-public void Start()
-{	
+public void ExtractToFile(string excelFileOutput)
+{       
 string[] files = Directory.GetFiles(_documentLocation, "*.docx");
 _logger.Info($"processing {files.Length} word documents");
 //code omitted for brevity
