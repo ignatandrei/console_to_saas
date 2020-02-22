@@ -306,15 +306,15 @@
 <p>The Desktop is calling the same BL , with some increased feedback for the user:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">try</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a>{</span>
-<span id="cb6-3"><a href="#cb6-3"></a>    <span class="dt">string</span> folder = folderPath.<span class="fu">Text</span>;</span>
-<span id="cb6-4"><a href="#cb6-4"></a>    <span class="kw">if</span>(<span class="dt">string</span>.<span class="fu">IsNullOrWhiteSpace</span>(folder))</span>
+<span id="cb6-3"><a href="#cb6-3"></a>    <span class="dt">string</span> folderWithWordDocs = folderPath.<span class="fu">Text</span>;</span>
+<span id="cb6-4"><a href="#cb6-4"></a>    <span class="kw">if</span> (<span class="dt">string</span>.<span class="fu">IsNullOrWhiteSpace</span>(folderWithWordDocs))</span>
 <span id="cb6-5"><a href="#cb6-5"></a>    {</span>
 <span id="cb6-6"><a href="#cb6-6"></a>        MessageBox.<span class="fu">Show</span>(<span class="st">&quot;please choose a folder&quot;</span>);</span>
 <span id="cb6-7"><a href="#cb6-7"></a>        <span class="kw">return</span>;</span>
-<span id="cb6-8"><a href="#cb6-8"></a></span>
-<span id="cb6-9"><a href="#cb6-9"></a>    }</span>
-<span id="cb6-10"><a href="#cb6-10"></a>    <span class="dt">var</span> extractor = <span class="kw">new</span> <span class="fu">WordContractExtractor</span>(folder);</span>
-<span id="cb6-11"><a href="#cb6-11"></a>    extractor.<span class="fu">Start</span>();</span>
+<span id="cb6-8"><a href="#cb6-8"></a>    }</span>
+<span id="cb6-9"><a href="#cb6-9"></a>    <span class="dt">string</span> excelResultsFile = <span class="st">&quot;Contractors.xlsx&quot;</span>;</span>
+<span id="cb6-10"><a href="#cb6-10"></a>    <span class="dt">var</span> wordExtractor = <span class="kw">new</span> <span class="fu">WordContractExtractor</span>(folderWithWordDocs);</span>
+<span id="cb6-11"><a href="#cb6-11"></a>    wordExtractor.<span class="fu">ExtractToFile</span>(excelResultsFile);</span>
 <span id="cb6-12"><a href="#cb6-12"></a>}</span>
 <span id="cb6-13"><a href="#cb6-13"></a><span class="kw">catch</span>(Exception ex)</span>
 <span id="cb6-14"><a href="#cb6-14"></a>{</span>
