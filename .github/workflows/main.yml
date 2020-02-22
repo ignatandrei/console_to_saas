@@ -95,10 +95,15 @@ jobs:
         echo chapters to generate $ChaptersMD
         git pull      
 
-    - uses: montudor/action-zip@v0.1.0
-      with:
-        args: zip -qq -r ./Chapter01.zip ./docs/sources/Chapter01.zip
-
+    # - uses: montudor/action-zip@v0.1.0
+    #   with:
+    #     args: zip -qq -r ./Chapter01.zip ./docs/sources/Chapter01.zip
+    - name: Zip Release
+      uses: TheDoctor0/zip-release@v0.2.1
+      with:        
+        filename: ./docs/sources/Chapter01.zip        
+        path: ./docs/sources/Chapter01.zip        
+    
     - name: Commit files
       run: |
         git config --local user.email "action@github.com"
