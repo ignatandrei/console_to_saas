@@ -36,7 +36,8 @@ You can read offline by downloading the
 
 ## Source codes
 
-You can find source codes at
+You can find source codes at [Console2SAAS](https://github.com/ignatandrei/console_to_saas/) or after each chapter.
+
    
 ## Feedback
 
