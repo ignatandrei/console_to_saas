@@ -141,7 +141,23 @@
 <ul>
 <li><a href="#technical-analysis-4">Technical analysis</a></li>
 <li><a href="#exercise-4">Exercise</a></li>
-<li><a href="#impact-to-the-solution-2">Impact to the solution</a></li>
+<li><a href="#impact-to-the-solution-2">Impact to the solution</a>
+<ul>
+<li><a href="#download-code-4">Download code</a></li>
+</ul></li>
+<li><a href="#technical-reading-box">Technical Reading Box</a></li>
+</ul></li>
+<li><a href="#chapter-06---our-second-external-client-ecosystem-versioning--ci">Chapter 06 - Our second external client: Ecosystem/ Versioning / CI</a>
+<ul>
+<li><a href="#organizing-source-code">Organizing source code</a>
+<ul>
+<li><a href="#create-different-branches">Create different branches</a></li>
+<li><a href="#create-single-branch">Create single branch</a></li>
+</ul></li>
+<li><a href="#product-client-version">Product client version</a></li>
+<li><a href="#multiple-types-of-contracts">Multiple types of contracts</a></li>
+<li><a href="#working-related-to-other-apps---extension-endpoints-reporting-when-finishes-to-extract-data">Working related to other apps - extension endpoints reporting when finishes to extract data</a></li>
+<li><a href="#technical-box">Technical Box</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -311,74 +327,64 @@
 <div class="sourceCode" id="cb7"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb7-1"><a href="#cb7-1"></a><span class="dt">var</span> settings = Settings.<span class="fu">From</span>(<span class="st">&quot;app.json&quot;</span>);</span>
 <span id="cb7-2"><a href="#cb7-2"></a><span class="dt">var</span> fileSystem = settings.<span class="fu">FileSystemProvider</span>.<span class="fu">CurrentFileSystem</span>();</span>
 <span id="cb7-3"><a href="#cb7-3"></a><span class="dt">var</span> extractor = <span class="kw">new</span> <span class="fu">WordContractExtractor</span>(fileSystem);</span>
-<span id="cb7-4"><a href="#cb7-4"></a>extractor.<span class="fu">Start</span>();</span>
-<span id="cb7-5"><a href="#cb7-5"></a>```csharp</span>
-<span id="cb7-6"><a href="#cb7-6"></a>### Download code </span>
-<span id="cb7-7"><a href="#cb7-7"></a></span>
-<span id="cb7-8"><a href="#cb7-8"></a>Code at [Chapter05](https:<span class="co">//ignatandrei.github.io/console_to_saas/sources/Chapter05.zip)</span></span>
-<span id="cb7-9"><a href="#cb7-9"></a></span>
-<span id="cb7-10"><a href="#cb7-10"></a>## Technical Reading Box</span>
-<span id="cb7-11"><a href="#cb7-11"></a></span>
-<span id="cb7-12"><a href="#cb7-12"></a><span class="fl">1.</span> Interfaces vs Abstract Classes</span>
-<span id="cb7-13"><a href="#cb7-13"></a><span class="fl">1.</span> <span class="fu">IDisposable</span> (<span class="kw">for</span> zip extracting)</span>
-<span id="cb7-14"><a href="#cb7-14"></a><span class="fl">1.</span> FileSystem <span class="fu">Abstraction</span> ( exists already:  https:<span class="co">//github.com/System-IO-Abstractions/System.IO.Abstractions</span></span>
-<span id="cb7-15"><a href="#cb7-15"></a>http:<span class="co">//dontcodetired.com/blog/post/Unit-Testing-C-File-Access-Code-with-SystemIOAbstractions) </span></span>
-<span id="cb7-16"><a href="#cb7-16"></a><span class="fl">1.</span> How to Serialize interfaces to restore classes</span>
-<span id="cb7-17"><a href="#cb7-17"></a><span class="fl">1.</span> Unit Test vs Integration Test vs Component Test vs System Test vs Load Test</span>
-<span id="cb7-18"><a href="#cb7-18"></a><span class="fl">1.</span> ArrangeActAssert vs GWT</span>
-<span id="cb7-19"><a href="#cb7-19"></a><span class="fl">1.</span> Mock vs Fakes vs Stubs : https:<span class="co">//martinfowler.com/articles/mocksArentStubs.html</span></span>
-<span id="cb7-20"><a href="#cb7-20"></a><span class="fl">1.</span> Technical Debt</span>
-<span id="cb7-21"><a href="#cb7-21"></a></span>
-<span id="cb7-22"><a href="#cb7-22"></a></span>
-<span id="cb7-23"><a href="#cb7-23"></a></span>
-<span id="cb7-24"><a href="#cb7-24"></a># Chapter <span class="dv">06</span> - Our second external client: Ecosystem/ Versioning / CI </span>
-<span id="cb7-25"><a href="#cb7-25"></a></span>
-<span id="cb7-26"><a href="#cb7-26"></a>Our second client has different types of contracts that needs to be considered. Having <span class="dv">2</span> clients that needs to run the same code, but to work differently it <span class="kw">is</span> a challenging task. Thus, we could address <span class="kw">this</span> problem <span class="kw">using</span> two approaches:</span>
-<span id="cb7-27"><a href="#cb7-27"></a><span class="fl">1.</span> Create a different branch <span class="kw">for</span> each client</span>
-<span id="cb7-28"><a href="#cb7-28"></a><span class="fl">2.</span> Have a single branch of code, but allow through configuration to work differently</span>
-<span id="cb7-29"><a href="#cb7-29"></a>There <span class="kw">is</span> no perfect or easy solution, so let’s make a comparison and see which one fits better</span>
-<span id="cb7-30"><a href="#cb7-30"></a>## Organizing source code</span>
-<span id="cb7-31"><a href="#cb7-31"></a>### Create different branches</span>
-<span id="cb7-32"><a href="#cb7-32"></a>So, we have our main code <span class="kw">in</span> master, and we will create a separate branch <span class="kw">for</span> each client. This <span class="kw">is</span> an easy task, but let’s see what are the consequences</span>
-<span id="cb7-33"><a href="#cb7-33"></a>*Advantages*</span>
-<span id="cb7-34"><a href="#cb7-34"></a><span class="fl">1.</span> Creating separate branch, <span class="kw">is</span> no effort</span>
-<span id="cb7-35"><a href="#cb7-35"></a><span class="fl">1.</span> Best way to separate behavior and replicate bugs</span>
-<span id="cb7-36"><a href="#cb7-36"></a><span class="fl">1.</span> It <span class="kw">is</span> easy to implement <span class="kw">new</span> different feature <span class="kw">for</span> each client</span>
-<span id="cb7-37"><a href="#cb7-37"></a>*Problems*</span>
-<span id="cb7-38"><a href="#cb7-38"></a><span class="fl">1.</span> ~~IF~~  When a bug appears , it should be replicated on every client . This could be done by either </span>
-<span id="cb7-39"><a href="#cb7-39"></a>have a single master and replicating to each branch</span>
-<span id="cb7-40"><a href="#cb7-40"></a><span class="fl">1.</span> writing the bug solving code on every branch</span>
-<span id="cb7-41"><a href="#cb7-41"></a><span class="fl">1.</span> Same with a <span class="kw">new</span> feature that many clients want.</span>
-<span id="cb7-42"><a href="#cb7-42"></a><span class="fl">1.</span> The master branch will not have a defined behaviour. It will contain all the features merged, thus we should treat it like a <span class="kw">new</span> client, but with all features on.</span>
-<span id="cb7-43"><a href="#cb7-43"></a>### Create single branch</span>
-<span id="cb7-44"><a href="#cb7-44"></a>Another solution <span class="kw">is</span> to have a single code branch, but <span class="kw">this</span> means to design the application to allow enabling/disabling features by configuration.</span>
-<span id="cb7-45"><a href="#cb7-45"></a></span>
-<span id="cb7-46"><a href="#cb7-46"></a>*Advantages*</span>
-<span id="cb7-47"><a href="#cb7-47"></a><span class="fl">1.</span> Single branch to maintain</span>
-<span id="cb7-48"><a href="#cb7-48"></a><span class="fl">1.</span> Fixing a bug =&gt; it <span class="kw">is</span> done <span class="kw">in</span> a single branch</span>
-<span id="cb7-49"><a href="#cb7-49"></a></span>
-<span id="cb7-50"><a href="#cb7-50"></a>*Problems*</span>
-<span id="cb7-51"><a href="#cb7-51"></a><span class="fl">1.</span> Re-architecting the application to support different features per configuration.</span>
-<span id="cb7-52"><a href="#cb7-52"></a><span class="fl">1.</span> Replicate the client behaviour <span class="kw">is</span> more difficult</span>
-<span id="cb7-53"><a href="#cb7-53"></a><span class="fl">1.</span> Create a feature requires more time to integrate with the configuration system</span>
-<span id="cb7-54"><a href="#cb7-54"></a><span class="fl">1.</span> Components per client</span>
-<span id="cb7-55"><a href="#cb7-55"></a><span class="fl">1.</span> Incompatible clients requirements ;-)</span>
-<span id="cb7-56"><a href="#cb7-56"></a></span>
-<span id="cb7-57"><a href="#cb7-57"></a></span>
-<span id="cb7-58"><a href="#cb7-58"></a>## Product client version</span>
-<span id="cb7-59"><a href="#cb7-59"></a>When a client reports a bug, we must know the code that was compiled to be distributed to the client. For <span class="kw">this</span>, we should somehow mark the source code before the application distributable to be built  - and <span class="kw">this</span> can be done by tagging or by branches <span class="kw">in</span> the code source.</span>
-<span id="cb7-60"><a href="#cb7-60"></a>Also  we can have the application reporting the components version .</span>
-<span id="cb7-61"><a href="#cb7-61"></a></span>
-<span id="cb7-62"><a href="#cb7-62"></a>## Multiple types of contracts</span>
-<span id="cb7-63"><a href="#cb7-63"></a></span>
-<span id="cb7-64"><a href="#cb7-64"></a>## Working related to other apps - extension endpoints reporting when finishes to extract data</span>
-<span id="cb7-65"><a href="#cb7-65"></a></span>
-<span id="cb7-66"><a href="#cb7-66"></a></span>
-<span id="cb7-67"><a href="#cb7-67"></a>## Technical Box</span>
-<span id="cb7-68"><a href="#cb7-68"></a></span>
-<span id="cb7-69"><a href="#cb7-69"></a><span class="fl">1.</span>  Design Pattern - strategy</span>
-<span id="cb7-70"><a href="#cb7-70"></a><span class="fl">2.</span>  Versioning - show the production version. SemVer, CalVer</span>
-<span id="cb7-71"><a href="#cb7-71"></a><span class="fl">3.</span>  AutoUpdate application</span>
-<span id="cb7-72"><a href="#cb7-72"></a><span class="fl">4.</span>  .<span class="fu">NET</span> Core <span class="dv">3</span> Self Container Application per platform: https:<span class="co">//docs.microsoft.com/en-us/dotnet/core/deploying/</span></span></code></pre></div>
+<span id="cb7-4"><a href="#cb7-4"></a>extractor.<span class="fu">Start</span>();</span></code></pre></div>
+<h3 id="download-code-4">Download code</h3>
+<p>Code at <a href="https://ignatandrei.github.io/console_to_saas/sources/Chapter05.zip">Chapter05</a></p>
+<h2 id="technical-reading-box">Technical Reading Box</h2>
+<ol>
+<li>Interfaces vs Abstract Classes</li>
+<li>IDisposable (for zip extracting)</li>
+<li>FileSystem Abstraction ( exists already: <a href="https://github.com/System-IO-Abstractions/System.IO.Abstractions">https://github.com/System-IO-Abstractions/System.IO.Abstractions</a> <a href="http://dontcodetired.com/blog/post/Unit-Testing-C-File-Access-Code-with-SystemIOAbstractions">http://dontcodetired.com/blog/post/Unit-Testing-C-File-Access-Code-with-SystemIOAbstractions</a>)</li>
+<li>How to Serialize interfaces to restore classes</li>
+<li>Unit Test vs Integration Test vs Component Test vs System Test vs Load Test</li>
+<li>ArrangeActAssert vs GWT</li>
+<li>Mock vs Fakes vs Stubs : <a href="https://martinfowler.com/articles/mocksArentStubs.html">https://martinfowler.com/articles/mocksArentStubs.html</a></li>
+<li>Technical Debt</li>
+</ol>
+<h1 id="chapter-06---our-second-external-client-ecosystem-versioning--ci">Chapter 06 - Our second external client: Ecosystem/ Versioning / CI</h1>
+<p>Our second client has different types of contracts that need to be considered. Having 2 clients that needs to run the same code, but to work differently it is a challenging task. Thus, we could address this problem using two approaches:</p>
+<ol>
+<li>Create a different branch for each client</li>
+<li>Have a single branch of code, but allow through configuration to work differently There is no perfect or easy solution, so let’s make a comparison and see which one fits better</li>
+</ol>
+<h2 id="organizing-source-code">Organizing source code</h2>
+<h3 id="create-different-branches">Create different branches</h3>
+<p>So, we have our main code in master, and we will create a separate branch for each client. This is an easy task, but let’s see what are the consequences <em>Advantages</em></p>
+<ol>
+<li>Creating separate branch, is no effort</li>
+<li>Best way to separate behavior and replicate bugs</li>
+<li>It is easy to implement new different feature for each client <em>Problems</em></li>
+<li><del>IF</del> When a bug appears , it should be replicated on every client . This could be done by either have a single master and replicating to each branch</li>
+<li>writing the bug solving code on every branch</li>
+<li>Same with a new feature that many clients want.</li>
+<li>The master branch will not have a defined behaviour. It will contain all the features merged, thus we should treat it like a new client, but with all features on.</li>
+</ol>
+<h3 id="create-single-branch">Create single branch</h3>
+<p>Another solution is to have a single code branch, but this means to design the application to allow enabling/disabling features by configuration.</p>
+<p><em>Advantages</em></p>
+<ol>
+<li>Single branch to maintain</li>
+<li>Fixing a bug =&gt; it is done in a single branch</li>
+</ol>
+<p><em>Problems</em></p>
+<ol>
+<li>Re-architecting the application to support different features per configuration.</li>
+<li>Replicate the client behaviour is more difficult</li>
+<li>Create a feature requires more time to integrate with the configuration system</li>
+<li>Components per client</li>
+<li>Incompatible clients requirements ;-)</li>
+</ol>
+<h2 id="product-client-version">Product client version</h2>
+<p>When a client reports a bug, we must know the code that was compiled to be distributed to the client. For this, we should somehow mark the source code before the application distributable to be built - and this can be done by tagging or by branches in the code source. Also we can have the application reporting the components version .</p>
+<h2 id="multiple-types-of-contracts">Multiple types of contracts</h2>
+<h2 id="working-related-to-other-apps---extension-endpoints-reporting-when-finishes-to-extract-data">Working related to other apps - extension endpoints reporting when finishes to extract data</h2>
+<h2 id="technical-box">Technical Box</h2>
+<ol>
+<li>Design Pattern - strategy</li>
+<li>Plugin architecture in .NET Core 3</li>
+<li>Versioning - show the production version. SemVer, CalVer</li>
+<li>AutoUpdate application - Click Once, Electron</li>
+<li>.NET Core 3 Self Container Application per platform: <a href="https://docs.microsoft.com/en-us/dotnet/core/deploying/">https://docs.microsoft.com/en-us/dotnet/core/deploying/</a></li>
+</ol>
 </body>
 </html>
