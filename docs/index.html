@@ -124,7 +124,7 @@
 <ul>
 <li><a href="#download-code-2">Download code</a></li>
 </ul></li>
-<li><a href="#further-reading-1">Further reading</a></li>
+<li><a href="#technical-box-1">Technical box</a></li>
 </ul></li>
 <li><a href="#chapter-04--transform-to-product-making-a-gui">Chapter 04- Transform to product: making a GUI</a>
 <ul>
@@ -135,7 +135,7 @@
 <ul>
 <li><a href="#download-code-3">Download code</a></li>
 </ul></li>
-<li><a href="#further-reading-2">Further reading</a></li>
+<li><a href="#further-reading-1">Further reading</a></li>
 </ul></li>
 <li><a href="#chapter-05---the-first-real-client-zip-folder--componentization--testing--refactoring">Chapter 05 - The first real client: Zip Folder =&gt; Componentization / Testing / Refactoring</a>
 <ul>
@@ -157,7 +157,7 @@
 <li><a href="#product-client-version">Product client version</a></li>
 <li><a href="#multiple-types-of-contracts">Multiple types of contracts</a></li>
 <li><a href="#working-related-to-other-apps---extension-endpoints-reporting-when-finishes-to-extract-data">Working related to other apps - extension endpoints reporting when finishes to extract data</a></li>
-<li><a href="#technical-box-1">Technical Box</a></li>
+<li><a href="#technical-box-2">Technical Box</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -253,7 +253,7 @@
 <span id="cb3-2"><a href="#cb3-2"></a><span class="dt">var</span> directoryToSearch= settings.<span class="fu">DocumentSLocation</span>;</span></code></pre></div>
 <h3 id="download-code-2">Download code</h3>
 <p>Code at <a href="https://ignatandrei.github.io/console_to_saas/sources/Chapter03.zip">Chapter03</a></p>
-<h2 id="further-reading-1">Further reading</h2>
+<h2 id="technical-box-1">Technical box</h2>
 <p>An application can have multiple sources of configuration. Read about .NET Core endpoint configuration (<a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-2.2">https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-2.2</a> ) : Environment, command line, configuration file, code ( in this order)</p>
 <p>Read also about IOptionSnapshot and IOptionMonitor at <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options?view=aspnetcore-3.1">https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options?view=aspnetcore-3.1</a></p>
 <h1 id="chapter-04--transform-to-product-making-a-gui">Chapter 04- Transform to product: making a GUI</h1>
@@ -296,7 +296,7 @@
 <span id="cb6-17"><a href="#cb6-17"></a>}</span></code></pre></div>
 <h3 id="download-code-3">Download code</h3>
 <p>Code at <a href="https://ignatandrei.github.io/console_to_saas/sources/Chapter04.zip">Chapter04</a></p>
-<h2 id="further-reading-2">Further reading</h2>
+<h2 id="further-reading-1">Further reading</h2>
 <p>.NET Core 3.0 Windows application ( WPF, WinForms): <a href="https://docs.microsoft.com/en-us/dotnet/core/whats-new/dotnet-core-3-0">https://docs.microsoft.com/en-us/dotnet/core/whats-new/dotnet-core-3-0</a></p>
 <p>MultiTier architecture : <a href="https://en.wikipedia.org/wiki/Multitier_architecture">https://en.wikipedia.org/wiki/Multitier_architecture</a></p>
 <h1 id="chapter-05---the-first-real-client-zip-folder--componentization--testing--refactoring">Chapter 05 - The first real client: Zip Folder =&gt; Componentization / Testing / Refactoring</h1>
@@ -333,11 +333,11 @@
 <h2 id="technical-reading-box">Technical Reading Box</h2>
 <ol>
 <li>Interfaces vs Abstract Classes</li>
-<li>IDisposable (for zip extracting)</li>
+<li>IDisposable <a href="https://docs.microsoft.com/en-us/dotnet/api/system.idisposable">https://docs.microsoft.com/en-us/dotnet/api/system.idisposable</a></li>
 <li>FileSystem Abstraction ( exists already: <a href="https://github.com/System-IO-Abstractions/System.IO.Abstractions">https://github.com/System-IO-Abstractions/System.IO.Abstractions</a> <a href="http://dontcodetired.com/blog/post/Unit-Testing-C-File-Access-Code-with-SystemIOAbstractions">http://dontcodetired.com/blog/post/Unit-Testing-C-File-Access-Code-with-SystemIOAbstractions</a>)</li>
 <li>How to Serialize interfaces to restore classes</li>
 <li>Unit Test vs Integration Test vs Component Test vs System Test vs Load Test</li>
-<li>ArrangeActAssert vs GWT</li>
+<li>ArrangeActAssert vs GivenWhenTest</li>
 <li>Mock vs Fakes vs Stubs : <a href="https://martinfowler.com/articles/mocksArentStubs.html">https://martinfowler.com/articles/mocksArentStubs.html</a></li>
 <li>Technical Debt</li>
 </ol>
@@ -378,7 +378,7 @@
 <p>When a client reports a bug, we must know the code that was compiled to be distributed to the client. For this, we should somehow mark the source code before the application distributable to be built - and this can be done by tagging or by branches in the code source. Also we can have the application reporting the components version .</p>
 <h2 id="multiple-types-of-contracts">Multiple types of contracts</h2>
 <h2 id="working-related-to-other-apps---extension-endpoints-reporting-when-finishes-to-extract-data">Working related to other apps - extension endpoints reporting when finishes to extract data</h2>
-<h2 id="technical-box-1">Technical Box</h2>
+<h2 id="technical-box-2">Technical Box</h2>
 <ol>
 <li>Design Pattern - strategy</li>
 <li>Plugin architecture in .NET Core 3</li>
