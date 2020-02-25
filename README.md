@@ -44,3 +44,6 @@ You can find source codes at [Console2SAAS](https://github.com/ignatandrei/conso
 Please share feedback by opening an issue or pull request at https://github.com/ignatandrei/console_to_saas/
 
 
+## Authors
+
+Andrei & Daniel
