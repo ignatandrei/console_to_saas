@@ -27,9 +27,13 @@ As you can see, we were facing resolving the solution for the particular client 
 
 ### Download code 
 Code at [Chapter01](https://ignatandrei.github.io/console_to_saas/sources/Chapter01.zip)
-## Further reading
+
+## Technical box
+
 Read about Gui.cs - https://github.com/migueldeicaza/gui.cs
 
-Read about the difference between EnumerateFiles and GetFiles.
+Read about the difference between IEnumerable and array (e.g. EnumerateFiles and GetFiles). Read https://www.codeproject.com/Articles/832189/List-vs-IEnumerable-vs-IQueryable-vs-ICollection-v
 
-Read about Async Enumerable in .NET 3.0
+Read about Async Enumerable in .NET 3.0 : https://docs.microsoft.com/en-us/archive/msdn-magazine/2019/november/csharp-iterating-with-async-enumerables-in-csharp-8
+
+
