@@ -333,13 +333,52 @@
 <span id="cb7-23"><a href="#cb7-23"></a></span>
 <span id="cb7-24"><a href="#cb7-24"></a># Chapter <span class="dv">06</span> - Our second external client: Ecosystem/ Versioning / CI </span>
 <span id="cb7-25"><a href="#cb7-25"></a></span>
-<span id="cb7-26"><a href="#cb7-26"></a>The second client</span>
-<span id="cb7-27"><a href="#cb7-27"></a></span>
-<span id="cb7-28"><a href="#cb7-28"></a>## Technical Box</span>
-<span id="cb7-29"><a href="#cb7-29"></a></span>
-<span id="cb7-30"><a href="#cb7-30"></a><span class="fl">1.</span>  Design Pattern - strategy</span>
-<span id="cb7-31"><a href="#cb7-31"></a><span class="fl">2.</span>  Versioning - show the production version. SemVer, CalVer</span>
-<span id="cb7-32"><a href="#cb7-32"></a><span class="fl">3.</span>  AutoUpdate application</span>
-<span id="cb7-33"><a href="#cb7-33"></a><span class="fl">4.</span>  .<span class="fu">NET</span> Core <span class="dv">3</span> Self Container Application per platform: https:<span class="co">//docs.microsoft.com/en-us/dotnet/core/deploying/</span></span></code></pre></div>
+<span id="cb7-26"><a href="#cb7-26"></a>Our second client has different types of contracts that needs to be considered. Having <span class="dv">2</span> clients that needs to run the same code, but to work differently it <span class="kw">is</span> a challenging task. Thus, we could address <span class="kw">this</span> problem <span class="kw">using</span> two approaches:</span>
+<span id="cb7-27"><a href="#cb7-27"></a><span class="fl">1.</span> Create a different branch <span class="kw">for</span> each client</span>
+<span id="cb7-28"><a href="#cb7-28"></a><span class="fl">2.</span> Have a single branch of code, but allow through configuration to work differently</span>
+<span id="cb7-29"><a href="#cb7-29"></a>There <span class="kw">is</span> no perfect or easy solution, so let’s make a comparison and see which one fits better</span>
+<span id="cb7-30"><a href="#cb7-30"></a>## Organizing source code</span>
+<span id="cb7-31"><a href="#cb7-31"></a>### Create different branches</span>
+<span id="cb7-32"><a href="#cb7-32"></a>So, we have our main code <span class="kw">in</span> master, and we will create a separate branch <span class="kw">for</span> each client. This <span class="kw">is</span> an easy task, but let’s see what are the consequences</span>
+<span id="cb7-33"><a href="#cb7-33"></a>*Advantages*</span>
+<span id="cb7-34"><a href="#cb7-34"></a><span class="fl">1.</span> Creating separate branch, <span class="kw">is</span> no effort</span>
+<span id="cb7-35"><a href="#cb7-35"></a><span class="fl">1.</span> Best way to separate behavior and replicate bugs</span>
+<span id="cb7-36"><a href="#cb7-36"></a><span class="fl">1.</span> It <span class="kw">is</span> easy to implement <span class="kw">new</span> different feature <span class="kw">for</span> each client</span>
+<span id="cb7-37"><a href="#cb7-37"></a>*Problems*</span>
+<span id="cb7-38"><a href="#cb7-38"></a><span class="fl">1.</span> ~~IF~~  When a bug appears , it should be replicated on every client . This could be done by either </span>
+<span id="cb7-39"><a href="#cb7-39"></a>have a single master and replicating to each branch</span>
+<span id="cb7-40"><a href="#cb7-40"></a><span class="fl">1.</span> writing the bug solving code on every branch</span>
+<span id="cb7-41"><a href="#cb7-41"></a><span class="fl">1.</span> Same with a <span class="kw">new</span> feature that many clients want.</span>
+<span id="cb7-42"><a href="#cb7-42"></a><span class="fl">1.</span> The master branch will not have a defined behaviour. It will contain all the features merged, thus we should treat it like a <span class="kw">new</span> client, but with all features on.</span>
+<span id="cb7-43"><a href="#cb7-43"></a>### Create single branch</span>
+<span id="cb7-44"><a href="#cb7-44"></a>Another solution <span class="kw">is</span> to have a single code branch, but <span class="kw">this</span> means to design the application to allow enabling/disabling features by configuration.</span>
+<span id="cb7-45"><a href="#cb7-45"></a></span>
+<span id="cb7-46"><a href="#cb7-46"></a>*Advantages*</span>
+<span id="cb7-47"><a href="#cb7-47"></a><span class="fl">1.</span> Single branch to maintain</span>
+<span id="cb7-48"><a href="#cb7-48"></a><span class="fl">1.</span> Fixing a bug =&gt; it <span class="kw">is</span> done <span class="kw">in</span> a single branch</span>
+<span id="cb7-49"><a href="#cb7-49"></a></span>
+<span id="cb7-50"><a href="#cb7-50"></a>*Problems*</span>
+<span id="cb7-51"><a href="#cb7-51"></a><span class="fl">1.</span> Re-architecting the application to support different features per configuration.</span>
+<span id="cb7-52"><a href="#cb7-52"></a><span class="fl">1.</span> Replicate the client behaviour <span class="kw">is</span> more difficult</span>
+<span id="cb7-53"><a href="#cb7-53"></a><span class="fl">1.</span> Create a feature requires more time to integrate with the configuration system</span>
+<span id="cb7-54"><a href="#cb7-54"></a><span class="fl">1.</span> Components per client</span>
+<span id="cb7-55"><a href="#cb7-55"></a><span class="fl">1.</span> Incompatible clients requirements ;-)</span>
+<span id="cb7-56"><a href="#cb7-56"></a></span>
+<span id="cb7-57"><a href="#cb7-57"></a></span>
+<span id="cb7-58"><a href="#cb7-58"></a>## Product client version</span>
+<span id="cb7-59"><a href="#cb7-59"></a>When a client reports a bug, we must know the code that was compiled to be distributed to the client. For <span class="kw">this</span>, we should somehow mark the source code before the application distributable to be built  - and <span class="kw">this</span> can be done by tagging or by branches <span class="kw">in</span> the code source.</span>
+<span id="cb7-60"><a href="#cb7-60"></a>Also  we can have the application reporting the components version .</span>
+<span id="cb7-61"><a href="#cb7-61"></a></span>
+<span id="cb7-62"><a href="#cb7-62"></a>## Multiple types of contracts</span>
+<span id="cb7-63"><a href="#cb7-63"></a></span>
+<span id="cb7-64"><a href="#cb7-64"></a>## Working related to other apps - extension endpoints reporting when finishes to extract data</span>
+<span id="cb7-65"><a href="#cb7-65"></a></span>
+<span id="cb7-66"><a href="#cb7-66"></a></span>
+<span id="cb7-67"><a href="#cb7-67"></a>## Technical Box</span>
+<span id="cb7-68"><a href="#cb7-68"></a></span>
+<span id="cb7-69"><a href="#cb7-69"></a><span class="fl">1.</span>  Design Pattern - strategy</span>
+<span id="cb7-70"><a href="#cb7-70"></a><span class="fl">2.</span>  Versioning - show the production version. SemVer, CalVer</span>
+<span id="cb7-71"><a href="#cb7-71"></a><span class="fl">3.</span>  AutoUpdate application</span>
+<span id="cb7-72"><a href="#cb7-72"></a><span class="fl">4.</span>  .<span class="fu">NET</span> Core <span class="dv">3</span> Self Container Application per platform: https:<span class="co">//docs.microsoft.com/en-us/dotnet/core/deploying/</span></span></code></pre></div>
 </body>
 </html>
