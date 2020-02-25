@@ -133,7 +133,7 @@ jobs:
       uses: TheDoctor0/zip-release@v0.2.1
       with:        
         filename: ./docs/sources/Chapter05.zip        
-        path: ./Chapter04/FastExtractDocumentMetadata
+        path: ./Chapter05/FastExtractDocumentMetadata
   
        
     # - name: Zip Release Chapter05
