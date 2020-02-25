@@ -44,7 +44,7 @@ Also  we can have the application reporting the components version .
 ## Technical Box
 
 1.	Design Pattern - strategy
-1.  Plugin architecture in .NET Core 3
-2.  Versioning - show the production version. SemVer, CalVer
+1.  Plugin architecture in .NET Core 3 
+2.  Versioning - show the production version. SemVer, CalVer. https://sachabarbs.wordpress.com/2020/02/23/net-core-standard-auto-incrementing-versioning/
 3.  AutoUpdate application - Click Once, Electron
 4.  .NET Core 3 Self Container Application per platform: https://docs.microsoft.com/en-us/dotnet/core/deploying/
