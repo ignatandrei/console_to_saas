@@ -26,7 +26,7 @@ var directoryToSearch= settings.DocumentSLocation;
 Code at [Chapter03](https://ignatandrei.github.io/console_to_saas/sources/Chapter03.zip)
 
 
-## Further reading
+## Technical box
 An application can have multiple sources of configuration.
 Read about .NET Core endpoint configuration (https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-2.2 ) : Environment, command line, configuration file, code ( in this order)
 

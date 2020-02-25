@@ -45,14 +45,14 @@ Code at [Chapter05](https://ignatandrei.github.io/console_to_saas/sources/Chapte
 
 ## Technical Reading Box
 
-1. Interfaces vs Abstract Classes
-1. IDisposable (for zip extracting)
+1. Interfaces vs Abstract Classes 
+1. IDisposable https://docs.microsoft.com/en-us/dotnet/api/system.idisposable
 1. FileSystem Abstraction ( exists already:  https://github.com/System-IO-Abstractions/System.IO.Abstractions
 http://dontcodetired.com/blog/post/Unit-Testing-C-File-Access-Code-with-SystemIOAbstractions) 
 1. How to Serialize interfaces to restore classes
 1. Unit Test vs Integration Test vs Component Test vs System Test vs Load Test
-1. ArrangeActAssert vs GWT
+1. ArrangeActAssert vs GivenWhenTest
 1. Mock vs Fakes vs Stubs : https://martinfowler.com/articles/mocksArentStubs.html
-1. Technical Debt
+1. Technical Debt 
 
 
