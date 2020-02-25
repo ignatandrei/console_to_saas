@@ -1,6 +1,6 @@
 # Chapter 06 - Our second external client: Ecosystem/ Versioning / CI 
 
-Our second client has different types of contracts that needs to be considered. Having 2 clients that needs to run the same code, but to work differently it is a challenging task. Thus, we could address this problem using two approaches:
+Our second client has different types of contracts that need to be considered. Having 2 clients that needs to run the same code, but to work differently it is a challenging task. Thus, we could address this problem using two approaches:
 1. Create a different branch for each client
 2. Have a single branch of code, but allow through configuration to work differently
 There is no perfect or easy solution, so let’s make a comparison and see which one fits better
@@ -44,6 +44,7 @@ Also  we can have the application reporting the components version .
 ## Technical Box
 
 1.	Design Pattern - strategy
+1.  Plugin architecture in .NET Core 3
 2.  Versioning - show the production version. SemVer, CalVer
-3.  AutoUpdate application
+3.  AutoUpdate application - Click Once, Electron
 4.  .NET Core 3 Self Container Application per platform: https://docs.microsoft.com/en-us/dotnet/core/deploying/

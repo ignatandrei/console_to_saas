@@ -37,7 +37,8 @@ var settings = Settings.From("app.json");
 var fileSystem = settings.FileSystemProvider.CurrentFileSystem();
 var extractor = new WordContractExtractor(fileSystem);
 extractor.Start();
-```csharp
+```
+
 ### Download code 
 
 Code at [Chapter05](https://ignatandrei.github.io/console_to_saas/sources/Chapter05.zip)
