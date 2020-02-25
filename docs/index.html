@@ -103,7 +103,7 @@
 <ul>
 <li><a href="#download-code">Download code</a></li>
 </ul></li>
-<li><a href="#further-reading">Further reading</a></li>
+<li><a href="#technical-box">Technical box</a></li>
 </ul></li>
 <li><a href="#chapter-02---financial-department-last-tweaks-mvp--fixing-bugs-source-control">Chapter 02 - Financial department last tweaks: MVP + fixing bugs, source control</a>
 <ul>
@@ -113,7 +113,7 @@
 <ul>
 <li><a href="#download-code-1">Download code</a></li>
 </ul></li>
-<li><a href="#further-reading-1">Further reading</a></li>
+<li><a href="#further-reading">Further reading</a></li>
 </ul></li>
 <li><a href="#chapter-03---second-internal-customer-sharing-code-source--settings-for-client">Chapter 03 - Second internal customer: sharing code source + settings for client</a>
 <ul>
@@ -124,7 +124,7 @@
 <ul>
 <li><a href="#download-code-2">Download code</a></li>
 </ul></li>
-<li><a href="#further-reading-2">Further reading</a></li>
+<li><a href="#further-reading-1">Further reading</a></li>
 </ul></li>
 <li><a href="#chapter-04--transform-to-product-making-a-gui">Chapter 04- Transform to product: making a GUI</a>
 <ul>
@@ -135,7 +135,7 @@
 <ul>
 <li><a href="#download-code-3">Download code</a></li>
 </ul></li>
-<li><a href="#further-reading-3">Further reading</a></li>
+<li><a href="#further-reading-2">Further reading</a></li>
 </ul></li>
 <li><a href="#chapter-05---the-first-real-client-zip-folder--componentization--testing--refactoring">Chapter 05 - The first real client: Zip Folder =&gt; Componentization / Testing / Refactoring</a>
 <ul>
@@ -157,7 +157,7 @@
 <li><a href="#product-client-version">Product client version</a></li>
 <li><a href="#multiple-types-of-contracts">Multiple types of contracts</a></li>
 <li><a href="#working-related-to-other-apps---extension-endpoints-reporting-when-finishes-to-extract-data">Working related to other apps - extension endpoints reporting when finishes to extract data</a></li>
-<li><a href="#technical-box">Technical Box</a></li>
+<li><a href="#technical-box-1">Technical Box</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -219,10 +219,10 @@
 <p>As you can see, we were facing resolving the solution for the particular client for the specific situation without having an overview of the overall process or any thoughts to going this idea further. The whole process is a sequence of operations without any control flow involved.</p>
 <h3 id="download-code">Download code</h3>
 <p>Code at <a href="https://ignatandrei.github.io/console_to_saas/sources/Chapter01.zip">Chapter01</a></p>
-<h2 id="further-reading">Further reading</h2>
+<h2 id="technical-box">Technical box</h2>
 <p>Read about Gui.cs - <a href="https://github.com/migueldeicaza/gui.cs">https://github.com/migueldeicaza/gui.cs</a></p>
-<p>Read about the difference between EnumerateFiles and GetFiles.</p>
-<p>Read about Async Enumerable in .NET 3.0</p>
+<p>Read about the difference between IEnumerable and array (e.g. EnumerateFiles and GetFiles). Read <a href="https://www.codeproject.com/Articles/832189/List-vs-IEnumerable-vs-IQueryable-vs-ICollection-v">https://www.codeproject.com/Articles/832189/List-vs-IEnumerable-vs-IQueryable-vs-ICollection-v</a></p>
+<p>Read about Async Enumerable in .NET 3.0 : <a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2019/november/csharp-iterating-with-async-enumerables-in-csharp-8">https://docs.microsoft.com/en-us/archive/msdn-magazine/2019/november/csharp-iterating-with-async-enumerables-in-csharp-8</a></p>
 <h1 id="chapter-02---financial-department-last-tweaks-mvp--fixing-bugs-source-control">Chapter 02 - Financial department last tweaks: MVP + fixing bugs, source control</h1>
 <p>We installed our console app on one of the computers of an employee in the financial department, we set it up and we let it running. After a few days we had some bug fixing and some new requests that came in. We saw an enthusiastic behavior on our colleagues by using our solution and that was our first real feedback that we were resolving a customer pain. We anticipated that we will get more feedback and to track what we have done we needed a source control. After a few iterations, we had our financial department happy and we are ready with our first MVP.</p>
 <h2 id="technical-analysis-1">Technical analysis</h2>
@@ -235,7 +235,7 @@
 <p>Now, we are ready to process any folder very easy, just be instantiating a new class with the directory</p>
 <h3 id="download-code-1">Download code</h3>
 <p>Code at <a href="https://ignatandrei.github.io/console_to_saas/sources/Chapter02.zip">Chapter02</a></p>
-<h2 id="further-reading-1">Further reading</h2>
+<h2 id="further-reading">Further reading</h2>
 <p>Version Control : <a href="https://en.wikipedia.org/wiki/Version_control">https://en.wikipedia.org/wiki/Version_control</a></p>
 <p>Set also a repository at <a href="http://github.com/">http://github.com/</a> , <a href="https://azure.microsoft.com/en-us/services/devops/">https://azure.microsoft.com/en-us/services/devops/</a> or other online source control.</p>
 <p>Refactoring: <a href="https://www.amazon.com/Refactoring-Improving-Design-Existing-Code/dp/0201485672">https://www.amazon.com/Refactoring-Improving-Design-Existing-Code/dp/0201485672</a></p>
@@ -253,7 +253,7 @@
 <span id="cb3-2"><a href="#cb3-2"></a><span class="dt">var</span> directoryToSearch= settings.<span class="fu">DocumentSLocation</span>;</span></code></pre></div>
 <h3 id="download-code-2">Download code</h3>
 <p>Code at <a href="https://ignatandrei.github.io/console_to_saas/sources/Chapter03.zip">Chapter03</a></p>
-<h2 id="further-reading-2">Further reading</h2>
+<h2 id="further-reading-1">Further reading</h2>
 <p>An application can have multiple sources of configuration. Read about .NET Core endpoint configuration (<a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-2.2">https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-2.2</a> ) : Environment, command line, configuration file, code ( in this order)</p>
 <p>Read also about IOptionSnapshot and IOptionMonitor at <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options?view=aspnetcore-3.1">https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options?view=aspnetcore-3.1</a></p>
 <h1 id="chapter-04--transform-to-product-making-a-gui">Chapter 04- Transform to product: making a GUI</h1>
@@ -296,7 +296,7 @@
 <span id="cb6-17"><a href="#cb6-17"></a>}</span></code></pre></div>
 <h3 id="download-code-3">Download code</h3>
 <p>Code at <a href="https://ignatandrei.github.io/console_to_saas/sources/Chapter04.zip">Chapter04</a></p>
-<h2 id="further-reading-3">Further reading</h2>
+<h2 id="further-reading-2">Further reading</h2>
 <p>.NET Core 3.0 Windows application ( WPF, WinForms): <a href="https://docs.microsoft.com/en-us/dotnet/core/whats-new/dotnet-core-3-0">https://docs.microsoft.com/en-us/dotnet/core/whats-new/dotnet-core-3-0</a></p>
 <p>MultiTier architecture : <a href="https://en.wikipedia.org/wiki/Multitier_architecture">https://en.wikipedia.org/wiki/Multitier_architecture</a></p>
 <h1 id="chapter-05---the-first-real-client-zip-folder--componentization--testing--refactoring">Chapter 05 - The first real client: Zip Folder =&gt; Componentization / Testing / Refactoring</h1>
@@ -378,7 +378,7 @@
 <p>When a client reports a bug, we must know the code that was compiled to be distributed to the client. For this, we should somehow mark the source code before the application distributable to be built - and this can be done by tagging or by branches in the code source. Also we can have the application reporting the components version .</p>
 <h2 id="multiple-types-of-contracts">Multiple types of contracts</h2>
 <h2 id="working-related-to-other-apps---extension-endpoints-reporting-when-finishes-to-extract-data">Working related to other apps - extension endpoints reporting when finishes to extract data</h2>
-<h2 id="technical-box">Technical Box</h2>
+<h2 id="technical-box-1">Technical Box</h2>
 <ol>
 <li>Design Pattern - strategy</li>
 <li>Plugin architecture in .NET Core 3</li>
