@@ -14,6 +14,15 @@ jobs:
     
     steps:
     - uses: actions/checkout@v2
+    - name: LineOfCode
+      uses: shadowmoose/GHA-LoC-Badge@1.0.0
+      id: badge
+      with:
+        debug: true
+        directory: ./Chapter01/
+        badge: ./Chapter01/badge.svg
+        patterns: '*.cs'  # Patterns in the format of a '.gitignore' file, separated by pipes.
+        ignore: 'node_modules'    
     - name: generate pdf
       run: |
         chmod +x ./print/getBook.bat
