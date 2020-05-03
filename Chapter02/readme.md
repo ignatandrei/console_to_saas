@@ -31,3 +31,5 @@ Version Control : https://en.wikipedia.org/wiki/Version_control
 Set also a repository at http://github.com/ , https://azure.microsoft.com/en-us/services/devops/ or other online source control.
 
 Refactoring: https://www.amazon.com/Refactoring-Improving-Design-Existing-Code/dp/0201485672
+
+
