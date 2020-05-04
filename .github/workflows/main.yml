@@ -22,6 +22,7 @@ jobs:
         cd print        
         ./getBook.bat
         cp ./book.pdf ../docs/ConsoleToSaas.pdf
+        cp ./Chapter01/lines/md ../Chapter01
 
     - name: upload pdf to artifacts
       uses: actions/upload-artifact@v1

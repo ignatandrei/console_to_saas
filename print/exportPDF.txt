@@ -5,14 +5,4 @@ RUN (cd print && npm install )
 COPY . .
 RUN ls -l print/*.* 
 RUN node print/server.js
-RUN (cd print && npm run count1 -- silent > ../Chapter01/lines.csv)
-RUN (cd print && npm run data1 --silent > ../Chapter01/lines.md)
-RUN (cd print && npm run count2 -- silent > ../Chapter02/lines.csv)
-RUN (cd print && npm run data2 --silent > ../Chapter02/lines.md)
-RUN (cd print && npm run count3 -- silent > ../Chapter03/lines.csv)
-RUN (cd print && npm run data3 --silent > ../Chapter03/lines.md)
-RUN (cd print && npm run count4 -- silent > ../Chapter04/lines.csv)
-RUN (cd print && npm run data4 --silent > ../Chapter04/lines.md)
-RUN (cd print && npm run count5 -- silent > ../Chapter05/lines.csv)
-RUN (cd print && npm run data5 --silent > ../Chapter05/lines.md)
 CMD tail -f /dev/null
