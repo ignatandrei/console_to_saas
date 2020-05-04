@@ -4,9 +4,15 @@
   "description": "print on Docker",
   "author": "Andrei Ignat",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "count1": "sloc --details --format cli-table --keys total ../Chapter01/",
+    "count2": "sloc --details --format cli-table --keys total ../Chapter02/",
+    "count3": "sloc --details --format cli-table --keys total ../Chapter03/",
+    "count4": "sloc --details --format cli-table --keys total ../Chapter04/",
+    "count5": "sloc --details --format cli-table --keys total ../Chapter05/",
+    "countex": "sloc --details --format cli-table --keys total,source,comment --exclude i18n* --format-option no-head ../Chapter05/"
   },
   "dependencies": {
-    "markdown-pdf": "10.0.0"
+    "sloc": "^0.2.1"
   }
 }
