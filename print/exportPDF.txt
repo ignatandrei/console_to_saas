@@ -5,9 +5,9 @@ RUN (cd print && npm install )
 COPY . .
 RUN ls -l print/*.* 
 RUN node print/server.js
-RUN npm run count1
-RUN npm run count2
-RUN npm run count3
-RUN npm run count4
-RUN npm run count5
+RUN (cd print && npm run count1)
+RUN (cd print && npm run count2)
+RUN (cd print && npm run count3)
+RUN (cd print && npm run count4)
+RUN (cd print && npm run count5)
 CMD tail -f /dev/null
