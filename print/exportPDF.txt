@@ -1,7 +1,7 @@
 FROM node:10
 WORKDIR /usr/src/
 COPY print/package.json ./print/
-RUN npm install ./print/
+RUN (cd print && npm install )
 COPY . .
 RUN ls -l print/*.* 
 RUN node print/server.js
