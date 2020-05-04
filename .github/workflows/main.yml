@@ -7,6 +7,7 @@ on:
     - '**.md'
     - '**.yml'
     - '**.txt'
+    - '**.json'
 
 jobs:
   build:

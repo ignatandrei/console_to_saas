@@ -13,6 +13,7 @@
     "countex": "sloc --details --format cli-table --keys total,source,comment --exclude i18n* --format-option no-head ../Chapter05/"
   },
   "dependencies": {
-    "sloc": "^0.2.1"
+    "sloc": "^0.2.1",
+    "markdown-pdf": "10.0.0"
   }
 }
