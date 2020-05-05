@@ -1,13 +1,13 @@
-<svg width="806.5" height="100" viewBox="0 0 1613 200" xmlns="http://www.w3.org/2000/svg">
+<svg width="336.6" height="40" viewBox="0 0 1683 200" xmlns="http://www.w3.org/2000/svg">
   <g>
     <rect fill="#ADF" width="678" height="200"/>
-    <rect fill="#08C" x="678" width="935" height="200"/>
+    <rect fill="#08C" x="678" width="1005" height="200"/>
   </g>
   <g fill="#fff" text-anchor="start" font-family="Verdana,DejaVu Sans,sans-serif" font-size="110">
-    <text x="60" y="148" textLength="578" fill="#000" opacity="0.1">Chapter01</text>
-    <text x="50" y="138" textLength="578">Chapter01</text>
-    <text x="733" y="148" textLength="835" fill="#000" opacity="0.1">files:1;lines:66</text>
-    <text x="723" y="138" textLength="835">files:1;lines:66</text>
+    <text x="60" y="148" textLength="578" fill="#000" opacity="0.1">Chapter03</text>
+    <text x="50" y="138" textLength="578">Chapter03</text>
+    <text x="733" y="148" textLength="905" fill="#000" opacity="0.1">files:3;lines:117</text>
+    <text x="723" y="138" textLength="905">files:3;lines:117</text>
   </g>
   
 </svg>
