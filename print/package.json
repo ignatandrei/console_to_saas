@@ -4,22 +4,11 @@
   "description": "print on Docker",
   "author": "Andrei Ignat",
   "scripts": {
-    "start": "node server.js",
-    "count1": "sloc --details --format csv  ../Chapter01/",
-    "data1": "csv2md ../Chapter01/lines.csv",
-    "count2": "sloc --details --format csv  ../Chapter02/",
-    "data2": "csv2md ../Chapter02/lines.csv",
-    "count3": "sloc --details --format csv  ../Chapter03/",
-    "data3": "csv2md ../Chapter03/lines.csv",
-    "count4": "sloc --details --format csv  ../Chapter04/",
-    "data4": "csv2md ../Chapter05/lines.csv",
-    "count5": "sloc --details --format csv  ../Chapter05/",
-    "data5": "csv2md ../Chapter05/lines.csv",
-    "countex": "sloc --details --format cli-table --keys total,source,comment --exclude i18n* --format-option no-head ../Chapter05/"
+    "start": "node server.js"
   },
   "dependencies": {
-    "csv2md": "1.0.1",
+    "badgen": "3.0.1",
     "markdown-pdf": "10.0.0",
-    "sloc": "0.2.1"
+    "node-sloc": "0.1.12"
   }
 }
