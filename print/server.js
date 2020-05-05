@@ -24,7 +24,7 @@ for (var i = 0; i < chapters.length; i++) {
       style: "flat", // 'flat' or 'classic' (default: 'classic')
       //icon: 'data:image/svg+xml;base64,...', // Use icon (default: undefined)
       //iconWidth: 13,    // Set this if icon is not square (default: 13)
-      scale: 2, // Set badge scale (default: 1)
+      scale: 1, // Set badge scale (default: 1)
     });
     fs.writeFileSync(`../${item}.svg`, svgString);
   

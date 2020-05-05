@@ -21,7 +21,7 @@ wordExtractor.ExtractToFile(excelResultsFile);
 Now, we are ready to process any folder very easy, just be instantiating a new class with the directory
 
 ### Download code 
-Code at [![Chapter02](Chapter02.svg)](https://ignatandrei.github.io/console_to_saas/sources/Chapter02.zip)
+Code at [![Chapter02](https://ignatandrei.github.io/console_to_saas/Chapter02.svg)](https://ignatandrei.github.io/console_to_saas/sources/Chapter02.zip)
 
 
 ## Further reading

@@ -66,7 +66,7 @@ catch(Exception ex)
 ```
 ### Download code 
 
-Code at [![Chapter04](Chapter04.svg)](https://ignatandrei.github.io/console_to_saas/sources/Chapter04.zip)
+Code at [![Chapter04](https://ignatandrei.github.io/console_to_saas/Chapter04.svg)](https://ignatandrei.github.io/console_to_saas/sources/Chapter04.zip)
 
 ## Further reading
 

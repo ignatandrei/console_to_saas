@@ -30,11 +30,11 @@ jobs:
         cp ./Chapter04.svg ../docs/Chapter04.svg
         cp ./Chapter05.svg ../docs/Chapter05.svg
 
-        cp ./Chapter01.svg ../Chapter01/Chapter01.svg
-        cp ./Chapter02.svg ../Chapter02/Chapter02.svg
-        cp ./Chapter03.svg ../Chapter03/Chapter03.svg
-        cp ./Chapter04.svg ../Chapter04/Chapter04.svg
-        cp ./Chapter05.svg ../Chapter05/Chapter05.svg
+        # cp ./Chapter01.svg ../Chapter01/Chapter01.svg
+        # cp ./Chapter02.svg ../Chapter02/Chapter02.svg
+        # cp ./Chapter03.svg ../Chapter03/Chapter03.svg
+        # cp ./Chapter04.svg ../Chapter04/Chapter04.svg
+        # cp ./Chapter05.svg ../Chapter05/Chapter05.svg
 
     - name: upload pdf to artifacts
       uses: actions/upload-artifact@v1
