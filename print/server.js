@@ -34,15 +34,15 @@ for (var i = 0; i < chapters.length; i++) {
 var markdownpdf = require("markdown-pdf");
 
 var mdDocs = [
-    "README.md",
-    "Chapter01/readme.md",
-    "Chapter02/readme.md",
-    "Chapter03/readme.md",
-    "Chapter04/readme.md",
-    "Chapter05/readme.md",
-    "Chapter06/readme.md",
+    "../README.md",
+    "../Chapter01/readme.md",
+    "../Chapter02/readme.md",
+    "../Chapter03/readme.md",
+    "../Chapter04/readme.md",
+    "../Chapter05/readme.md",
+    "../Chapter06/readme.md",
   ],
-  bookPath = "book.pdf";
+  bookPath = "../book.pdf";
 
 markdownpdf()
   .concat.from(mdDocs)
