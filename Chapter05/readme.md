@@ -41,7 +41,7 @@ extractor.Start();
 
 ### Download code 
 
-Code at [Chapter05](https://ignatandrei.github.io/console_to_saas/sources/Chapter05.zip)
+Code at [![Chapter05](Chapter05.svg)](https://ignatandrei.github.io/console_to_saas/sources/Chapter05.zip)
 
 ## Technical Reading Box
 
