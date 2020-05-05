@@ -22,6 +22,7 @@ jobs:
         chmod +x ./print/getBook.bat
         cd print        
         ./getBook.bat
+        ls -lh 
         cp ./book.pdf ../docs/ConsoleToSaas.pdf
         cp ./Chapter01.svg ../docs/Chapter01.svg
 
