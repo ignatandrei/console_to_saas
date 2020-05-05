@@ -26,7 +26,7 @@ for (var i = 0; i < chapters.length; i++) {
       //iconWidth: 13,    // Set this if icon is not square (default: 13)
       scale: 5, // Set badge scale (default: 1)
     });
-    fs.writeFileSync(`${item}.svg`, svgString);
+    fs.writeFileSync(`../${item}.svg`, svgString);
   
 }
 
