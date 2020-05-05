@@ -4,5 +4,7 @@ COPY print/package.json ./print/
 RUN (cd print && npm install )
 COPY . .
 RUN ls -l print/*.* 
-RUN node print/server.js
+RUN ls -l Chapter01/*.* 
+RUN  (cd print && npm run start)
+#RUN node print/server.js
 CMD tail -f /dev/null
