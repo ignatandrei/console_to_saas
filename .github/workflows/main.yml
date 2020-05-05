@@ -24,6 +24,12 @@ jobs:
         ./getBook.bat
         ls -lh 
         cp ./book.pdf ../docs/ConsoleToSaas.pdf
+        cp ./Chapter01.svg ../docs/Chapter01.svg
+        cp ./Chapter02.svg ../docs/Chapter02.svg
+        cp ./Chapter03.svg ../docs/Chapter03.svg
+        cp ./Chapter04.svg ../docs/Chapter04.svg
+        cp ./Chapter05.svg ../docs/Chapter05.svg
+
         cp ./Chapter01.svg ../Chapter01/Chapter01.svg
         cp ./Chapter02.svg ../Chapter02/Chapter02.svg
         cp ./Chapter03.svg ../Chapter03/Chapter03.svg
