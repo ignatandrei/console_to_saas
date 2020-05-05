@@ -24,7 +24,7 @@ jobs:
         ./getBook.bat
         ls -lh 
         cp ./book.pdf ../docs/ConsoleToSaas.pdf
-        cp ./Chapter01.svg ../docs/Chapter01.svg
+        cp ./Chapter01.svg ../Chapter01/Chapter01.svg
 
     - name: upload pdf to artifacts
       uses: actions/upload-artifact@v1
