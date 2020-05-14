@@ -41,6 +41,7 @@ var mdDocs = [
     "../Chapter04/readme.md",
     "../Chapter05/readme.md",
     "../Chapter06/readme.md",
+    "../Chapter07/readme.md"
   ],
   bookPath = "../book.pdf";
 
