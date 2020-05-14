@@ -159,6 +159,18 @@
 <li><a href="#working-related-to-other-apps---extension-endpoints-reporting-when-finishes-to-extract-data">Working related to other apps - extension endpoints reporting when finishes to extract data</a></li>
 <li><a href="#technical-box-2">Technical Box</a></li>
 </ul></li>
+<li><a href="#chapter-07---passing-to-saas">Chapter 07 - Passing to SAAS</a>
+<ul>
+<li><a href="#technical-approach---what-must-be-build">Technical approach - what must be build</a>
+<ul>
+<li><a href="#web-application">Web Application</a></li>
+<li><a href="#users--roles--configuration">Users / Roles / configuration</a></li>
+<li><a href="#revisit-application-to-see-what-works-on-local-and-should-be-handled-differently-on-web">Revisit application to see what works on local and should be handled differently on web</a></li>
+<li><a href="#revisit-the-application-to-see-long-duration-processes">Revisit the application to see long duration processes</a></li>
+<li><a href="#think-about-databases--websites---multi-tenant-vs-single-tenant">Think about databases / websites - multi tenant vs single tenant</a></li>
+</ul></li>
+<li><a href="#technical-box-3">Technical Box</a></li>
+</ul></li>
 </ul>
 </nav>
 <h1 id="console-to-saas---book-description">Console to SAAS - book description</h1>
@@ -389,6 +401,41 @@
 <li>Versioning - show the production version. SemVer, CalVer. <a href="https://sachabarbs.wordpress.com/2020/02/23/net-core-standard-auto-incrementing-versioning/">https://sachabarbs.wordpress.com/2020/02/23/net-core-standard-auto-incrementing-versioning/</a></li>
 <li>AutoUpdate application - Click Once, Electron</li>
 <li>.NET Core 3 Self Container Application per platform: <a href="https://docs.microsoft.com/en-us/dotnet/core/deploying/">https://docs.microsoft.com/en-us/dotnet/core/deploying/</a></li>
+</ol>
+<h1 id="chapter-07---passing-to-saas">Chapter 07 - Passing to SAAS</h1>
+<p>The business figures out that the application can be easy done as a Software as a Service instead of working on local. From a business perspective, this means recurring paying customers instead of selling one shot the application . As an example, see Office XP that you buy versus Office 365 on cloud.</p>
+<h2 id="technical-approach---what-must-be-build">Technical approach - what must be build</h2>
+<h3 id="web-application">Web Application</h3>
+<p>The application must be converted to a web application ( eventually, a mobile application should be ready also)</p>
+<h3 id="users--roles--configuration">Users / Roles / configuration</h3>
+<p>The application should have one or more ways to identify users ( either username + password, either via a third provider, like Google / Facebook , either via an integrated provider , like Azure Active Directory / Okta)</p>
+<h3 id="revisit-application-to-see-what-works-on-local-and-should-be-handled-differently-on-web">Revisit application to see what works on local and should be handled differently on web</h3>
+<p>There are will be always some parts of the application that will work on local. In our example , the application is monitoring either :</p>
+<ol>
+<li>Network files</li>
+<li>Zip files</li>
+</ol>
+<p>The zip files can be uploaded and processed ion the web. But, for the local files, the architecture should be somehow different : You may think about an agent that works on local , monitors the local file system and uploads data to the web to be processed.</p>
+<p><a href="https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoic3RhdGVEaWFncmFtIFxuICAgIFxuICAgXG4gICAgTG9jYWxQQyAtLT4gV2ViRnVuY3Rpb24gOiBzZW5kcyBkYXRhIGZyb20gbG9jYWwgUENcbiAgICBXZWJGdW5jdGlvbiAtLT5XZWJBcHAgOiBub3RpZmllcyBkYXRhIHJlYWR5IC8gcHJvY2Vzc2luZ1xuICAgIFVzZXItLT4gV2ViQXBwIDogc2VlIHJlc3VsdHNcbiAgICBzdGF0ZSBMb2NhbFBDICB7XG4gICAgICAgIEhhcmREcml2ZSAtLT4gTG9jYWxBcHAgICAgICAgICBcblxuICAgIH1cbiAgICBzdGF0ZSBXZWJGdW5jdGlvbiB7XG4gICAgICAgIFJlY2VpdmVEYXRhIC0tPiBQcm9jZXNzRGF0YSAgICAgICAgXG4gICAgICAgIFByb2Nlc3NEYXRhIC0tPiBTdG9yZXNSZXN1bHRcbiAgICB9XG4gICAgc3RhdGUgV2ViQXBwe1xuICAgICAgU3RvcmVzUmVzdWx0LS0-IERpc3BsYXlEYXRhXG4gICAgfVxuXG5cdFxuXHRcdFx0XHRcdCIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In0sInVwZGF0ZUVkaXRvciI6ZmFsc2V9"><img src="https://mermaid.ink/img/eyJjb2RlIjoic3RhdGVEaWFncmFtIFxuICAgIFxuICAgXG4gICAgTG9jYWxQQyAtLT4gV2ViRnVuY3Rpb24gOiBzZW5kcyBkYXRhIGZyb20gbG9jYWwgUENcbiAgICBXZWJGdW5jdGlvbiAtLT5XZWJBcHAgOiBub3RpZmllcyBkYXRhIHJlYWR5IC8gcHJvY2Vzc2luZ1xuICAgIFVzZXItLT4gV2ViQXBwIDogc2VlIHJlc3VsdHNcbiAgICBzdGF0ZSBMb2NhbFBDICB7XG4gICAgICAgIEhhcmREcml2ZSAtLT4gTG9jYWxBcHAgICAgICAgICBcblxuICAgIH1cbiAgICBzdGF0ZSBXZWJGdW5jdGlvbiB7XG4gICAgICAgIFJlY2VpdmVEYXRhIC0tPiBQcm9jZXNzRGF0YSAgICAgICAgXG4gICAgICAgIFByb2Nlc3NEYXRhIC0tPiBTdG9yZXNSZXN1bHRcbiAgICB9XG4gICAgc3RhdGUgV2ViQXBwe1xuICAgICAgU3RvcmVzUmVzdWx0LS0-IERpc3BsYXlEYXRhXG4gICAgfVxuXG5cdFxuXHRcdFx0XHRcdCIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In0sInVwZGF0ZUVkaXRvciI6ZmFsc2V9" /></a></p>
+<p>(<small>Generated with mermaid.js , <a href="https://mermaid-js.github.io/mermaid-live-editor/#">https://mermaid-js.github.io/mermaid-live-editor/#</a></p>
+<p>stateDiagram LocalPC --&gt; WebFunction : sends data from local PC WebFunction --&gt;WebApp : notifies data ready / processing User--&gt; WebApp : see results state LocalPC { HardDrive --&gt; LocalApp</p>
+<pre><code>}
+state WebFunction {
+    ReceiveData --&gt; ProcessData        
+    ProcessData --&gt; StoresResult
+}
+state WebApp{
+  StoresResult--&gt; DisplayData
+}
+</code></pre>
+<p></small> )</p>
+<h3 id="revisit-the-application-to-see-long-duration-processes">Revisit the application to see long duration processes</h3>
+<h3 id="think-about-databases--websites---multi-tenant-vs-single-tenant">Think about databases / websites - multi tenant vs single tenant</h3>
+<h2 id="technical-box-3">Technical Box</h2>
+<ol>
+<li>Identity Server</li>
+<li>2FA</li>
+<li>Authentication / Authorization in .NET Core</li>
 </ol>
 </body>
 </html>
