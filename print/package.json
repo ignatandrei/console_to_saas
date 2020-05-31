@@ -7,6 +7,8 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "markdown-pdf": "10.0.0"
+    "badgen": "3.0.1",
+    "markdown-pdf": "10.0.0",
+    "node-sloc": "0.1.12"
   }
 }

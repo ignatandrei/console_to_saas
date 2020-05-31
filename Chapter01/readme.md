@@ -28,14 +28,23 @@ foreach (string file in Directory.GetFiles(folderWithWordDocs, "*.docx"))
 ```
 We were facing resolving the solution just with a list of sequence of operations without any control flow involved. Great!
 
+
 ### Download code 
 Code at [Chapter01](https://ignatandrei.github.io/console_to_saas/sources/Chapter01.zip)
+Code at [![Chapter01](https://ignatandrei.github.io/console_to_saas/Chapter01.svg)](https://ignatandrei.github.io/console_to_saas/sources/Chapter01.zip) 
+
+
 
 ## Technical box
 
 Read about Gui.cs - https://github.com/migueldeicaza/gui.cs
-Read about the difference between IEnumerable and array (e.g. EnumerateFiles and GetFiles). Read https://www.codeproject.com/Articles/832189/List-vs-IEnumerable-vs-IQueryable-vs-ICollection-v
 
-Read about Async Enumerable in .NET 3.0: https://docs.microsoft.com/en-us/archive/msdn-magazine/2019/november/csharp-iterating-with-async-enumerables-in-csharp-8
+Read about the difference between IEnumerable and array (e.g. EnumerateFiles and GetFiles). Read https://www.codeproject.com/Articles/832189/List-vs-IEnumerable-vs-IQueryable-vs-ICollection-v
+When reading files on the hard disk, you should understand if you want to enumerate all files or just see if there are any files ,  e.g. EnumerateFiles and GetFiles. Read the difference between IEnumerable and array (). Read https://www.codeproject.com/Articles/832189/List-vs-IEnumerable-vs-IQueryable-vs-ICollection-v
+
+Read about Async Enumerable in .NET 3.0 : https://docs.microsoft.com/en-us/archive/msdn-magazine/2019/november/csharp-iterating-with-async-enumerables-in-csharp-8
+<!-- Read about Async Enumerable in .NET 3.0 : https://docs.microsoft.com/en-us/archive/msdn-magazine/2019/november/csharp-iterating-with-async-enumerables-in-csharp-8 -->
+
+
 
 

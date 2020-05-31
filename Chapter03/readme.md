@@ -23,7 +23,7 @@ var settings = Settings.From("app.json");
 var directoryToSearch= settings.DocumentSLocation;
 ```
 ### Download code 
-Code at [Chapter03](https://ignatandrei.github.io/console_to_saas/sources/Chapter03.zip)
+Code at [![Chapter03](https://ignatandrei.github.io/console_to_saas/Chapter03.svg)](https://ignatandrei.github.io/console_to_saas/sources/Chapter03.zip)
 
 
 ## Technical box
