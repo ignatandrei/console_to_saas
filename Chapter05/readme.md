@@ -3,21 +3,21 @@
 **Componentization / Testing / Refactoring**
 
 -----
-A client which was interested mentioned that they were using zip files for backup the documents for company service. They were interested in having our product, but we didn’t support zip files. We shared our vision to create a highly customizable product, so implementing reading files from zip would be an additional feature. He agreed to pay for it and we started the product development.
+A client who was interested mentioned that they were using zip files for backup the documents for company service. They were interested in having our product, but we didn’t support zip files. We shared our vision to create a highly customizable product, so implementing reading files from zipping would be an additional feature. He agreed to pay for it and we started the product development.
 
 # Problem
-Starting from the solution, add support for reading either from a folder, either from zip file.
+Starting from the solution, add support for reading either from a folder, either from a zip file.
 
 ## Technical analysis
-Changing the business core, requires refactoring which usually involves regression testing. Before every refactoring is started, we need to define the supported test scenarios from the business perspective. This is a list which usually includes inputs, appropriate action and the expected output. The easiest way to achieve this is to add unit tests which does the checking automatically. 
+Changing the business core requires refactoring which usually involves regression testing. Before every refactoring is started, we need to define the supported test scenarios from the business perspective. This is a list that usually includes inputs, appropriate action, and the expected output. The easiest way to achieve this is to add unit tests which do the checking automatically. 
 
-Altering pretty much the entire core, adds some regression risks. To compensate for that, we will add tests (unit and/or integration and/or component and/or system) which verifies the already old behavior and the new one. The tests will make sure that our core (reading and parsing) outputs the expected output using various file systems. We will add a new project for unit/component test and we will reference the business core project and inject different components (in our case, file system).
-This core modification, will also impact the other projects, including GUI and console application.
-In our case we want to make sure that the contract parsing success if we use both file systems.
+Altering pretty much the entire core adds some regression risks. To compensate for that, we will add tests (unit and/or integration and/or component and/or system) which verifies the already old behavior and the new one. The tests will make sure that our core (reading and parsing) outputs the expected output using various file systems. We will add a new project for unit/component test and we will reference the business core project and inject different components (in our case, file system).
+This core modification will also impact other projects, including GUI and console applications.
+In our case, we want to make sure that the contract parsing success if we use both file systems.
 
-We already identified the operations that needs to be abstract, so let’s write the interfaces that allows this:
+We already identified the operations that need to be abstract, so let’s write the interfaces that allow this:
 1. An interface for the file system which supports listing files (IFileSystem)
-2. An interface the actual file. This needs to have a Name and to read the content from either a zip file, either a folder into the system (IFile).
+2. An interface with the actual file. This needs to have a Name and to read the content from either a zip file, either a folder into the system (IFile).
    
 Our core program needs to:
 
@@ -56,9 +56,9 @@ Code at [![Chapter05](https://ignatandrei.github.io/console_to_saas/Chapter05.sv
 <!-- 5. How to Serialize interfaces to restore classes
 6. Unit Test vs Integration Test vs Component Test vs System Test vs Load Test
 7. ArrangeActAssert vs GivenWhenThen
-- Unit Testing and the Arrange, Act and Assert (AAA) Pattern - https://medium.com/@pjbgf/title-testing-code-ocd-and-the-aaa-pattern-df453975ab80
+- Unit Testing and the Arrange, Act, and Assert (AAA) Pattern - https://medium.com/@pjbgf/title-testing-code-ocd-and-the-aaa-pattern-df453975ab80
 - GivenWhenThen - https://martinfowler.com/bliki/GivenWhenThen.html
 
-7. Mock vs Fakes vs Stubs : https://martinfowler.com/articles/mocksArentStubs.html -->
+7. Mock vs Fakes vs Stubs: https://martinfowler.com/articles/mocksArentStubs.html -->
 
 

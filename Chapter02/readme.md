@@ -38,7 +38,7 @@ Code at [![Chapter02](https://ignatandrei.github.io/console_to_saas/Chapter02.sv
 
 What is version control: https://en.wikipedia.org/wiki/Version_control
 
-Create free version control repository at http://github.com/, https://azure.microsoft.com/en-us/services/devops/, or other online source control.
+Create a free version control repository at http://github.com/, https://azure.microsoft.com/en-us/services/devops/, or other online source control.
 
 Read more about how you improve the design of existing code by refactoring: https://www.amazon.com/Refactoring-Improving-Design-Existing-Code/dp/0201485672
 

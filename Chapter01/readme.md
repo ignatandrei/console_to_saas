@@ -10,7 +10,7 @@ Make an application that reads all word documents from a folder, parses, and out
 ## Technical analysis
 After putting some brainstorming and analyzing the constraint we ended up developing a solution that reads from a folder share and continues the process without any human intervention. This would allow us to have all our employees to continue their work simultaneously with less effort than before. To speed up the things, we decided to go with a minimal setup
 - prototype solution in a console app
-- use [NPOI](https://github.com/dotnetcore/NPOI) library for handling Word document reading. The decision is simply based on prefference. [ClosedXML](https://github.com/ClosedXML/ClosedXML) is another options. However we chosed to go with a native approach that does't require to have the Microsoft suite installed on pur computer simply because it was easy.
+- use [NPOI](https://github.com/dotnetcore/NPOI) library for handling Word document reading. The decision is simply based on preference. [ClosedXML](https://github.com/ClosedXML/ClosedXML) is another options. However, we have chosen to go with an approach that doesn't require to have the Microsoft Office installed. Limiting the dependencies is generally a good approach and in our case, it was easier also.
 
 We wrapped everything in the same project, just to make sure it works and to keep our focus on delivering. Everything we put in the main file of the console app, and we have chosen C# because we were the most comfortable and were able to fulfill our requirements in a minimum amount of time.
 
@@ -26,7 +26,7 @@ foreach (string file in Directory.GetFiles(folderWithWordDocs, "*.docx"))
     allContractors.Add(contractorDetails);
 }
 ```
-We were facing resolving the solution just with a list of sequence of operations without any control flow involved. Great!
+We were facing resolving the solution just with a list of sequences of operations without any control flow involved. Great!
 
 
 **Download code**
