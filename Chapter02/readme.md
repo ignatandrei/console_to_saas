@@ -1,4 +1,4 @@
-# Chapter 1
+# Chapter 2
 ## Adapt to the financial department last tweaks
 
 ----
@@ -30,15 +30,16 @@ wordExtractor.ExtractToFile(excelResultsFile);
 ```
 Now, all we need to do is to use the class and pass the needed parameters. In this case, the file path is the only dependent requirement. This path can come from a config file or from a user pick action. The only check we could add is to make sure it is writeable. We can add this check before executing the program or we can just handle separately the exception and display to the user a message. We will see that later in the next chapters.
 
-### Download code 
+**Download code**
 Code at [![Chapter02](https://ignatandrei.github.io/console_to_saas/Chapter02.svg)](https://ignatandrei.github.io/console_to_saas/sources/Chapter02.zip)
 
 
 ## Further reading
 
-Version Control: https://en.wikipedia.org/wiki/Version_control
-Set also a repository at http://github.com/, https://azure.microsoft.com/en-us/services/devops/, or other online source control.
+What is version control: https://en.wikipedia.org/wiki/Version_control
 
-Refactoring: https://www.amazon.com/Refactoring-Improving-Design-Existing-Code/dp/0201485672
+Create free version control repository at http://github.com/, https://azure.microsoft.com/en-us/services/devops/, or other online source control.
+
+Read more about how you improve the design of existing code by refactoring: https://www.amazon.com/Refactoring-Improving-Design-Existing-Code/dp/0201485672
 
 

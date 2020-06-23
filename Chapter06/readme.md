@@ -1,5 +1,8 @@
-# Chapter 06 - Our second external client: Ecosystem/ Versioning / CI 
+# Chapter 6
+## Our second external client
+**Ecosystem / Versioning / CI**
 
+-----
 Our second client has different types of contracts that need to be considered. Having 2 clients that needs to run the same code, but to work differently it is a challenging task. Thus, we could address this problem using two approaches:
 1. Create a different branch for each client
 2. Have a single branch of code, but allow through configuration to work differently
@@ -33,18 +36,13 @@ Another solution is to have a single code branch, but this means to design the a
 
 
 ## Product client version
-When a client reports a bug, we must know the code that was compiled to be distributed to the client. For this, we should somehow mark the source code before the application distributable to be built  - and this can be done by tagging or by branches in the code source.
+When a client reports a bug, we must know the code that was compiled to be distributed to the client. For this, we should somehow mark the source code before the application distributable to be built - and this can be done by tagging or by branches in the code source.
 Also  we can have the application reporting the components version .
-
-## Multiple types of contracts
-
-## Working related to other apps - extension endpoints reporting when finishes to extract data
 
 
 ## Technical Box
 
-1.	Design Pattern - strategy
-1.  Plugin architecture in .NET Core 3 
-2.  Versioning - show the production version. SemVer, CalVer. https://sachabarbs.wordpress.com/2020/02/23/net-core-standard-auto-incrementing-versioning/
-3.  AutoUpdate application - Click Once, Electron
-4.  .NET Core 3 Self Container Application per platform: https://docs.microsoft.com/en-us/dotnet/core/deploying/
+1.	To organize to on single source code for multiple clients and different needs, please read Strategy Design Pattern - https://www.tutorialspoint.com/design_pattern/strategy_pattern.htm . Also you may use Plugin architecture - each client is a different plugin into the application .
+1.  Versioning - show the production version. You can use  Semantic Versioning or Calendar Versioning . https://sachabarbs.wordpress.com/2020/02/23/net-core-standard-auto-incrementing-versioning/
+2.  For Auto-Update application please read how it is done with  Click Once, Electron.
+3.  For depoying / download the whole application please read .NET Core 3 Self Container Application per platform: https://docs.microsoft.com/en-us/dotnet/core/deploying/
