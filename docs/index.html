@@ -146,7 +146,7 @@
 <li><a href="#organizing-source-code">Organizing source code</a>
 <ul>
 <li><a href="#create-different-branches">Create different branches</a></li>
-<li><a href="#create-single-branch">Create single branch</a></li>
+<li><a href="#create-a-single-branch">Create a single branch</a></li>
 </ul></li>
 <li><a href="#product-client-version">Product client version</a></li>
 <li><a href="#technical-box">Technical Box</a></li>
@@ -217,7 +217,7 @@
 <p>After putting some brainstorming and analyzing the constraint we ended up developing a solution that reads from a folder share and continues the process without any human intervention. This would allow us to have all our employees to continue their work simultaneously with less effort than before. To speed up the things, we decided to go with a minimal setup</p>
 <ul>
 <li>prototype solution in a console app</li>
-<li>use <a href="https://github.com/dotnetcore/NPOI">NPOI</a> library for handling Word document reading. The decision is simply based on prefference. <a href="https://github.com/ClosedXML/ClosedXML">ClosedXML</a> is another options. However we chosed to go with a native approach that does't require to have the Microsoft suite installed on pur computer simply because it was easy.</li>
+<li>use <a href="https://github.com/dotnetcore/NPOI">NPOI</a> library for handling Word document reading. The decision is simply based on preference. <a href="https://github.com/ClosedXML/ClosedXML">ClosedXML</a> is another options. However, we have chosen to go with an approach that doesn't require to have the Microsoft Office installed. Limiting the dependencies is generally a good approach and in our case, it was easier also.</li>
 </ul>
 <p>We wrapped everything in the same project, just to make sure it works and to keep our focus on delivering. Everything we put in the main file of the console app, and we have chosen C# because we were the most comfortable and were able to fulfill our requirements in a minimum amount of time.</p>
 <h2 id="code">Code</h2>
@@ -230,7 +230,7 @@
 <span id="cb1-7"><a href="#cb1-7"></a>    <span class="dt">var</span> contractorDetails = <span class="fu">ExactContractorDetails</span>(document.<span class="fu">Tables</span>[<span class="dv">0</span>]);</span>
 <span id="cb1-8"><a href="#cb1-8"></a>    allContractors.<span class="fu">Add</span>(contractorDetails);</span>
 <span id="cb1-9"><a href="#cb1-9"></a>}</span></code></pre></div>
-<p>We were facing resolving the solution just with a list of sequence of operations without any control flow involved. Great!</p>
+<p>We were facing resolving the solution just with a list of sequences of operations without any control flow involved. Great!</p>
 <p><strong>Download code</strong> Code at <a href="https://ignatandrei.github.io/console_to_saas/sources/Chapter01.zip"><img src="https://ignatandrei.github.io/console_to_saas/Chapter01.svg" alt="Chapter01" /></a></p>
 <h2 id="further-reading">Further reading</h2>
 <p>How to create a menu for the console app - <a href="https://github.com/migueldeicaza/gui.cs">https://github.com/migueldeicaza/gui.cs</a></p>
@@ -263,18 +263,18 @@
 <p><strong>Download code</strong> Code at <a href="https://ignatandrei.github.io/console_to_saas/sources/Chapter02.zip"><img src="https://ignatandrei.github.io/console_to_saas/Chapter02.svg" alt="Chapter02" /></a></p>
 <h2 id="further-reading-1">Further reading</h2>
 <p>What is version control: <a href="https://en.wikipedia.org/wiki/Version_control">https://en.wikipedia.org/wiki/Version_control</a></p>
-<p>Create free version control repository at <a href="http://github.com/">http://github.com/</a>, <a href="https://azure.microsoft.com/en-us/services/devops/">https://azure.microsoft.com/en-us/services/devops/</a>, or other online source control.</p>
+<p>Create a free version control repository at <a href="http://github.com/">http://github.com/</a>, <a href="https://azure.microsoft.com/en-us/services/devops/">https://azure.microsoft.com/en-us/services/devops/</a>, or other online source control.</p>
 <p>Read more about how you improve the design of existing code by refactoring: <a href="https://www.amazon.com/Refactoring-Improving-Design-Existing-Code/dp/0201485672">https://www.amazon.com/Refactoring-Improving-Design-Existing-Code/dp/0201485672</a></p>
 <h1 id="chapter-3">Chapter 3</h1>
 <h2 id="second-internal-customer">Second internal customer</h2>
 <p><strong>Sharing code source + settings for client</strong></p>
 <hr />
-<p>It has been a few months since our financial department is using the application and they were happy with it. On a morning coffee break where we were discussing the new automation trends, they mention the tool that we developed. Sales department was willing to see since they had themselves some similar situation. We configured and deployed on a separate machine for them and we saw great feedback and real usage on a daily basis. They were so excited to see how they decreased the paperwork hours and had more time to pay attention to the clients needs. They want to use the application as an example of automation and we find more suitable as a product development.</p>
+<p>It has been a few months since our financial department is using the application and they were happy with it. On a morning coffee break where we were discussing the new automation trends, they mention the tool that we developed. The sales department was willing to see since they had themselves some similar situation. We configured and deployed on a separate machine for them and we saw great feedback and real usage on a daily basis. They were so excited to see how they decreased the paperwork hours and had more time to pay attention to the client's needs. They want to use the application as an example of automation and we find it more suitable as product development.</p>
 <h1 id="problem-1">Problem</h1>
-<p>Make a Console solution that can read a configurable setting ( the folder path to be searched ) from a file instead of being hard coded into the application. Do not over-engineer the solution. Create and make it work, the easy way.</p>
+<p>Make a Console solution that can read a configurable setting (the folder path to be searched) from a file instead of being hardcoded into the application. Do not over-engineer the solution. Create and make it work, the easy way.</p>
 <h2 id="technical-analysis-2">Technical analysis</h2>
-<p>Creating a configuration file with all the settings that a client can particular change. For now we have just the directory path, along with the config. We have added also a class that manages the reading operation to move the reading operation</p>
-<p>The reason that we put the setting into a configuration file and not make 2 applications is to have an easy way to maintain the same application for 2 clients. Also, later, the client may want to read from 2 different folders ?</p>
+<p>Creating a configuration file with all the settings that a client can particularly change. For now, we have just the directory path, along with the config. We have added also a class that manages the reading operation to move the reading operation</p>
+<p>The reason that we put the setting into a configuration file and not make 2 applications is to have an easy way to maintain the same application for 2 clients. Also, later, the client may want to read from 2 different folders?</p>
 <p>The impact on the solution is minimal. Just create a new class that knows how to read from a config file and retrieve the name of the folder as a property.</p>
 <h2 id="code-2">Code</h2>
 <div class="sourceCode" id="cb3"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1"></a><span class="dt">var</span> settings = Settings.<span class="fu">From</span>(<span class="st">&quot;app.json&quot;</span>);</span>
@@ -282,30 +282,30 @@
 <p><strong>Download code</strong> Code at <a href="https://ignatandrei.github.io/console_to_saas/sources/Chapter03.zip"><img src="https://ignatandrei.github.io/console_to_saas/Chapter03.svg" alt="Chapter03" /></a></p>
 <h2 id="further-reading-2">Further reading</h2>
 <p>How an application can have multiple configuration sources (environment, command line, configuration file, code - in this order) - Read about .NET Core endpoint configuration (<a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-2.2">https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-2.2</a>)</p>
-<p>Hot reload configuration: read IOptionSnapshot and IOptionMonitor at <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options?view=aspnetcore-3.1">https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options?view=aspnetcore-3.1</a></p>
+<p>Hot reload the configuration: read IOptionSnapshot and IOptionMonitor at <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options?view=aspnetcore-3.1">https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options?view=aspnetcore-3.1</a></p>
 <h1 id="chapter-4">Chapter 4</h1>
 <h2 id="transform-to-product">Transform to product</h2>
 <p><strong>Making a Graphical User Interface</strong></p>
 <hr />
-<p>At our Digital Transformation Center Department we have recurring meetings with clients that are part of our continuous iterative process to identify things that needs to be improved. In one of the meetups that we hosted on our desk, we invited the financial department to leave feedback on the process that we helped. We talked about how the process evolved and how by adopting Digital Solutions decreased manual work. The presentation ended up with some Q&amp;A and several clients they were interested to have the application installed. At that point we realised that this is real a missing point in the current market and we planned to develop a product around this. At this point we had a validated idea by the market and we decided to evolve based on the client needs. Selling the application to multiple clients means to have configurable the word extracting and location of the documents. We ended up creating a GUI to allow the user to configure himself the automation parameters. This was a valuable feature for our users since most of them could be non technical. Transfer the ownership of the paths from the config file to more appropriate user interface</p>
+<p>At our Digital Transformation Center Department, we have recurring meetings with clients that are part of our continuous iterative process to identify things that need to be improved. In one of the meetups that we hosted on our desk, we invited the financial department to leave feedback on the process that we helped. We talked about how the process evolved and how by adopting Digital Solutions decreased manual work. The presentation ended up with some Q&amp;A and several clients they were interested to have the application installed. At that point, we realized that this is a missing point in the current market and we planned to develop a product around this. At this point, we had a validated idea by the market and we decided to evolve based on the client's needs. Selling the application to multiple clients means to have configurable the word extracting and location of the documents. We ended up creating a GUI to allow the user to configure himself with the automation parameters. This was a valuable feature for our users since most of them could be non-technical. Transfer the ownership of the paths from the config file to a more appropriate user interface.</p>
 <h1 id="problem-2">Problem</h1>
 <p>Modify the existing solution to support both Console and GUI.</p>
 <h2 id="technical-analysis-3">Technical analysis</h2>
-<p>For both application we have the same functionality: reading files from the hard disk and reading settings. We do not want to copy paste code and become un-maintainable, so we want to share code source from console application to the GUI application.</p>
+<p>For both applications, we have the same functionality: reading files from the hard disk and reading settings. We do not want to copy-paste code and become un-maintainable, so we want to share code source from a console application to the GUI application.</p>
 <p>Because the user works now with network folders that cannot be available always, we need to perform some modifications to alert the user for problems. In our case we have the user interface for showing :</p>
 <ul>
 <li>the progress of the operations</li>
 <li>Adding logging for knowing what happens if an error occurs</li>
 <li>Adding exception handling to not crash the application</li>
-<li>Handle edge cases of the user saving configuration (assert that user have not entered any folder / maybe list what documents have been successfully processed and what not)</li>
+<li>Handle edge cases of the user saving configuration (assert that user have not entered any folder / maybe list what documents have been successfully processed and whatnot)</li>
 </ul>
 <p>From a solution with a single project, we have now a solution with 3 projects:</p>
 <ul>
-<li>Business Layer (BL) - logic for the application - in our case, processing documents from a folder</li>
+<li>Business Layer (BL) - the logic for the application - in our case, processing documents from a folder</li>
 <li>Console (referencing BL)</li>
 <li>Desktop (referencing BL)</li>
 </ul>
-<p>The BL has the code that was previous in the console application (loading settings, doing extraction) + some new code (logging, others).</p>
+<p>The BL has the code that was previously in the console application (loading settings, doing extraction) + some new code (logging, others).</p>
 <h2 id="code-3">Code</h2>
 <p>The business logic is now more simple:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">ExtractToFile</span>(<span class="dt">string</span> excelFileOutput)</span>
@@ -343,16 +343,16 @@
 <h2 id="the-first-real-client">The first real client</h2>
 <p><strong>Componentization / Testing / Refactoring</strong></p>
 <hr />
-<p>A client which was interested mentioned that they were using zip files for backup the documents for company service. They were interested in having our product, but we didn’t support zip files. We shared our vision to create a highly customizable product, so implementing reading files from zip would be an additional feature. He agreed to pay for it and we started the product development.</p>
+<p>A client who was interested mentioned that they were using zip files for backup the documents for company service. They were interested in having our product, but we didn’t support zip files. We shared our vision to create a highly customizable product, so implementing reading files from zipping would be an additional feature. He agreed to pay for it and we started the product development.</p>
 <h1 id="problem-3">Problem</h1>
-<p>Starting from the solution, add support for reading either from a folder, either from zip file.</p>
+<p>Starting from the solution, add support for reading either from a folder, either from a zip file.</p>
 <h2 id="technical-analysis-4">Technical analysis</h2>
-<p>Changing the business core, requires refactoring which usually involves regression testing. Before every refactoring is started, we need to define the supported test scenarios from the business perspective. This is a list which usually includes inputs, appropriate action and the expected output. The easiest way to achieve this is to add unit tests which does the checking automatically.</p>
-<p>Altering pretty much the entire core, adds some regression risks. To compensate for that, we will add tests (unit and/or integration and/or component and/or system) which verifies the already old behavior and the new one. The tests will make sure that our core (reading and parsing) outputs the expected output using various file systems. We will add a new project for unit/component test and we will reference the business core project and inject different components (in our case, file system). This core modification, will also impact the other projects, including GUI and console application. In our case we want to make sure that the contract parsing success if we use both file systems.</p>
-<p>We already identified the operations that needs to be abstract, so let’s write the interfaces that allows this:</p>
+<p>Changing the business core requires refactoring which usually involves regression testing. Before every refactoring is started, we need to define the supported test scenarios from the business perspective. This is a list that usually includes inputs, appropriate action, and the expected output. The easiest way to achieve this is to add unit tests which do the checking automatically.</p>
+<p>Altering pretty much the entire core adds some regression risks. To compensate for that, we will add tests (unit and/or integration and/or component and/or system) which verifies the already old behavior and the new one. The tests will make sure that our core (reading and parsing) outputs the expected output using various file systems. We will add a new project for unit/component test and we will reference the business core project and inject different components (in our case, file system). This core modification will also impact other projects, including GUI and console applications. In our case, we want to make sure that the contract parsing success if we use both file systems.</p>
+<p>We already identified the operations that need to be abstract, so let’s write the interfaces that allow this:</p>
 <ol>
 <li>An interface for the file system which supports listing files (IFileSystem)</li>
-<li>An interface the actual file. This needs to have a Name and to read the content from either a zip file, either a folder into the system (IFile).</li>
+<li>An interface with the actual file. This needs to have a Name and to read the content from either a zip file, either a folder into the system (IFile).</li>
 </ol>
 <p>Our core program needs to:</p>
 <ol>
@@ -383,33 +383,34 @@
 <!-- 5. How to Serialize interfaces to restore classes
 6. Unit Test vs Integration Test vs Component Test vs System Test vs Load Test
 7. ArrangeActAssert vs GivenWhenThen
-- Unit Testing and the Arrange, Act and Assert (AAA) Pattern - https://medium.com/@pjbgf/title-testing-code-ocd-and-the-aaa-pattern-df453975ab80
+- Unit Testing and the Arrange, Act, and Assert (AAA) Pattern - https://medium.com/@pjbgf/title-testing-code-ocd-and-the-aaa-pattern-df453975ab80
 - GivenWhenThen - https://martinfowler.com/bliki/GivenWhenThen.html
 
-7. Mock vs Fakes vs Stubs : https://martinfowler.com/articles/mocksArentStubs.html -->
+7. Mock vs Fakes vs Stubs: https://martinfowler.com/articles/mocksArentStubs.html -->
 
 <h1 id="chapter-6">Chapter 6</h1>
 <h2 id="our-second-external-client">Our second external client</h2>
 <p><strong>Ecosystem / Versioning / CI</strong></p>
 <hr />
-<p>Our second client has different types of contracts that need to be considered. Having 2 clients that needs to run the same code, but to work differently it is a challenging task. Thus, we could address this problem using two approaches:</p>
+<p>Our second client has different types of contracts that need to be considered. Having 2 clients that need to run the same code, but to work differently it is a challenging task. Thus, we could address this problem using two approaches:</p>
 <ol>
 <li>Create a different branch for each client</li>
 <li>Have a single branch of code, but allow through configuration to work differently There is no perfect or easy solution, so let’s make a comparison and see which one fits better</li>
 </ol>
 <h2 id="organizing-source-code">Organizing source code</h2>
+<p>There are two approaches to this problem: create separate branches for each client or use a single branch and make the product behave differently.</p>
 <h3 id="create-different-branches">Create different branches</h3>
 <p>So, we have our main code in master, and we will create a separate branch for each client. This is an easy task, but let’s see what are the consequences <em>Advantages</em></p>
 <ol>
-<li>Creating separate branch, is no effort</li>
+<li>Creating a separate branch is no effort</li>
 <li>Best way to separate behavior and replicate bugs</li>
-<li>It is easy to implement new different feature for each client <em>Problems</em></li>
-<li><del>IF</del> When a bug appears , it should be replicated on every client . This could be done by either have a single master and replicating to each branch</li>
+<li>It is easy to implement a new different feature for each client <em>Problems</em></li>
+<li><del>IF</del> When a bug appears, it should be replicated on every client. This could be done by either have a single master and replicating to each branch</li>
 <li>writing the bug solving code on every branch</li>
 <li>Same with a new feature that many clients want.</li>
-<li>The master branch will not have a defined behaviour. It will contain all the features merged, thus we should treat it like a new client, but with all features on.</li>
+<li>The master branch will not have defined behavior. It will contain all the features merged, thus we should treat it as a new client, but with all features on.</li>
 </ol>
-<h3 id="create-single-branch">Create single branch</h3>
+<h3 id="create-a-single-branch">Create a single branch</h3>
 <p>Another solution is to have a single code branch, but this means to design the application to allow enabling/disabling features by configuration.</p>
 <p><em>Advantages</em></p>
 <ol>
@@ -419,19 +420,19 @@
 <p><em>Problems</em></p>
 <ol>
 <li>Re-architecting the application to support different features per configuration.</li>
-<li>Replicate the client behaviour is more difficult</li>
+<li>Replicate the client behavior is more difficult</li>
 <li>Create a feature requires more time to integrate with the configuration system</li>
 <li>Components per client</li>
 <li>Incompatible clients requirements ;-)</li>
 </ol>
 <h2 id="product-client-version">Product client version</h2>
-<p>When a client reports a bug, we must know the code that was compiled to be distributed to the client. For this, we should somehow mark the source code before the application distributable to be built - and this can be done by tagging or by branches in the code source. Also we can have the application reporting the components version .</p>
+<p>When a client reports a bug, we must know the code that was compiled to be distributed to the client. For this, we should somehow mark the source code before the application distributable to be built - and this can be done by tagging or by branches in the code source. Also, we can have the application reporting the version of the components.</p>
 <h2 id="technical-box">Technical Box</h2>
 <ol>
 <li>To organize to on single source code for multiple clients and different needs, please read Strategy Design Pattern - <a href="https://www.tutorialspoint.com/design_pattern/strategy_pattern.htm">https://www.tutorialspoint.com/design_pattern/strategy_pattern.htm</a> . Also you may use Plugin architecture - each client is a different plugin into the application .</li>
-<li>Versioning - show the production version. You can use Semantic Versioning or Calendar Versioning . <a href="https://sachabarbs.wordpress.com/2020/02/23/net-core-standard-auto-incrementing-versioning/">https://sachabarbs.wordpress.com/2020/02/23/net-core-standard-auto-incrementing-versioning/</a></li>
+<li>Versioning - show the production version. You can use Semantic Versioning or Calendar Versioning. <a href="https://sachabarbs.wordpress.com/2020/02/23/net-core-standard-auto-incrementing-versioning/">https://sachabarbs.wordpress.com/2020/02/23/net-core-standard-auto-incrementing-versioning/</a></li>
 <li>For Auto-Update application please read how it is done with Click Once, Electron.</li>
-<li>For depoying / download the whole application please read .NET Core 3 Self Container Application per platform: <a href="https://docs.microsoft.com/en-us/dotnet/core/deploying/">https://docs.microsoft.com/en-us/dotnet/core/deploying/</a></li>
+<li>For deploying / download the whole application please read .NET Core 3 Self Container Application per platform: <a href="https://docs.microsoft.com/en-us/dotnet/core/deploying/">https://docs.microsoft.com/en-us/dotnet/core/deploying/</a></li>
 </ol>
 <h1 id="chapter-07---passing-to-saas">Chapter 07 - Passing to SAAS</h1>
 <p>The business figures out that the application can be easy done as a Software as a Service instead of working on local. From a business perspective, this means recurring paying customers instead of selling one shot the application . As an example, see Office XP that you buy versus Office 365 on cloud.</p>
