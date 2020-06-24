@@ -38,7 +38,19 @@ You can read offline by downloading the
 
 You can find source codes at [Console2SAAS](https://github.com/ignatandrei/console_to_saas/) or after each chapter.
 
-   
+## How the chapters are organized
+
+Each chapter has this shape:
+
+1. A *description* of the business challenge 
+2. An *exercise* for the reader
+3. A *technical analysis*  - what should be modified in order to do the project
+4. Some *code* that shows how the challenge is solved ( also, link to the full code to be downloaded )
+5. *Further reading* - if the reader wants to learn more 
+
+
+
+
 ## Feedback
 
 Please share feedback by opening an issue or pull request at https://github.com/ignatandrei/console_to_saas/
