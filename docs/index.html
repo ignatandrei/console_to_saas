@@ -114,9 +114,7 @@
 <li><a href="#chapter-3">Chapter 3</a>
 <ul>
 <li><a href="#second-internal-customer">Second internal customer</a></li>
-</ul></li>
-<li><a href="#problem-1">Problem</a>
-<ul>
+<li><a href="#problem-1">Problem</a></li>
 <li><a href="#technical-analysis-2">Technical analysis</a></li>
 <li><a href="#code-2">Code</a></li>
 <li><a href="#further-reading-2">Further reading</a></li>
@@ -124,9 +122,7 @@
 <li><a href="#chapter-4">Chapter 4</a>
 <ul>
 <li><a href="#transform-to-product">Transform to product</a></li>
-</ul></li>
-<li><a href="#problem-2">Problem</a>
-<ul>
+<li><a href="#problem-2">Problem</a></li>
 <li><a href="#technical-analysis-3">Technical analysis</a></li>
 <li><a href="#code-3">Code</a></li>
 <li><a href="#further-reading-3">Further reading</a></li>
@@ -134,9 +130,7 @@
 <li><a href="#chapter-5">Chapter 5</a>
 <ul>
 <li><a href="#the-first-real-client">The first real client</a></li>
-</ul></li>
-<li><a href="#problem-3">Problem</a>
-<ul>
+<li><a href="#problem-3">Problem</a></li>
 <li><a href="#technical-analysis-4">Technical analysis</a></li>
 <li><a href="#code-4">Code</a></li>
 <li><a href="#further-reading-4">Further reading</a></li>
@@ -280,7 +274,7 @@
 <p><strong>Sharing code source + settings for client</strong></p>
 <hr />
 <p>It has been a few months since our financial department is using the application and they were happy with it. On a morning coffee break where we were discussing the new automation trends, they mention the tool that we developed. The sales department was willing to see since they had themselves some similar situation. We configured and deployed on a separate machine for them and we saw great feedback and real usage on a daily basis. They were so excited to see how they decreased the paperwork hours and had more time to pay attention to the client's needs. They want to use the application as an example of automation and we find it more suitable as product development.</p>
-<h1 id="problem-1">Problem</h1>
+<h2 id="problem-1">Problem</h2>
 <p>Make a Console solution that can read a configurable setting (the folder path to be searched) from a file instead of being hardcoded into the application. Do not over-engineer the solution. Create and make it work, the easy way.</p>
 <h2 id="technical-analysis-2">Technical analysis</h2>
 <p>Creating a configuration file with all the settings that a client can particularly change. For now, we have just the directory path, along with the config. We have added also a class that manages the reading operation to move the reading operation</p>
@@ -298,7 +292,7 @@
 <p><strong>Making a Graphical User Interface</strong></p>
 <hr />
 <p>At our Digital Transformation Center Department, we have recurring meetings with clients that are part of our continuous iterative process to identify things that need to be improved. In one of the meetups that we hosted on our desk, we invited the financial department to leave feedback on the process that we helped. We talked about how the process evolved and how by adopting Digital Solutions decreased manual work. The presentation ended up with some Q&amp;A and several clients they were interested to have the application installed. At that point, we realized that this is a missing point in the current market and we planned to develop a product around this. At this point, we had a validated idea by the market and we decided to evolve based on the client's needs. Selling the application to multiple clients means to have configurable the word extracting and location of the documents. We ended up creating a GUI to allow the user to configure himself with the automation parameters. This was a valuable feature for our users since most of them could be non-technical. Transfer the ownership of the paths from the config file to a more appropriate user interface.</p>
-<h1 id="problem-2">Problem</h1>
+<h2 id="problem-2">Problem</h2>
 <p>Modify the existing solution to support both Console and GUI.</p>
 <h2 id="technical-analysis-3">Technical analysis</h2>
 <p>For both applications, we have the same functionality: reading files from the hard disk and reading settings. We do not want to copy-paste code and become un-maintainable, so we want to share code source from a console application to the GUI application.</p>
@@ -354,7 +348,7 @@
 <p><strong>Componentization / Testing / Refactoring</strong></p>
 <hr />
 <p>A client who was interested mentioned that they were using zip files for backup the documents for company service. They were interested in having our product, but we didn’t support zip files. We shared our vision to create a highly customizable product, so implementing reading files from zipping would be an additional feature. He agreed to pay for it and we started the product development.</p>
-<h1 id="problem-3">Problem</h1>
+<h2 id="problem-3">Problem</h2>
 <p>Starting from the solution, add support for reading either from a folder, either from a zip file.</p>
 <h2 id="technical-analysis-4">Technical analysis</h2>
 <p>Changing the business core requires refactoring which usually involves regression testing. Before every refactoring is started, we need to define the supported test scenarios from the business perspective. This is a list that usually includes inputs, appropriate action, and the expected output. The easiest way to achieve this is to add unit tests which do the checking automatically.</p>
