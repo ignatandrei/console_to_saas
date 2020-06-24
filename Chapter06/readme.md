@@ -43,7 +43,7 @@ When a client reports a bug, we must know the code that was compiled to be distr
 Also, we can have the application reporting the version of the components.
 
 
-## Technical Box
+## Further reading
 
 1.  To organize to on single source code for multiple clients and different needs, please read Strategy Design Pattern - https://www.tutorialspoint.com/design_pattern/strategy_pattern.htm . Also you may use Plugin architecture - each client is a different plugin into the application .
 1.  Versioning - show the production version. You can use  Semantic Versioning or Calendar Versioning. https://sachabarbs.wordpress.com/2020/02/23/net-core-standard-auto-incrementing-versioning/
