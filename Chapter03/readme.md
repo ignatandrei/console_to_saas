@@ -7,7 +7,7 @@ It has been a few months since our financial department is using the application
 We configured and deployed on a separate machine for them and we saw great feedback and real usage on a daily basis. They were so excited to see how they decreased the paperwork hours and had more time to pay attention to the client's needs.
 They want to use the application as an example of automation and we find it more suitable as product development.
 
-# Problem
+## Problem
 Make a Console solution that can read a configurable setting (the folder path to be searched) from a file instead of being hardcoded into the application. Do not over-engineer the solution. Create and make it work, the easy way.
 
 

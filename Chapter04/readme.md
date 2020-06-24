@@ -8,7 +8,7 @@ The presentation ended up with some Q&A and several clients they were interested
 Selling the application to multiple clients means to have configurable the word extracting and location of the documents. We ended up creating a GUI to allow the user to configure himself with the automation parameters. This was a valuable feature for our users since most of them could be non-technical. 
 Transfer the ownership of the paths from the config file to a more appropriate user interface.
 
-# Problem 
+## Problem 
 Modify the existing solution to support both Console and GUI.
 
 

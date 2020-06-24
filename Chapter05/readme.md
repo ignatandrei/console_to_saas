@@ -5,7 +5,7 @@
 -----
 A client who was interested mentioned that they were using zip files for backup the documents for company service. They were interested in having our product, but we didn’t support zip files. We shared our vision to create a highly customizable product, so implementing reading files from zipping would be an additional feature. He agreed to pay for it and we started the product development.
 
-# Problem
+## Problem
 Starting from the solution, add support for reading either from a folder, either from a zip file.
 
 ## Technical analysis
