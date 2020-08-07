@@ -58,14 +58,17 @@ Please share feedback by opening an issue or pull request at https://github.com/
 
 ## Authors
 
-Andrei Ignat, http://msprogrammer.serviciipeweb.ro/ .
+Andrei Ignat - http://msprogrammer.serviciipeweb.ro/ .
 
-Andrei Ignat has >20 year programming experience. He started from VB3 , passed via plain old ASP and a former C# Microsoft Most Valuable Professional (MVP).
-He is also a consultant, author, speaker,www.adces.ro community leader and http://www.asp.net/ moderator.
+Andrei Ignat has >20 year programming experience. He started from VB3, passed via plain old ASP and a former C# Microsoft Most Valuable Professional (MVP).
+He is also a consultant, author, speaker, www.adces.ro community leader and http://www.asp.net/ moderator.
 
 You can ask him any .NET related question – he will be glad to answer – if he knows the answer. If not, he will learn.
 
-Daniel Tila, 
+Daniel Tila - https://automationpill.com
 
+Systems engineer master degree in system architecture and 10+ years of experience. I worked on airplane engine software, train security doors to bank payment and printing systems. 
+
+I am a certified teaching UiPath Developer & Architect and co-founder at Automation Pill where we help companies to optimize their costs by automating repetitive, mundane tasks. Holding training courses has always attracted me and I really enjoy a curious audience to whom I can interact with and challenge with fun practical exercises 
 
 
