@@ -148,7 +148,8 @@
 </ul></li>
 <li><a href="#chapter-07---passing-to-saas">Chapter 07 - Passing to SAAS</a>
 <ul>
-<li><a href="#technical-approach---what-must-be-build">Technical approach - what must be build</a>
+<li><a href="#problem-4">Problem</a></li>
+<li><a href="#technical-analysis-5">Technical analysis</a>
 <ul>
 <li><a href="#web-application">Web Application</a></li>
 <li><a href="#users--roles--configuration">Users / Roles / configuration</a></li>
@@ -207,7 +208,7 @@
 <h2 id="feedback">Feedback</h2>
 <p>Please share feedback by opening an issue or pull request at <a href="https://github.com/ignatandrei/console_to_saas/">https://github.com/ignatandrei/console_to_saas/</a></p>
 <h2 id="authors">Authors</h2>
-<p>Andrei Ignat - <a href="http://msprogrammer.serviciipeweb.ro/">http://msprogrammer.serviciipeweb.ro/</a> .</p>
+<p>Andrei Ignat - <a href="http://msprogrammer.serviciipeweb.ro/">http://msprogrammer.serviciipeweb.ro/</a></p>
 <p>Andrei Ignat has &gt;20 year programming experience. He started from VB3, passed via plain old ASP and a former C# Microsoft Most Valuable Professional (MVP). He is also a consultant, author, speaker, <a href="http://www.adces.ro">www.adces.ro</a> community leader and <a href="http://www.asp.net/">http://www.asp.net/</a> moderator.</p>
 <p>You can ask him any .NET related question – he will be glad to answer – if he knows the answer. If not, he will learn.</p>
 <p>Daniel Tila - <a href="https://automationpill.com">https://automationpill.com</a></p>
@@ -441,8 +442,13 @@
 <li>For deploying / download the whole application please read .NET Core 3 Self Container Application per platform: <a href="https://docs.microsoft.com/en-us/dotnet/core/deploying/">https://docs.microsoft.com/en-us/dotnet/core/deploying/</a></li>
 </ol>
 <h1 id="chapter-07---passing-to-saas">Chapter 07 - Passing to SAAS</h1>
-<p>The business figures out that the application can be easy done as a Software as a Service instead of working on local. From a business perspective, this means recurring paying customers instead of selling one shot the application . As an example, see Office XP that you buy versus Office 365 on cloud.</p>
-<h2 id="technical-approach---what-must-be-build">Technical approach - what must be build</h2>
+<p>Dealing with multiple clients adds complexity that must be handled.</p>
+<p>There are several challenges: Keep track of the configuration/version of the app of each client Deliver different patches for the different clients Besides this, we want to have a central part where we want to see how clients are using the app, so some analytics were needed. Customer issues with the system where it is installed the application (like OS incompatibility, antivirus, dll problems, or others ) must be solved.</p>
+<p>These challenges we could tackle easier if we could have a central point. Moreover, transforming this project into a SAAS could allow the activation of a subscription model for each individual client.</p>
+<h2 id="problem-4">Problem</h2>
+<p>// TODO</p>
+<h2 id="technical-analysis-5">Technical analysis</h2>
+<p>// TODO</p>
 <h3 id="web-application">Web Application</h3>
 <p>The application must be converted to a web application ( eventually, a mobile application should be ready also)</p>
 <h3 id="users--roles--configuration">Users / Roles / configuration</h3>
