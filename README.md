@@ -58,7 +58,7 @@ Please share feedback by opening an issue or pull request at https://github.com/
 
 ## Authors
 
-Andrei Ignat - http://msprogrammer.serviciipeweb.ro/ .
+Andrei Ignat - http://msprogrammer.serviciipeweb.ro/
 
 Andrei Ignat has >20 year programming experience. He started from VB3, passed via plain old ASP and a former C# Microsoft Most Valuable Professional (MVP).
 He is also a consultant, author, speaker, www.adces.ro community leader and http://www.asp.net/ moderator.

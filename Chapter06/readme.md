@@ -23,6 +23,7 @@ have a single master and replicating to each branch
 1. writing the bug solving code on every branch
 1. Same with a new feature that many clients want.
 1. The master branch will not have defined behavior. It will contain all the features merged, thus we should treat it as a new client, but with all features on.
+
 ### Create a single branch
 Another solution is to have a single code branch, but this means to design the application to allow enabling/disabling features by configuration.
 

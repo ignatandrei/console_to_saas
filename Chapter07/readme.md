@@ -1,10 +1,21 @@
 # Chapter 07 - Passing to SAAS
 
-The business figures out that the application can be easy done as a Software as a Service instead of working on local.
-From a business perspective, this means recurring paying customers instead of selling one shot the application . As an example, see Office XP that you buy versus Office 365 on cloud.
+Dealing with multiple clients adds complexity that must be handled. 
 
-## Technical approach - what must be build
+There are several challenges: 
+Keep track of the configuration/version of the app of each client 
+Deliver different patches for the different clients 
+Besides this, we want to have a central part where we want to see how clients are using the app, so some analytics were needed.
+Customer issues with the system where it is installed the application (like OS incompatibility, antivirus, dll problems, or others ) must be solved.
 
+These challenges we could tackle easier if we could have a central point. Moreover, transforming this project into a SAAS could allow the activation of a subscription model for each individual client.
+
+
+## Problem
+// TODO
+
+## Technical analysis
+// TODO
 
 ### Web Application
 
