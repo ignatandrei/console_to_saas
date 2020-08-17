@@ -151,14 +151,11 @@
 <li><a href="#problem-4">Problem</a></li>
 <li><a href="#technical-analysis-5">Technical analysis</a>
 <ul>
-<li><a href="#web-application">Web Application</a></li>
-<li><a href="#users--roles--configuration">Users / Roles / configuration</a></li>
-<li><a href="#revisit-application-to-see-what-works-on-local-and-should-be-handled-differently-on-web">Revisit application to see what works on local and should be handled differently on web</a></li>
 <li><a href="#revisit-the-application-to-see-long-duration-processes">Revisit the application to see long duration processes</a></li>
 <li><a href="#think-about-databases--websites---multi-tenant-vs-single-tenant">Think about databases / websites - multi tenant vs single tenant</a></li>
-</ul></li>
 <li><a href="#multiple-types-of-contracts">Multiple types of contracts</a></li>
 <li><a href="#working-related-to-other-apps---extension-endpoints-reporting-when-finishes-to-extract-data">Working related to other apps - extension endpoints reporting when finishes to extract data</a></li>
+</ul></li>
 <li><a href="#technical-box">Technical Box</a></li>
 </ul></li>
 </ul>
@@ -442,24 +439,18 @@
 <li>For deploying / download the whole application please read .NET Core 3 Self Container Application per platform: <a href="https://docs.microsoft.com/en-us/dotnet/core/deploying/">https://docs.microsoft.com/en-us/dotnet/core/deploying/</a></li>
 </ol>
 <h1 id="chapter-07---passing-to-saas">Chapter 07 - Passing to SAAS</h1>
-<p>Dealing with multiple clients adds complexity that must be handled.</p>
-<p>There are several challenges: Keep track of the configuration/version of the app of each client Deliver different patches for the different clients Besides this, we want to have a central part where we want to see how clients are using the app, so some analytics were needed. Customer issues with the system where it is installed the application (like OS incompatibility, antivirus, dll problems, or others ) must be solved.</p>
+<p>Dealing with multiple clients adds complexity that must be handled, and there are several challenges:</p>
+<ul>
+<li>Keep track of the configuration/version of the app of each client</li>
+<li>Deliver different patches for the different clients Besides this, we want to have a central part where we want to see how clients are using the app, so some analytics were needed. Customer issues with the system where it is installed the application (like OS incompatibility, antivirus, dll problems, or others) must be solved.</li>
+</ul>
 <p>These challenges we could tackle easier if we could have a central point. Moreover, transforming this project into a SAAS could allow the activation of a subscription model for each individual client.</p>
 <h2 id="problem-4">Problem</h2>
-<p>// TODO</p>
+<p>Create a website that allows us to import a zip file with multiple documents and output the resulting Excel.</p>
 <h2 id="technical-analysis-5">Technical analysis</h2>
-<p>// TODO</p>
-<h3 id="web-application">Web Application</h3>
-<p>The application must be converted to a web application ( eventually, a mobile application should be ready also)</p>
-<h3 id="users--roles--configuration">Users / Roles / configuration</h3>
-<p>The application should have one or more ways to identify users ( either username + password, either via a third provider, like Google / Facebook , either via an integrated provider , like Azure Active Directory / Okta)</p>
-<h3 id="revisit-application-to-see-what-works-on-local-and-should-be-handled-differently-on-web">Revisit application to see what works on local and should be handled differently on web</h3>
-<p>There are will be always some parts of the application that will work on local. In our example , the application is monitoring either :</p>
-<ol>
-<li>Network files</li>
-<li>Zip files</li>
-</ol>
-<p>The zip files can be uploaded and processed ion the web. But, for the local files, the architecture should be somehow different: You may think about an agent that works on local , monitors the local file system and uploads data to the web to be processed.</p>
+<p>Create a new web project and use the existing functionality in the <code>ContractExtractor</code> project. The application must be converted to a web application (eventually, a mobile application should be ready also). The web application should allow manage multiple client and be <a href="https://en.wikipedia.org/wiki/Multitenancy">multi-tenant</a> enabled.</p>
+<p>Authentication mechanism should allow to have one or more ways to identify users (either username + password, either via a third provider, like Google / Facebook, either via an integrated provider, like Azure Active Directory / Okta).</p>
+<p>The zip files can be uploaded and processed on the web. But, for the local files, the architecture should be somehow different: You may think about an agent that works on local, monitors the local file system and uploads data to the web to be processed. This will allow to have access to local resources and process on the web.</p>
 <p><a href="https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoic3RhdGVEaWFncmFtIFxuICAgIFxuICAgXG4gICAgTG9jYWxQQyAtLT4gV2ViRnVuY3Rpb24gOiBzZW5kcyBkYXRhIGZyb20gbG9jYWwgUENcbiAgICBXZWJGdW5jdGlvbiAtLT5XZWJBcHAgOiBub3RpZmllcyBkYXRhIHJlYWR5IC8gcHJvY2Vzc2luZ1xuICAgIFVzZXItLT4gV2ViQXBwIDogc2VlIHJlc3VsdHNcbiAgICBzdGF0ZSBMb2NhbFBDICB7XG4gICAgICAgIEhhcmREcml2ZSAtLT4gTG9jYWxBcHAgICAgICAgICBcblxuICAgIH1cbiAgICBzdGF0ZSBXZWJGdW5jdGlvbiB7XG4gICAgICAgIFJlY2VpdmVEYXRhIC0tPiBQcm9jZXNzRGF0YSAgICAgICAgXG4gICAgICAgIFByb2Nlc3NEYXRhIC0tPiBTdG9yZXNSZXN1bHRcbiAgICB9XG4gICAgc3RhdGUgV2ViQXBwe1xuICAgICAgU3RvcmVzUmVzdWx0LS0-IERpc3BsYXlEYXRhXG4gICAgfVxuXG5cdFxuXHRcdFx0XHRcdCIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In0sInVwZGF0ZUVkaXRvciI6ZmFsc2V9"><img src="https://mermaid.ink/img/eyJjb2RlIjoic3RhdGVEaWFncmFtIFxuICAgIFxuICAgXG4gICAgTG9jYWxQQyAtLT4gV2ViRnVuY3Rpb24gOiBzZW5kcyBkYXRhIGZyb20gbG9jYWwgUENcbiAgICBXZWJGdW5jdGlvbiAtLT5XZWJBcHAgOiBub3RpZmllcyBkYXRhIHJlYWR5IC8gcHJvY2Vzc2luZ1xuICAgIFVzZXItLT4gV2ViQXBwIDogc2VlIHJlc3VsdHNcbiAgICBzdGF0ZSBMb2NhbFBDICB7XG4gICAgICAgIEhhcmREcml2ZSAtLT4gTG9jYWxBcHAgICAgICAgICBcblxuICAgIH1cbiAgICBzdGF0ZSBXZWJGdW5jdGlvbiB7XG4gICAgICAgIFJlY2VpdmVEYXRhIC0tPiBQcm9jZXNzRGF0YSAgICAgICAgXG4gICAgICAgIFByb2Nlc3NEYXRhIC0tPiBTdG9yZXNSZXN1bHRcbiAgICB9XG4gICAgc3RhdGUgV2ViQXBwe1xuICAgICAgU3RvcmVzUmVzdWx0LS0-IERpc3BsYXlEYXRhXG4gICAgfVxuXG5cdFxuXHRcdFx0XHRcdCIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In0sInVwZGF0ZUVkaXRvciI6ZmFsc2V9" /></a></p>
 <p>(<small>Generated with mermaid.js , <a href="https://mermaid-js.github.io/mermaid-live-editor/#">https://mermaid-js.github.io/mermaid-live-editor/#</a></p>
 <p>stateDiagram LocalPC --&gt; WebFunction : sends data from local PC WebFunction --&gt;WebApp : notifies data ready / processing User--&gt; WebApp : see results state LocalPC { HardDrive --&gt; LocalApp</p>
@@ -472,11 +463,12 @@ state WebApp{
   StoresResult--&gt; DisplayData
 }
 </code></pre>
-<p></small> )</p>
+</small>
+
 <h3 id="revisit-the-application-to-see-long-duration-processes">Revisit the application to see long duration processes</h3>
 <h3 id="think-about-databases--websites---multi-tenant-vs-single-tenant">Think about databases / websites - multi tenant vs single tenant</h3>
-<h2 id="multiple-types-of-contracts">Multiple types of contracts</h2>
-<h2 id="working-related-to-other-apps---extension-endpoints-reporting-when-finishes-to-extract-data">Working related to other apps - extension endpoints reporting when finishes to extract data</h2>
+<h3 id="multiple-types-of-contracts">Multiple types of contracts</h3>
+<h3 id="working-related-to-other-apps---extension-endpoints-reporting-when-finishes-to-extract-data">Working related to other apps - extension endpoints reporting when finishes to extract data</h3>
 <h2 id="technical-box">Technical Box</h2>
 <ol>
 <li>Identity Server</li>
