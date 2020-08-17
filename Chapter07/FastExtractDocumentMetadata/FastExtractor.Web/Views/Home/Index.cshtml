@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to extractor !</h1>
+    Please upload your zip file with documents
+    <form asp-controller="Home" asp-action="UploadFile" method="post"
+          enctype="multipart/form-data">
+
+
+        <input type="file" name="file" id="fileToSubmit" />
+
+        <input type="submit" value="Generate Summary" />
+
+    </form>
+</div>

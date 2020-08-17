@@ -1,6 +1,6 @@
 name: 'CD for generate book and docs folder'
 env:
-      ChaptersMD : Chapter01/readme.md Chapter02/readme.md  Chapter03/readme.md Chapter04/readme.md  Chapter05/readme.md Chapter06/readme.md  
+      ChaptersMD : Chapter01/readme.md Chapter02/readme.md  Chapter03/readme.md Chapter04/readme.md  Chapter05/readme.md Chapter06/readme.md  Chapter07/readme.md  
 on:
   push:
     paths:
@@ -29,6 +29,8 @@ jobs:
         cp ./Chapter03.svg ../docs/Chapter03.svg
         cp ./Chapter04.svg ../docs/Chapter04.svg
         cp ./Chapter05.svg ../docs/Chapter05.svg
+        cp ./Chapter06.svg ../docs/Chapter06.svg
+        cp ./Chapter07.svg ../docs/Chapter07.svg
 
         # cp ./Chapter01.svg ../Chapter01/Chapter01.svg
         # cp ./Chapter02.svg ../Chapter02/Chapter02.svg
@@ -65,7 +67,7 @@ jobs:
       - name: generate odt
         uses: docker://pandoc/latex:2.9
         with: # needs a README in your repo root!
-          args: "README.md Chapter01/readme.md Chapter02/readme.md  Chapter03/readme.md Chapter04/readme.md Chapter05/readme.md Chapter06/readme.md   --standalone -f gfm -t odt  --toc -o output/output.odt --metadata title=CLI/Console2SAAS"
+          args: "README.md Chapter01/readme.md Chapter02/readme.md  Chapter03/readme.md Chapter04/readme.md Chapter05/readme.md Chapter06/readme.md Chapter07/readme.md   --standalone -f gfm -t odt  --toc -o output/output.odt --metadata title=CLI/Console2SAAS"
 
       
       - name: generate epub
@@ -76,13 +78,13 @@ jobs:
       - name: generate docx
         uses: docker://pandoc/latex:2.9
         with: # needs a README in your repo root!
-          args: "README.md Chapter01/readme.md Chapter02/readme.md  Chapter03/readme.md Chapter04/readme.md Chapter05/readme.md Chapter06/readme.md  Chapter07/readme.md  --standalone -f gfm -t docx  --toc -o output/output.docx --metadata title=CLI/Console2SAAS"
+          args: "README.md Chapter01/readme.md Chapter02/readme.md  Chapter03/readme.md Chapter04/readme.md Chapter05/readme.md Chapter06/readme.md  Chapter07/readme.md --standalone -f gfm -t docx  --toc -o output/output.docx --metadata title=CLI/Console2SAAS"
 
       - name: generate html
         uses: docker://pandoc/latex:2.9
         with: # needs a README in your repo root!
           #args: "--standalone --output=output/README.html README.md"
-          args: "README.md Chapter01/readme.md Chapter02/readme.md  Chapter03/readme.md Chapter04/readme.md Chapter05/readme.md Chapter06/readme.md  Chapter07/readme.md --standalone -f gfm -t html  --toc -o output/output.html --metadata title=CLI/Console2SAAS"
+          args: "README.md Chapter01/readme.md Chapter02/readme.md  Chapter03/readme.md Chapter04/readme.md Chapter05/readme.md Chapter06/readme.md  Chapter07/readme.md  --standalone -f gfm -t html  --toc -o output/output.html --metadata title=CLI/Console2SAAS"
 
       - uses: actions/upload-artifact@master
         with:
@@ -150,7 +152,20 @@ jobs:
         filename: ./docs/sources/Chapter05.zip        
         path: ./Chapter05/FastExtractDocumentMetadata
   
-       
+   
+    - name: Zip Release Chapter06
+      uses: TheDoctor0/zip-release@v0.2.1
+      with:        
+        filename: ./docs/sources/Chapter06.zip        
+        path: ./Chapter06/FastExtractDocumentMetadata
+  
+   
+    - name: Zip Release Chapter07
+      uses: TheDoctor0/zip-release@v0.2.1
+      with:        
+        filename: ./docs/sources/Chapter07.zip        
+        path: ./Chapter07/FastExtractDocumentMetadata
+      
     # - name: Zip Release Chapter05
     #   uses: TheDoctor0/zip-release@v0.2.1
     #   with:        

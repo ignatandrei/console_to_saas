@@ -6,5 +6,7 @@ docker cp printsaas:/usr/src/Chapter02.svg .
 docker cp printsaas:/usr/src/Chapter03.svg .
 docker cp printsaas:/usr/src/Chapter04.svg .
 docker cp printsaas:/usr/src/Chapter05.svg .
+docker cp printsaas:/usr/src/Chapter06.svg .
+docker cp printsaas:/usr/src/Chapter07.svg .
 docker container kill printsaas
 docker container rm printsaas

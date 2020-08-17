@@ -10,6 +10,8 @@ const chapters = [
   "Chapter03",
   "Chapter04",
   "Chapter05",
+  "Chapter06",
+  "Chapter07",
 ];
 
 for (var i = 0; i < chapters.length; i++) {
