@@ -88,11 +88,12 @@ stateDiagram
 
 
 ### Decoupling GUI from backend
+### Microservices
 ### Revisit the application to see long duration processes
 ### Think about databases / websites - multi tenant vs single tenant
 ### Multiple types of contracts
 ### Working related to other apps - extension endpoints reporting when finishes to extract data 
-
+### Automated CI / CD  ( blue-green deployment, canary deployment, feature toggle ,KeystoneInterface , ...)
 
 
 
