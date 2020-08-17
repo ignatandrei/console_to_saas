@@ -87,7 +87,7 @@ stateDiagram
 </small>
 
 
-### Decoupling GUI from backend
+### Decoupling GUI from backend - allow Mobile , Local, Web to work with same ( http ) endpoints
 ### Microservices
 ### Revisit the application to see long duration processes
 ### Think about databases / websites - multi tenant vs single tenant

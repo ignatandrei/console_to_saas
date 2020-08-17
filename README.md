@@ -49,7 +49,12 @@ Each chapter has this shape:
 5. *Further reading* - if the reader wants to learn more 
 
 
+## What we will build
 
+The application will be a simple one: from multiple word documents we will build a summarizing Excel file.
+
+
+The point here is not the application per se , but the way to organize from console application to web.
 
 ## Feedback
 
