@@ -149,7 +149,8 @@
 <li><a href="#chapter-07---passing-to-saas">Chapter 07 - Passing to SAAS</a>
 <ul>
 <li><a href="#problem-4">Problem</a></li>
-<li><a href="#technical-analysis-5">Technical analysis</a>
+<li><a href="#technical-analysis-5">Technical analysis</a></li>
+<li><a href="#code-5">Code</a>
 <ul>
 <li><a href="#revisit-the-application-to-see-long-duration-processes">Revisit the application to see long duration processes</a></li>
 <li><a href="#think-about-databases--websites---multi-tenant-vs-single-tenant">Think about databases / websites - multi tenant vs single tenant</a></li>
@@ -451,6 +452,38 @@
 <p>Create a new web project and use the existing functionality in the <code>ContractExtractor</code> project. The application must be converted to a web application (eventually, a mobile application should be ready also). The web application should allow manage multiple client and be <a href="https://en.wikipedia.org/wiki/Multitenancy">multi-tenant</a> enabled.</p>
 <p>Authentication mechanism should allow to have one or more ways to identify users (either username + password, either via a third provider, like Google / Facebook, either via an integrated provider, like Azure Active Directory / Okta).</p>
 <p>The zip files can be uploaded and processed on the web. But, for the local files, the architecture should be somehow different: You may think about an agent that works on local, monitors the local file system and uploads data to the web to be processed. This will allow to have access to local resources and process on the web.</p>
+<h2 id="code-5">Code</h2>
+<p>The most code will belong to the HTML and the backend infrastructure.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1"></a></span>
+<span id="cb8-2"><a href="#cb8-2"></a></span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;text-center&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a>    <span class="kw">&lt;h1</span><span class="ot"> class=</span><span class="st">&quot;display-4&quot;</span><span class="kw">&gt;</span>Welcome to extractor !<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a>    Please upload your zip file with documents</span>
+<span id="cb8-6"><a href="#cb8-6"></a>    <span class="kw">&lt;form</span><span class="ot"> asp-controller=</span><span class="st">&quot;Home&quot;</span><span class="ot"> asp-action=</span><span class="st">&quot;UploadFile&quot;</span><span class="ot"> method=</span><span class="st">&quot;post&quot;</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a><span class="ot">          enctype=</span><span class="st">&quot;multipart/form-data&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a></span>
+<span id="cb8-9"><a href="#cb8-9"></a></span>
+<span id="cb8-10"><a href="#cb8-10"></a>        <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;file&quot;</span><span class="ot"> name=</span><span class="st">&quot;file&quot;</span><span class="ot"> id=</span><span class="st">&quot;fileToSubmit&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb8-11"><a href="#cb8-11"></a></span>
+<span id="cb8-12"><a href="#cb8-12"></a>        <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;submit&quot;</span><span class="ot"> value=</span><span class="st">&quot;Generate Summary&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb8-13"><a href="#cb8-13"></a></span>
+<span id="cb8-14"><a href="#cb8-14"></a>    <span class="kw">&lt;/form&gt;</span></span>
+<span id="cb8-15"><a href="#cb8-15"></a><span class="kw">&lt;/div&gt;</span></span>
+<span id="cb8-16"><a href="#cb8-16"></a></span></code></pre></div>
+<p>The business layer code , if well written, will be mostly the same</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb9-1"><a href="#cb9-1"></a><span class="dt">var</span> fullPathFile = Path.<span class="fu">Combine</span>(_environment.<span class="fu">WebRootPath</span>,Path.<span class="fu">GetFileName</span>(file.<span class="fu">FileName</span>));</span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="kw">if</span> (System.<span class="fu">IO</span>.<span class="fu">File</span>.<span class="fu">Exists</span>(fullPathFile))</span>
+<span id="cb9-3"><a href="#cb9-3"></a>    System.<span class="fu">IO</span>.<span class="fu">File</span>.<span class="fu">Delete</span>(fullPathFile);</span>
+<span id="cb9-4"><a href="#cb9-4"></a></span>
+<span id="cb9-5"><a href="#cb9-5"></a><span class="kw">using</span> (<span class="dt">var</span> stream = <span class="kw">new</span> <span class="fu">FileStream</span>(fullPathFile, FileMode.<span class="fu">Create</span>))</span>
+<span id="cb9-6"><a href="#cb9-6"></a>{</span>
+<span id="cb9-7"><a href="#cb9-7"></a>    await file.<span class="fu">CopyToAsync</span>(stream);</span>
+<span id="cb9-8"><a href="#cb9-8"></a>}</span>
+<span id="cb9-9"><a href="#cb9-9"></a><span class="dt">var</span> fileSystem = <span class="kw">new</span> <span class="fu">ZipFileSystem</span>(fullPathFile);</span>
+<span id="cb9-10"><a href="#cb9-10"></a><span class="dt">var</span> extractor = <span class="kw">new</span> <span class="fu">WordContractExtractor</span>(fileSystem);</span>
+<span id="cb9-11"><a href="#cb9-11"></a>extractor.<span class="fu">Start</span>();</span></code></pre></div>
+<p>Now, all we need to do is to use the class and pass the needed parameters. In this case, the file path is the only dependent requirement. This path can come from a config file or from a user pick action. The only check we could add is to make sure it is writeable. We can add this check before executing the program or we can just handle separately the exception and display to the user a message. We will see that later in the next chapters.</p>
+<p><strong>Download code</strong> Code at <a href="https://ignatandrei.github.io/console_to_saas/sources/Chapter02.zip"><img src="https://ignatandrei.github.io/console_to_saas/Chapter02.svg" alt="Chapter02" /></a></p>
 <p><a href="https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoic3RhdGVEaWFncmFtIFxuICAgIFxuICAgXG4gICAgTG9jYWxQQyAtLT4gV2ViRnVuY3Rpb24gOiBzZW5kcyBkYXRhIGZyb20gbG9jYWwgUENcbiAgICBXZWJGdW5jdGlvbiAtLT5XZWJBcHAgOiBub3RpZmllcyBkYXRhIHJlYWR5IC8gcHJvY2Vzc2luZ1xuICAgIFVzZXItLT4gV2ViQXBwIDogc2VlIHJlc3VsdHNcbiAgICBzdGF0ZSBMb2NhbFBDICB7XG4gICAgICAgIEhhcmREcml2ZSAtLT4gTG9jYWxBcHAgICAgICAgICBcblxuICAgIH1cbiAgICBzdGF0ZSBXZWJGdW5jdGlvbiB7XG4gICAgICAgIFJlY2VpdmVEYXRhIC0tPiBQcm9jZXNzRGF0YSAgICAgICAgXG4gICAgICAgIFByb2Nlc3NEYXRhIC0tPiBTdG9yZXNSZXN1bHRcbiAgICB9XG4gICAgc3RhdGUgV2ViQXBwe1xuICAgICAgU3RvcmVzUmVzdWx0LS0-IERpc3BsYXlEYXRhXG4gICAgfVxuXG5cdFxuXHRcdFx0XHRcdCIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In0sInVwZGF0ZUVkaXRvciI6ZmFsc2V9"><img src="https://mermaid.ink/img/eyJjb2RlIjoic3RhdGVEaWFncmFtIFxuICAgIFxuICAgXG4gICAgTG9jYWxQQyAtLT4gV2ViRnVuY3Rpb24gOiBzZW5kcyBkYXRhIGZyb20gbG9jYWwgUENcbiAgICBXZWJGdW5jdGlvbiAtLT5XZWJBcHAgOiBub3RpZmllcyBkYXRhIHJlYWR5IC8gcHJvY2Vzc2luZ1xuICAgIFVzZXItLT4gV2ViQXBwIDogc2VlIHJlc3VsdHNcbiAgICBzdGF0ZSBMb2NhbFBDICB7XG4gICAgICAgIEhhcmREcml2ZSAtLT4gTG9jYWxBcHAgICAgICAgICBcblxuICAgIH1cbiAgICBzdGF0ZSBXZWJGdW5jdGlvbiB7XG4gICAgICAgIFJlY2VpdmVEYXRhIC0tPiBQcm9jZXNzRGF0YSAgICAgICAgXG4gICAgICAgIFByb2Nlc3NEYXRhIC0tPiBTdG9yZXNSZXN1bHRcbiAgICB9XG4gICAgc3RhdGUgV2ViQXBwe1xuICAgICAgU3RvcmVzUmVzdWx0LS0-IERpc3BsYXlEYXRhXG4gICAgfVxuXG5cdFxuXHRcdFx0XHRcdCIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In0sInVwZGF0ZUVkaXRvciI6ZmFsc2V9" /></a></p>
 <p>(<small>Generated with mermaid.js , <a href="https://mermaid-js.github.io/mermaid-live-editor/#">https://mermaid-js.github.io/mermaid-live-editor/#</a></p>
 <p>stateDiagram LocalPC --&gt; WebFunction : sends data from local PC WebFunction --&gt;WebApp : notifies data ready / processing User--&gt; WebApp : see results state LocalPC { HardDrive --&gt; LocalApp</p>
