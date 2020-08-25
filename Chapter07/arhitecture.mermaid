@@ -1,0 +1,16 @@
+
+stateDiagram 
+    LocalPC --> WebFunction : sends data from local PC
+    WebFunction -->WebApp : notifies data ready / processing
+    User--> WebApp : see results
+    state LocalPC  {
+        HardDrive --> LocalApp
+    }
+    state WebFunction {
+        ReceiveData --> ProcessData        
+        ProcessData --> StoresResult
+    }
+    state WebApp{
+      StoresResult--> DisplayData
+    }
+				

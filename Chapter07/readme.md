@@ -1,4 +1,5 @@
-# Chapter 07 - Passing to SAAS
+# Chapter 07
+## Switching to web - SAAS product
 
 Dealing with multiple clients adds complexity that must be handled, and there are several challenges:
 - Keep track of the configuration/version of the app of each client 
@@ -8,7 +9,6 @@ Customer issues with the system where it is installed the application (like OS i
 
 These challenges we could tackle easier if we could have a central point. Moreover, transforming this project into a SAAS could allow the activation of a subscription model for each individual client.
 
-
 ## Problem
 Create a website that allows us to import a zip file with multiple documents and output the resulting Excel.
 
@@ -16,9 +16,9 @@ Create a website that allows us to import a zip file with multiple documents and
 Create a new web project and use the existing functionality in the ``ContractExtractor`` project. The application must be converted to a web application (eventually, a mobile application should be ready also).
 The web application should allow manage multiple client and be [multi-tenant](https://en.wikipedia.org/wiki/Multitenancy) enabled.
 
-Authentication mechanism should allow to have one or more ways to identify users (either username + password, either via a third provider, like Google / Facebook, either via an integrated provider, like Azure Active Directory / Okta).
+An authentication mechanism should allow having one or more ways to identify users (either username + password, either via a third provider, like Google / Facebook, either via an integrated provider, like Azure Active Directory / Okta).
 
-The zip files can be uploaded and processed on the web. But, for the local files, the architecture should be somehow different: You may think about an agent that works on local, monitors the local file system and uploads data to the web to be processed. This will allow to have access to local resources and process on the web.
+The zip files can be uploaded and processed on the web. But, for the local files, the architecture should be somehow different: You may think about an agent that works on local, monitors the local file system, and uploads data to the web to be processed. This will allow us to have access to local resources and processes on the web.
 
 
 ## Code
@@ -66,25 +66,12 @@ Code at [![Chapter02](https://ignatandrei.github.io/console_to_saas/Chapter07.sv
 [![](https://mermaid.ink/img/eyJjb2RlIjoic3RhdGVEaWFncmFtIFxuICAgIFxuICAgXG4gICAgTG9jYWxQQyAtLT4gV2ViRnVuY3Rpb24gOiBzZW5kcyBkYXRhIGZyb20gbG9jYWwgUENcbiAgICBXZWJGdW5jdGlvbiAtLT5XZWJBcHAgOiBub3RpZmllcyBkYXRhIHJlYWR5IC8gcHJvY2Vzc2luZ1xuICAgIFVzZXItLT4gV2ViQXBwIDogc2VlIHJlc3VsdHNcbiAgICBzdGF0ZSBMb2NhbFBDICB7XG4gICAgICAgIEhhcmREcml2ZSAtLT4gTG9jYWxBcHAgICAgICAgICBcblxuICAgIH1cbiAgICBzdGF0ZSBXZWJGdW5jdGlvbiB7XG4gICAgICAgIFJlY2VpdmVEYXRhIC0tPiBQcm9jZXNzRGF0YSAgICAgICAgXG4gICAgICAgIFByb2Nlc3NEYXRhIC0tPiBTdG9yZXNSZXN1bHRcbiAgICB9XG4gICAgc3RhdGUgV2ViQXBwe1xuICAgICAgU3RvcmVzUmVzdWx0LS0-IERpc3BsYXlEYXRhXG4gICAgfVxuXG5cdFxuXHRcdFx0XHRcdCIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In0sInVwZGF0ZUVkaXRvciI6ZmFsc2V9)](https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoic3RhdGVEaWFncmFtIFxuICAgIFxuICAgXG4gICAgTG9jYWxQQyAtLT4gV2ViRnVuY3Rpb24gOiBzZW5kcyBkYXRhIGZyb20gbG9jYWwgUENcbiAgICBXZWJGdW5jdGlvbiAtLT5XZWJBcHAgOiBub3RpZmllcyBkYXRhIHJlYWR5IC8gcHJvY2Vzc2luZ1xuICAgIFVzZXItLT4gV2ViQXBwIDogc2VlIHJlc3VsdHNcbiAgICBzdGF0ZSBMb2NhbFBDICB7XG4gICAgICAgIEhhcmREcml2ZSAtLT4gTG9jYWxBcHAgICAgICAgICBcblxuICAgIH1cbiAgICBzdGF0ZSBXZWJGdW5jdGlvbiB7XG4gICAgICAgIFJlY2VpdmVEYXRhIC0tPiBQcm9jZXNzRGF0YSAgICAgICAgXG4gICAgICAgIFByb2Nlc3NEYXRhIC0tPiBTdG9yZXNSZXN1bHRcbiAgICB9XG4gICAgc3RhdGUgV2ViQXBwe1xuICAgICAgU3RvcmVzUmVzdWx0LS0-IERpc3BsYXlEYXRhXG4gICAgfVxuXG5cdFxuXHRcdFx0XHRcdCIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In0sInVwZGF0ZUVkaXRvciI6ZmFsc2V9)
 
 
-(<small>Generated with mermaid.js , https://mermaid-js.github.io/mermaid-live-editor/#
+<!-- 
 
-stateDiagram 
-    LocalPC --> WebFunction : sends data from local PC
-    WebFunction -->WebApp : notifies data ready / processing
-    User--> WebApp : see results
-    state LocalPC  {
-        HardDrive --> LocalApp         
+Diagram from arhitecture.marmaid file
+Generated with mermaid.js , https://mermaid-js.github.io/mermaid-live-editor/
 
-    }
-    state WebFunction {
-        ReceiveData --> ProcessData        
-        ProcessData --> StoresResult
-    }
-    state WebApp{
-      StoresResult--> DisplayData
-    }
-				
-</small>
+-->
 
 
 ### Decoupling GUI from backend - allow Mobile , Local, Web to work with same ( http ) endpoints
@@ -99,6 +86,6 @@ stateDiagram
 
 ## Technical Box
 
-1.	Identity Server 
-1.  2FA
+1. Identity Server 
+1. 2FA
 1. Authentication / Authorization in .NET Core
