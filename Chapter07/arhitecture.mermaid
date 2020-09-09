@@ -14,3 +14,20 @@ stateDiagram
       StoresResult--> DisplayData
     }
 				
+
+Legacy view graph code:
+
+graph TD
+ subgraph legacyViewApp[Old project style]
+    db2(database)-->BusinessLogic2[Business logic, Validation, others]
+    BusinessLogic2-->Render2[Render]
+    end
+
+New view graph code:
+
+graph TD
+   subgraph separateProjectsApp[New project style]
+    db1(database)-->BusinessLogic1[Business logic, Validation, others]
+    BusinessLogic1-->ExposeData1[Expose data]
+    ExposeData1-->Render1[Render]
+    end
