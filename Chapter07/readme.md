@@ -58,7 +58,7 @@ extractor.Start();
 Now, all we need to do is to use the class and pass the needed parameters. In this case, the file path is the only dependent requirement. This path can come from a config file or from a user pick action. The only check we could add is to make sure it is writeable. We can add this check before executing the program or we can just handle separately the exception and display to the user a message. We will see that later in the next chapters.
 
 **Download code**
-Code at [![Chapter02](https://ignatandrei.github.io/console_to_saas/Chapter07.svg)](https://ignatandrei.github.io/console_to_saas/sources/Chapter07.zip)
+Code at [![Chapter07](https://ignatandrei.github.io/console_to_saas/Chapter07.svg)](https://ignatandrei.github.io/console_to_saas/sources/Chapter07.zip)
 
 
 ### Possible architecture
