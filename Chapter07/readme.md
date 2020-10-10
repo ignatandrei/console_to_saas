@@ -122,8 +122,8 @@ You may need to link with other services when an event in your application happe
 One functionality that you may like to implement is to hook to a service which creates a notification when your contract has been created. There are many cloud providers that allow this like IFTTT or Zapier. 
 One implementation method is using WebHooks and for .NET please see https://docs.microsoft.com/en-us/aspnet/webhooks/ 
 
-### Working related to other apps - extension endpoints reporting when finishes to extract data 
-### Automated CI / CD  ( blue-green deployment, canary deployment, feature toggle ,KeystoneInterface , ...)
+
+### Automated CI / CD  (blue-green deployment, canary deployment, feature toggle, KeystoneInterface , ...)
 
 
 
