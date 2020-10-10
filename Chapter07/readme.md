@@ -102,13 +102,16 @@ The current project structure goes to a monolithic approach: you enhance a web a
 The new approach is to scale vertically: you split the application by features (named microservices), and each of these services runs on a smaller machine. It is easy to scale by features (individual microservice) from the application perspective (one feature could be more heavily used than others), and from the cloud hosting perspective.
 How do you split
 There is not the best practice to split, it is depending on the use case, but there are 2 popular splitting approaches
-By domain (you group entities that are meant for the same thing. Ex: Orders, Customers, Payment, etc)
-By functionality (OCR, parsing of text, web crawling, etc)
-In our application, we could use some microservices like Authentication and Contracts. There is a lot of theory behind microservices with problems/benefits but it is out of the scope of this book. However, we encourage to learn more by going through a selection of resources:
+- by domain (you group entities that are meant for the same thing. Ex: Orders, Customers, Payment, etc)
+- by functionality (OCR, parsing of text, web crawling, etc)
+In our application, we could use some microservices like Authentication and Contracts. There is a lot of theory behind microservices with problems/benefits but it is out of the scope of this book. 
+
+However, we encourage to learn more by going through a selection of resources:
 - https://udidahan.com/?blog=true 
 - https://www.youtube.com/watch?v=sSm2dRarhPo
 - https://docs.microsoft.com/en-us/azure/architecture/patterns/choreography
 - https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/saga/saga
+
 
 ### Revisit the application to see long duration processes
 ### Think about databases / websites - multi tenant vs single tenant

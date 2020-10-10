@@ -43,12 +43,21 @@ extractor.Start();
 
 Code at [![Chapter05](https://ignatandrei.github.io/console_to_saas/Chapter05.svg)](https://ignatandrei.github.io/console_to_saas/sources/Chapter05.zip)
 
+## Homework
+There are a few issues that you could encounter to transform this code example in production. The WordContractExtractor depends on the IFileSystem. The latter one is the state (it keeps the source files). While it is ok to have a state which is read-only (multiple requests will not alter the state), you could have concurrency problems if the files are written there. In this case, the IFileSystem has only methods for reading. Your homework is to modify the WordContractExtractor to be consistent and use the IFileSystem for writing. 
+
+Your task is to:
+- add a function for writing in the IFileSystem that receives a Stream and it writes the content to the file system.
+- add a property CanWrite to the IFileSystem and ensure writing is possible
+- implement in the classes that IFileSystems inherits from the functionality
+
 ## Further reading
 
 1. Choosing Between an Interface and an Abstract Class - https://medium.com/better-programming/choosing-between-interface-and-abstract-class-7a078551b914
 2. How to manage external connections using IDisposable - https://docs.microsoft.com/en-us/dotnet/api/system.idisposable
 3. Read about file system abstraction (exists already:  https://github.com/System-IO-Abstractions/System.IO.Abstractions
 4. How to unit test  http://dontcodetired.com/blog/post/Unit-Testing-C-File-Access-Code-with-SystemIOAbstractions) 
+
 
 
 
