@@ -3,7 +3,7 @@
 
 Dealing with multiple clients adds complexity that must be handled, and there are several challenges:
 - Keep track of the configuration/version of the app of each client 
-- Deliver different patches for the different clients 
+- Deliver different patches for the different clients.
 Besides this, we want to have a central part where we want to see how clients are using the app, so some analytics were needed.
 Customer issues with the system where it is installed the application (like OS incompatibility, antivirus, dll problems, or others) must be solved.
 
@@ -97,6 +97,19 @@ A big advantage of keeping the project separate, is that we can link another sou
 
 
 ### Microservices
+
+The current project structure goes to a monolithic approach: you enhance a web application rich enough to perform multiple tasks. This will be hard to handle multiple clients since you need to have one single server for all the requests. This scaling is named vertical scaling and it is the one way of application operating modes. You can monitor the load of the server and make multiple different servers assigned to different clients. 
+The new approach is to scale vertically: you split the application by features (named microservices), and each of these services runs on a smaller machine. It is easy to scale by features (individual microservice) from the application perspective (one feature could be more heavily used than others), and from the cloud hosting perspective.
+How do you split
+There is not the best practice to split, it is depending on the use case, but there are 2 popular splitting approaches
+By domain (you group entities that are meant for the same thing. Ex: Orders, Customers, Payment, etc)
+By functionality (OCR, parsing of text, web crawling, etc)
+In our application, we could use some microservices like Authentication and Contracts. There is a lot of theory behind microservices with problems/benefits but it is out of the scope of this book. However, we encourage to learn more by going through a selection of resources:
+- https://udidahan.com/?blog=true 
+- https://www.youtube.com/watch?v=sSm2dRarhPo
+- https://docs.microsoft.com/en-us/azure/architecture/patterns/choreography
+- https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/saga/saga
+
 ### Revisit the application to see long duration processes
 ### Think about databases / websites - multi tenant vs single tenant
 ### Multiple types of contracts
