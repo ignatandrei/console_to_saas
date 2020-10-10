@@ -116,8 +116,12 @@ However, we encourage to learn more by going through a selection of resources:
 - https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/saga/saga
 
 
-### Think about databases / websites - multi tenant vs single tenant
-### Multiple types of contracts
+## Exposing events to other apps
+
+You may need to link with other services when an event in your application happens (contract is parsed, contract summary is created). This is a problem usually resolved by adopting an event bus architecture (see microservices). While this is not the best way to solve this problem production-ready (it has a lot of security breaches), you could create a service that exposes just some of these events.
+One functionality that you may like to implement is to hook to a service which creates a notification when your contract has been created. There are many cloud providers that allow this like IFTTT or Zapier. 
+One implementation method is using WebHooks and for .NET please see https://docs.microsoft.com/en-us/aspnet/webhooks/ 
+
 ### Working related to other apps - extension endpoints reporting when finishes to extract data 
 ### Automated CI / CD  ( blue-green deployment, canary deployment, feature toggle ,KeystoneInterface , ...)
 
