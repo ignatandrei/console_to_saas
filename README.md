@@ -1,5 +1,7 @@
 # Console to SAAS - book description
 
+![Cover](https://raw.githubusercontent.com/ignatandrei/console_to_saas/master/cover.png "Cover")
+
 This book will guide you step-by-step how you can build a scalable product from a [proof of concept](https://en.wikipedia.org/wiki/Proof_of_concept) to a production ready [SAAS](https://en.wikipedia.org/wiki/Software_as_a_service). 
 Any development done will start from a business need: this will make things clear for the team what is the impact of the delivery. 
 You will see different arhitecture patterns for [separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns) and why some of them fit well and some of them not. Everything will happen incrementally and the product development history will be easy to be seen by analyzing commits.
