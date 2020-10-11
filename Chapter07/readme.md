@@ -124,7 +124,11 @@ One implementation method is using WebHooks and for .NET please see https://docs
 
 
 ### Automated CI / CD  (blue-green deployment, canary deployment, feature toggle, KeystoneInterface , ...)
+https://martinfowler.com/bliki/BlueGreenDeployment.html
 
+https://martinfowler.com/articles/feature-toggles.html
+
+https://martinfowler.com/bliki/CanaryRelease.html
 
 
 ## Technical Box
