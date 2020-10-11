@@ -1,8 +1,9 @@
 ![Cover](https://raw.githubusercontent.com/ignatandrei/console_to_saas/master/cover.png "Cover")
 
-<div style="page-break-after: always; visibility: hidden"> 
-\pagebreak 
-</div>
+<div style="page-break-after: always; visibility: hidden"></div>
+<div style="page-break-before: always;"></div>
+<div style="page-break-before: always;"></div>
+
 
 # Console to SAAS
 **How to transform a Proof Of Concept application to a Software As A Service product**
