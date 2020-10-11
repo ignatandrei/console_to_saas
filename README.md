@@ -1,6 +1,13 @@
-# Console to SAAS - book description
-
 ![Cover](https://raw.githubusercontent.com/ignatandrei/console_to_saas/master/cover.png "Cover")
+
+<div style="page-break-after: always; visibility: hidden"> 
+\pagebreak 
+</div>
+
+# Console to SAAS
+**How to transform a Proof Of Concept application to a Software As A Service product**
+
+-----
 
 This book will guide you step-by-step how you can build a scalable product from a [proof of concept](https://en.wikipedia.org/wiki/Proof_of_concept) to a production ready [SAAS](https://en.wikipedia.org/wiki/Software_as_a_service). 
 Any development done will start from a business need: this will make things clear for the team what is the impact of the delivery. 
@@ -42,7 +49,7 @@ You can find source codes at [Console2SAAS](https://github.com/ignatandrei/conso
 
 ## How the chapters are organized
 
-Each chapter has this shape:
+Each chapter has the following steps:
 
 1. A *description* of the business challenge 
 2. An *exercise* for the reader
@@ -53,10 +60,7 @@ Each chapter has this shape:
 
 ## What we will build
 
-The application will be a simple one: from multiple word documents we will build a summarizing Excel file.
-
-
-The point here is not the application per se , but the way to organize from console application to web.
+The application will be a simple one: from multiple word documents we will build a summarizing Excel file. The point here is not to build the application 100% production-ready, but our focus will be on code organization and discuss the common problems while on this journey.
 
 ## Feedback
 
@@ -65,16 +69,14 @@ Please share feedback by opening an issue or pull request at https://github.com/
 
 ## Authors
 
-Andrei Ignat - http://msprogrammer.serviciipeweb.ro/
+**Andrei Ignat** - http://msprogrammer.serviciipeweb.ro/
 
-Andrei Ignat has >20 year programming experience. He started from VB3, passed via plain old ASP and a former C# Microsoft Most Valuable Professional (MVP).
+Has more then 20 year programming experience. He started from VB3, passed via plain old ASP and a former C# Microsoft Most Valuable Professional (MVP).
 He is also a consultant, author, speaker, www.adces.ro community leader and http://www.asp.net/ moderator.
 
 You can ask him any .NET related question – he will be glad to answer – if he knows the answer. If not, he will learn.
 
-Daniel Tila - https://automationpill.com
-
-Systems engineer master degree in system architecture and 10+ years of experience. I worked on airplane engine software, train security doors to bank payment and printing systems. 
+**Daniel Tila** - is a systems engineer master degree in system architecture and 10+ years of experience. I worked on airplane engine software, train security doors to bank payment and printing systems. 
 
 I am a certified teaching UiPath Developer & Architect and co-founder at Automation Pill where we help companies to optimize their costs by automating repetitive, mundane tasks. Holding training courses has always attracted me and I really enjoy a curious audience to whom I can interact with and challenge with fun practical exercises 
 
