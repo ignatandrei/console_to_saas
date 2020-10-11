@@ -37,7 +37,9 @@ var markdownpdf = require("markdown-pdf");
 
 var mdDocs = [
     "../README.md",
+    "../1-break.md",
     "../Chapter01/readme.md",
+    "../1-break.md",
     "../Chapter02/readme.md",
     "../Chapter03/readme.md",
     "../Chapter04/readme.md",
