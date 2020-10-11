@@ -8,11 +8,11 @@ We installed our console app on one of the computers of an employee in the finan
 Try to refactor the solution from Chapter 1 to extract the business logic (i.e. transforming Word files into an Excel file) into a separate file.
 
 ## Technical analysis
-We decided to have 2 separate projects:
+As a starting point, we decided to have 2 separate projects:
 - a business logic
 - the host (in our case the console app)
 
-We decide to split now because at the current stage, we were still at the beginning and the effort between value and time was balanced. It was not mandatory, but since we're feeling the project will increase, it is a good time to use this approach for imposing [Separation of Concerns](https://en.wikipedia.org/wiki/Separation_of_concerns).
+We decide to have this approach because it keeps a well balanced effort between value and time, and allows the flexibility to ensure [separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns).
 We went with creating the **WordContractExtractor** where we handle all the Word related file formats. Here we moved the usage of the NPOI library and we make sure that the expected format is according to our requirements.
 Hence, our solution looks now like:
 - all the file conversion resides in a single place
