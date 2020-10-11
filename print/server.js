@@ -47,7 +47,9 @@ var mdDocs = [
   ],
   bookPath = "../book.pdf";
 
-markdownpdf()
+markdownpdf({
+  runningsPath: 'running.js'
+})
   .concat.from(mdDocs)
   .to(bookPath, function () {
     console.log("Created", bookPath);
