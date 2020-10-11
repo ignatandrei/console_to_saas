@@ -1,1 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="168.3" height="20" viewBox="0 0 1683 200"><g><rect width="678" height="200" fill="#ADF"/><rect width="1005" height="200" x="678" fill="#08C"/></g><g fill="#fff" font-family="Verdana,DejaVu Sans,sans-serif" font-size="110" text-anchor="start"><text x="60" y="148" fill="#000" opacity=".1" textLength="578">Chapter04</text><text x="50" y="138" textLength="578">Chapter04</text><text x="733" y="148" fill="#000" opacity=".1" textLength="905">files:6;lines:287</text><text x="723" y="138" textLength="905">files:6;lines:287</text></g></svg>
+<svg width="168.3" height="20" viewBox="0 0 1683 200" xmlns="http://www.w3.org/2000/svg">
+  <g>
+    <rect fill="#ADF" width="678" height="200"/>
+    <rect fill="#08C" x="678" width="1005" height="200"/>
+  </g>
+  <g fill="#fff" text-anchor="start" font-family="Verdana,DejaVu Sans,sans-serif" font-size="110">
+    <text x="60" y="148" textLength="578" fill="#000" opacity="0.1">Chapter04</text>
+    <text x="50" y="138" textLength="578">Chapter04</text>
+    <text x="733" y="148" textLength="905" fill="#000" opacity="0.1">files:6;lines:287</text>
+    <text x="723" y="138" textLength="905">files:6;lines:287</text>
+  </g>
+  
+</svg>
