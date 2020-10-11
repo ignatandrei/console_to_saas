@@ -471,9 +471,9 @@
 <p>Create a new web project and use the existing functionality in the <code>ContractExtractor</code> project. The application must be converted to a web application (eventually, a mobile application should be ready also). The web application should allow manage multiple client and be <a href="https://en.wikipedia.org/wiki/Multitenancy">multi-tenant</a> enabled.</p>
 <p>An authentication mechanism should allow having one or more ways to identify users (either username + password, either via a third provider, like Google / Facebook, either via an integrated provider, like Azure Active Directory / Okta). If you want to know how you can setup such a machanism, please read:</p>
 <ol>
-<li>Identity Server</li>
-<li>2FA</li>
-<li>Authentication / Authorization in .NET Core</li>
+<li>Identity Server : <a href="https://docs.microsoft.com/en-us/dotnet/architecture/cloud-native/identity-server">https://docs.microsoft.com/en-us/dotnet/architecture/cloud-native/identity-server</a></li>
+<li>2FA : <a href="https://docs.microsoft.com/en-us/aspnet/core/security/authentication/2fa">https://docs.microsoft.com/en-us/aspnet/core/security/authentication/2fa</a></li>
+<li>Authentication / Authorization in .NET Core: <a href="https://docs.microsoft.com/en-us/aspnet/core/security/authentication/">https://docs.microsoft.com/en-us/aspnet/core/security/authentication/</a></li>
 </ol>
 <p>The zip files can be uploaded and processed on the web. But, for the local files, the architecture should be somehow different: You may think about an agent that works on local, monitors the local file system, and uploads data to the web to be processed. This will allow us to have access to local resources and processes on the web.</p>
 <h2 id="code-5">Code</h2>
