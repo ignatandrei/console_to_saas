@@ -1,9 +1,15 @@
+function pad2(n) { return n < 10 ? '0' + n : n }
+
 exports.header = {
     height: "1cm",
     contents: function(pageNum, numPages) {
-        return "<h1>HEADER <span style='float:right'>" + pageNum + " / " + numPages + "</span></h1>"
+        var date = new Date();
+        var str=date.getFullYear().toString() + pad2(date.getMonth() + 1) + pad2( date.getDate()) + pad2( date.getHours() ) + pad2( date.getMinutes() ) + pad2( date.getSeconds() ) ;
+
+        return "<small>Console To SAAS version " + str  +"</small>"
     }
  };
+
 
 exports.footer = {
     height: "1cm",
@@ -11,6 +17,7 @@ exports.footer = {
         if (pageNum == numPages) {
             return "";
         }
-        return "<h1>FOOTER <span style='float:right'>" + pageNum + " / " + numPages + "</span></h1>";
+        
+        return "<small>Page <span style='float:right'>" + pageNum + " / " + numPages + "</span></small>";
     }
 }
