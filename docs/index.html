@@ -85,7 +85,7 @@
 </header>
 <nav id="TOC" role="doc-toc">
 <ul>
-<li><a href="#console-to-saas---book-description">Console to SAAS - book description</a>
+<li><a href="#console-to-saas">Console to SAAS</a>
 <ul>
 <li><a href="#on-premise-solution">On premise solution</a></li>
 <li><a href="#scaling">Scaling</a></li>
@@ -165,8 +165,14 @@
 </ul></li>
 </ul>
 </nav>
-<h1 id="console-to-saas---book-description">Console to SAAS - book description</h1>
 <p><img src="https://raw.githubusercontent.com/ignatandrei/console_to_saas/master/cover.png" title="Cover" alt="Cover" /></p>
+<div style="page-break-after: always; visibility: hidden"> 
+\pagebreak 
+</div>
+
+<h1 id="console-to-saas">Console to SAAS</h1>
+<p><strong>How to transform a Proof Of Concept application to a Software As A Service product</strong></p>
+<hr />
 <p>This book will guide you step-by-step how you can build a scalable product from a <a href="https://en.wikipedia.org/wiki/Proof_of_concept">proof of concept</a> to a production ready <a href="https://en.wikipedia.org/wiki/Software_as_a_service">SAAS</a>. Any development done will start from a business need: this will make things clear for the team what is the impact of the delivery. You will see different arhitecture patterns for <a href="https://en.wikipedia.org/wiki/Separation_of_concerns">separation of concerns</a> and why some of them fit well and some of them not. Everything will happen incrementally and the product development history will be easy to be seen by analyzing commits. To have our finished product, we will see the two development directions:</p>
 <h2 id="on-premise-solution">On premise solution</h2>
 <ul>
@@ -200,7 +206,7 @@
 <h2 id="source-codes">Source codes</h2>
 <p>You can find source codes at <a href="https://github.com/ignatandrei/console_to_saas/">Console2SAAS</a> or after each chapter.</p>
 <h2 id="how-the-chapters-are-organized">How the chapters are organized</h2>
-<p>Each chapter has this shape:</p>
+<p>Each chapter has the following steps:</p>
 <ol>
 <li>A <em>description</em> of the business challenge</li>
 <li>An <em>exercise</em> for the reader</li>
@@ -209,16 +215,14 @@
 <li><em>Further reading</em> - if the reader wants to learn more</li>
 </ol>
 <h2 id="what-we-will-build">What we will build</h2>
-<p>The application will be a simple one: from multiple word documents we will build a summarizing Excel file.</p>
-<p>The point here is not the application per se , but the way to organize from console application to web.</p>
+<p>The application will be a simple one: from multiple word documents we will build a summarizing Excel file. The point here is not to build the application 100% production-ready, but our focus will be on code organization and discuss the common problems while on this journey.</p>
 <h2 id="feedback">Feedback</h2>
 <p>Please share feedback by opening an issue or pull request at <a href="https://github.com/ignatandrei/console_to_saas/">https://github.com/ignatandrei/console_to_saas/</a></p>
 <h2 id="authors">Authors</h2>
-<p>Andrei Ignat - <a href="http://msprogrammer.serviciipeweb.ro/">http://msprogrammer.serviciipeweb.ro/</a></p>
-<p>Andrei Ignat has &gt;20 year programming experience. He started from VB3, passed via plain old ASP and a former C# Microsoft Most Valuable Professional (MVP). He is also a consultant, author, speaker, <a href="http://www.adces.ro">www.adces.ro</a> community leader and <a href="http://www.asp.net/">http://www.asp.net/</a> moderator.</p>
+<p><strong>Andrei Ignat</strong> - <a href="http://msprogrammer.serviciipeweb.ro/">http://msprogrammer.serviciipeweb.ro/</a></p>
+<p>Has more then 20 year programming experience. He started from VB3, passed via plain old ASP and a former C# Microsoft Most Valuable Professional (MVP). He is also a consultant, author, speaker, <a href="http://www.adces.ro">www.adces.ro</a> community leader and <a href="http://www.asp.net/">http://www.asp.net/</a> moderator.</p>
 <p>You can ask him any .NET related question – he will be glad to answer – if he knows the answer. If not, he will learn.</p>
-<p>Daniel Tila - <a href="https://automationpill.com">https://automationpill.com</a></p>
-<p>Systems engineer master degree in system architecture and 10+ years of experience. I worked on airplane engine software, train security doors to bank payment and printing systems.</p>
+<p><strong>Daniel Tila</strong> - is a systems engineer master degree in system architecture and 10+ years of experience. I worked on airplane engine software, train security doors to bank payment and printing systems.</p>
 <p>I am a certified teaching UiPath Developer &amp; Architect and co-founder at Automation Pill where we help companies to optimize their costs by automating repetitive, mundane tasks. Holding training courses has always attracted me and I really enjoy a curious audience to whom I can interact with and challenge with fun practical exercises</p>
 <h1 id="chapter-1">Chapter 1</h1>
 <h2 id="the-boss-that-is-hurrying-up">The boss that is hurrying up</h2>
@@ -255,12 +259,12 @@
 <h2 id="problem">Problem</h2>
 <p>Try to refactor the solution from Chapter 1 to extract the business logic (i.e. transforming Word files into an Excel file) into a separate file.</p>
 <h2 id="technical-analysis-1">Technical analysis</h2>
-<p>We decided to have 2 separate projects:</p>
+<p>As a starting point, we decided to have 2 separate projects:</p>
 <ul>
 <li>a business logic</li>
 <li>the host (in our case the console app)</li>
 </ul>
-<p>We decide to split now because at the current stage, we were still at the beginning and the effort between value and time was balanced. It was not mandatory, but since we're feeling the project will increase, it is a good time to use this approach for imposing <a href="https://en.wikipedia.org/wiki/Separation_of_concerns">Separation of Concerns</a>. We went with creating the <strong>WordContractExtractor</strong> where we handle all the Word related file formats. Here we moved the usage of the NPOI library and we make sure that the expected format is according to our requirements. Hence, our solution looks now like:</p>
+<p>We decide to have this approach because it keeps a well balanced effort between value and time, and allows the flexibility to ensure <a href="https://en.wikipedia.org/wiki/Separation_of_concerns">separation of concerns</a>. We went with creating the <strong>WordContractExtractor</strong> where we handle all the Word related file formats. Here we moved the usage of the NPOI library and we make sure that the expected format is according to our requirements. Hence, our solution looks now like:</p>
 <ul>
 <li>all the file conversion resides in a single place</li>
 <li>the main program file is more simple</li>
