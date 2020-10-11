@@ -1,18 +1,11 @@
 ![Cover](https://raw.githubusercontent.com/ignatandrei/console_to_saas/master/cover.png "Cover")
 
-<!-- 
 
-<div style="page-break-after: always"></div>
-<div style="page-break-before: always;"></div>
-<div style="page-break-before: always;"></div> 
-
--->
+_________________
 
 
 # Console to SAAS
 **How to transform a Proof Of Concept application to a Software As A Service product**
-
------
 
 This book will guide you step-by-step how you can build a scalable product from a [proof of concept](https://en.wikipedia.org/wiki/Proof_of_concept) to a production ready [SAAS](https://en.wikipedia.org/wiki/Software_as_a_service). 
 Any development done will start from a business need: this will make things clear for the team what is the impact of the delivery. 
