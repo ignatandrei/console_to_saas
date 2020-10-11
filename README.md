@@ -36,7 +36,7 @@ You can read online this book at  https://ignatandrei.github.io/console_to_saas/
    
 You can read offline by downloading the 
 
-1. [PDF](https://ignatandrei.github.io/console_to_saas/ConsoleToSaas.pdf)
+1. [PDF](https://ignatandrei.github.io/console_to_saas/ConsoleToSaas.pdf.html)
 1. [Word](https://ignatandrei.github.io/console_to_saas/ConsoleToSaas.docx)
 1. [Epub](https://ignatandrei.github.io/console_to_saas/ConsoleToSaas.epub)
 1. [ODT](https://ignatandrei.github.io/console_to_saas/ConsoleToSaas.odt)
