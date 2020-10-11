@@ -18,9 +18,9 @@ The web application should allow manage multiple client and be [multi-tenant](ht
 
 An authentication mechanism should allow having one or more ways to identify users (either username + password, either via a third provider, like Google / Facebook, either via an integrated provider, like Azure Active Directory / Okta). If you want to know how you can setup such a machanism, please read:
 
-1. Identity Server 
-1. 2FA
-1. Authentication / Authorization in .NET Core
+1. Identity Server : https://docs.microsoft.com/en-us/dotnet/architecture/cloud-native/identity-server
+1. 2FA : https://docs.microsoft.com/en-us/aspnet/core/security/authentication/2fa
+1. Authentication / Authorization in .NET Core: https://docs.microsoft.com/en-us/aspnet/core/security/authentication/
 
 The zip files can be uploaded and processed on the web. But, for the local files, the architecture should be somehow different: You may think about an agent that works on local, monitors the local file system, and uploads data to the web to be processed. This will allow us to have access to local resources and processes on the web.
 
