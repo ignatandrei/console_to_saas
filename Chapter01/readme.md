@@ -41,7 +41,6 @@ How to create a menu for the console app - https://github.com/migueldeicaza/gui.
 When reading files on the hard disk, you should understand if you want to enumerate all files or just see if there are any files.
 Read about the difference between IEnumerable and array (e.g. Directory.EnumerateFiles vs Directory.GetFiles) - https://www.codeproject.com/Articles/832189/List-vs-IEnumerable-vs-IQueryable-vs-ICollection-v
 
-  <!-- Read about Async Enumerable in .NET 3.0 : https://docs.microsoft.com/en-us/archive/msdn-magazine/2019/november/csharp-iterating-with-async-enumerables-in-csharp-8 -->
 
 
 

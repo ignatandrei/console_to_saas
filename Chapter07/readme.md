@@ -16,7 +16,11 @@ Create a website that allows us to import a zip file with multiple documents and
 Create a new web project and use the existing functionality in the ``ContractExtractor`` project. The application must be converted to a web application (eventually, a mobile application should be ready also).
 The web application should allow manage multiple client and be [multi-tenant](https://en.wikipedia.org/wiki/Multitenancy) enabled.
 
-An authentication mechanism should allow having one or more ways to identify users (either username + password, either via a third provider, like Google / Facebook, either via an integrated provider, like Azure Active Directory / Okta).
+An authentication mechanism should allow having one or more ways to identify users (either username + password, either via a third provider, like Google / Facebook, either via an integrated provider, like Azure Active Directory / Okta). If you want to know how you can setup such a machanism, please read:
+
+1. Identity Server 
+1. 2FA
+1. Authentication / Authorization in .NET Core
 
 The zip files can be uploaded and processed on the web. But, for the local files, the architecture should be somehow different: You may think about an agent that works on local, monitors the local file system, and uploads data to the web to be processed. This will allow us to have access to local resources and processes on the web.
 
@@ -99,7 +103,7 @@ A big advantage of keeping the project separate, is that we can link another sou
 An application is multi-tenant if it can serve multiple clients at the same time. A single tenant can only serve one client. Modern applications are designed as multi-tenant because they are easier to maintain and scale. For all the advantages and disadvantages please see this link - https://en.wikipedia.org/wiki/Multitenancy. 
 The choice between these will affect at least the construction of the website and the database structure.
 
-### Microservices
+## Microservices
 
 The current project structure goes to a monolithic approach: you enhance a web application rich enough to perform multiple tasks. This will be hard to handle multiple clients since you need to have one single server for all the requests. This scaling is named vertical scaling and it is the one way of application operating modes. You can monitor the load of the server and make multiple different servers assigned to different clients (multi-tenant). 
 The new approach is to scale vertically: you split the application by features (named microservices), and each of these services runs on a smaller machine. It is easy to scale by features (individual microservice) from the application perspective (one feature could be more heavily used than others), and from the cloud hosting perspective.
@@ -123,16 +127,23 @@ One functionality that you may like to implement is to hook to a service which c
 One implementation method is using WebHooks and for .NET please see https://docs.microsoft.com/en-us/aspnet/webhooks/ 
 
 
-### Automated CI / CD  (blue-green deployment, canary deployment, feature toggle, KeystoneInterface , ...)
-https://martinfowler.com/bliki/BlueGreenDeployment.html
+## Continuous Integration/Continuous Delivery
+Having continuous integration helps to minimize the time to discover code errors. This is useful when the team has any size since you can establish in the integration systems some quality controls rules that need to be passed after each developer does a code modification. The typical steps in a CI system are:
+Ensuring application is building successfully
+Ensuring tests pass successfully (unit tests, integration tests)
+Create the deployment package for the application
+Deploy on a UAT environment (continuous delivery)
 
-https://martinfowler.com/articles/feature-toggles.html
+There are many CI/CD systems (that you can run on your computer or in the cloud) such as:
 
-https://martinfowler.com/bliki/CanaryRelease.html
+- https://docs.microsoft.com/en-us/azure/devops-project/azure-devops-project-github 
+- https://github.com/features/actions
+- https://www.jetbrains.com/teamcity/ 
+- http://circleci.com/ 
+- https://travis-ci.org/ 
 
+Continuous delivery is usually done on a high-risk environment (UAT) and the deployment can be done after each commit of timed based (daily). For production deployment, there are many strategies on how you can do that and is really depending on the target quality and user dynamics. The most known deployment strategies are:
 
-## Technical Box
-
-1. Identity Server 
-1. 2FA
-1. Authentication / Authorization in .NET Core
+- https://martinfowler.com/bliki/BlueGreenDeployment.html 
+- https://martinfowler.com/articles/feature-toggles.html 
+- https://martinfowler.com/bliki/CanaryRelease.html 
