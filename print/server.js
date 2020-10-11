@@ -47,19 +47,18 @@ var mdDocs = [
   ],
   bookPath = "../book.pdf";
 
-  function preProcessMd () {
-    return through(function(data) {
-        pageBreak = '\n\n<div style="page-break-before: always;"></div>\n\n'
+//   function preProcessMd () {
+//     return through(function(data) {
+//         pageBreak = '\n\n<div style="page-break-before: always;"></div>\n\n'
 
-        this.queue(data + pageBreak)
-    })
-}
+//         this.queue(data + pageBreak)
+//     })
+// }
 
 
 
 markdownpdf({
-  runningsPath: 'running.js',
-  preProcessMd: preProcessMd 
+  runningsPath: 'running.js'
 })
   .concat.from(mdDocs)
   .to(bookPath, function () {
