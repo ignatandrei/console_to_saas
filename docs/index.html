@@ -538,6 +538,9 @@ Generated with mermaid.js , https://mermaid-js.github.io/mermaid-live-editor/
 <h2 id="exposing-events-to-other-apps">Exposing events to other apps</h2>
 <p>You may need to link with other services when an event in your application happens (contract is parsed, contract summary is created). This is a problem usually resolved by adopting an event bus architecture (see microservices). While this is not the best way to solve this problem production-ready (it has a lot of security breaches), you could create a service that exposes just some of these events. One functionality that you may like to implement is to hook to a service which creates a notification when your contract has been created. There are many cloud providers that allow this like IFTTT or Zapier. One implementation method is using WebHooks and for .NET please see <a href="https://docs.microsoft.com/en-us/aspnet/webhooks/">https://docs.microsoft.com/en-us/aspnet/webhooks/</a></p>
 <h3 id="automated-ci--cd-blue-green-deployment-canary-deployment-feature-toggle-keystoneinterface--">Automated CI / CD (blue-green deployment, canary deployment, feature toggle, KeystoneInterface , ...)</h3>
+<p><a href="https://martinfowler.com/bliki/BlueGreenDeployment.html">https://martinfowler.com/bliki/BlueGreenDeployment.html</a></p>
+<p><a href="https://martinfowler.com/articles/feature-toggles.html">https://martinfowler.com/articles/feature-toggles.html</a></p>
+<p><a href="https://martinfowler.com/bliki/CanaryRelease.html">https://martinfowler.com/bliki/CanaryRelease.html</a></p>
 <h2 id="technical-box">Technical Box</h2>
 <ol>
 <li>Identity Server</li>
