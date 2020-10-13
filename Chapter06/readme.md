@@ -1,3 +1,5 @@
+
+
 # Chapter 6
 ## Our second external client
 **Ecosystem / Versioning / CI**
