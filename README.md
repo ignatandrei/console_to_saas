@@ -1,9 +1,5 @@
-![Cover](https://raw.githubusercontent.com/ignatandrei/console_to_saas/master/cover.png "Cover")
-
 
 _________________
-
-
 
 # Console to SAAS
 **How to transform a Proof Of Concept application to a Software As A Service product**
