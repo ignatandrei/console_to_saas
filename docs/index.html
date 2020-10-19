@@ -237,10 +237,10 @@
 <h2 id="exercise">Exercise</h2>
 <p>Make an application that reads all word documents from a folder, parses, and outputs the contents to Excel. Create and make it work, the easy way. You can find sample data in the folder data in the GitHub project.</p>
 <h2 id="technical-analysis">Technical analysis</h2>
-<p>After putting some brainstorming and analyzing the constraint we ended up developing a solution that reads from a folder share and continues the process without any human intervention. This would allow us to have all our employees to continue their work simultaneously with less effort than before. To speed up the things, we decided to go with a minimal setup</p>
+<p>After putting some brainstorming and analyzing the constraint we ended up developing a solution that reads from a folder share and continues the process without any human intervention. This would allow us to have all our employees to continue their work simultaneously with less effort than before. The final setup was:</p>
 <ul>
 <li>prototype solution in a console app</li>
-<li>use <a href="https://github.com/dotnetcore/NPOI">NPOI</a> library for handling Word document reading. The decision is simply based on preference. <a href="https://github.com/ClosedXML/ClosedXML">ClosedXML</a> is another options. However, we have chosen to go with an approach that doesn't require to have the Microsoft Office installed. Limiting the dependencies is generally a good approach and in our case, it was easier also.</li>
+<li>use <a href="https://github.com/dotnetcore/NPOI">NPOI</a> library for handling Word document reading. The decision is simply based on preference. However <a href="https://github.com/ClosedXML/ClosedXML">ClosedXML</a> is another valid option too. Our main focus was to remove any dependency of Microsoft Office, so our program to not require to have it installed while running. Limiting the dependencies is generally a good approach because it makes the testing easier.</li>
 </ul>
 <p>We wrapped everything in the same project, just to make sure it works and to keep our focus on delivering. Everything we put in the main file of the console app, and we have chosen C# because we were the most comfortable and were able to fulfill our requirements in a minimum amount of time.</p>
 <h2 id="code">Code</h2>
@@ -257,20 +257,21 @@
 <p><strong>Download code</strong> Code at <a href="https://ignatandrei.github.io/console_to_saas/sources/Chapter01.zip"><img src="https://ignatandrei.github.io/console_to_saas/Chapter01.svg" alt="Chapter01" /></a></p>
 <h2 id="further-reading">Further reading</h2>
 <p>How to create a menu for the console app - <a href="https://github.com/migueldeicaza/gui.cs">https://github.com/migueldeicaza/gui.cs</a></p>
-<p>When reading files on the hard disk, you should understand if you want to enumerate all files or just see if there are any files. Read about the difference between IEnumerable and array (e.g. Directory.EnumerateFiles vs Directory.GetFiles) - <a href="https://www.codeproject.com/Articles/832189/List-vs-IEnumerable-vs-IQueryable-vs-ICollection-v">https://www.codeproject.com/Articles/832189/List-vs-IEnumerable-vs-IQueryable-vs-ICollection-v</a></p>
+<p>When reading files on the hard disk, you should understand if you want to enumerate all files or just those that match a path. Read about the difference between IEnumerable and array (e.g. Directory.EnumerateFiles vs Directory.GetFiles) - <a href="https://www.codeproject.com/Articles/832189/List-vs-IEnumerable-vs-IQueryable-vs-ICollection-v">https://www.codeproject.com/Articles/832189/List-vs-IEnumerable-vs-IQueryable-vs-ICollection-v</a></p>
 <h1 id="chapter-2">Chapter 2</h1>
 <h2 id="adapt-to-the-financial-department-last-tweaks">Adapt to the financial department last tweaks</h2>
 <hr />
-<p>We installed our console app on one of the computers of an employee in the financial department, we set it up and we let it run. After a few days, we had some bug fixing and some new requests that came in. We saw an enthusiastic behavior on our colleagues by using our solution and that was our first real feedback that we were resolving a customer pain. We anticipated that we will get more feedback and to track what we have done we needed a source control. After a few iterations, we had our financial department happy and we are ready with our first MVP.</p>
+<p>We installed our console app on one of the computers of an employee in the financial department, we set it up and we let it run. After a few days, we had some bug fixing and some new requests that came in. We saw an enthusiastic behavior on our colleagues by using our solution and that was our first real feedback that we were resolving a customer pain. We anticipated that our product will not be perfect (so more feedback will be considered) and to do tracking of what we did, we set up needed a source control. After a few iterations, we had our financial department happy and we are ready with our first MVP.</p>
 <h2 id="problem">Problem</h2>
 <p>Try to refactor the solution from Chapter 1 to extract the business logic (i.e. transforming Word files into an Excel file) into a separate file.</p>
 <h2 id="technical-analysis-1">Technical analysis</h2>
-<p>As a starting point, we decided to have 2 separate projects:</p>
+<p>As a starting point, we decided to go beyond a separate file, hence we ended up to have 2 separate projects:</p>
 <ul>
-<li>a business logic</li>
+<li>a business logic (that can contain the core logic)</li>
 <li>the host (in our case the console app)</li>
 </ul>
-<p>We decide to have this approach because it keeps a well balanced effort between value and time, and allows the flexibility to ensure <a href="https://en.wikipedia.org/wiki/Separation_of_concerns">separation of concerns</a>. We went with creating the <strong>WordContractExtractor</strong> where we handle all the Word related file formats. Here we moved the usage of the NPOI library and we make sure that the expected format is according to our requirements. Hence, our solution looks now like:</p>
+<p>We decide to have this approach because it keeps a well balanced effort between value and time, and allows the flexibility to ensure <a href="https://en.wikipedia.org/wiki/Separation_of_concerns">separation of concerns</a>. We went with creating the <strong>WordContractExtractor</strong> class, where we handle all the Word related file formats. Here we moved the usage of the NPOI library and we make sure that the expected format is according to our requirements.</p>
+<p>Hence, our solution looks now like:</p>
 <ul>
 <li>all the file conversion resides in a single place</li>
 <li>the main program file is more simple</li>
@@ -290,13 +291,13 @@
 <h2 id="second-internal-customer">Second internal customer</h2>
 <p><strong>Sharing code source + settings for client</strong></p>
 <hr />
-<p>It has been a few months since our financial department is using the application and they were happy with it. On a morning coffee break where we were discussing the new automation trends, they mention the tool that we developed. The sales department was willing to see since they had themselves some similar situation. We configured and deployed on a separate machine for them and we saw great feedback and real usage on a daily basis. They were so excited to see how they decreased the paperwork hours and had more time to pay attention to the client's needs. They want to use the application as an example of automation and we find it more suitable as product development.</p>
+<p>It has been a few months since our financial department is using the application and they were happy with it. On a morning coffee break where we were discussing the new automation trends, and among them our tool was mentioned. The sales department was willing to see in action, since they had themselves some similar situation.</p>
+<p>We configured and deployed on a separate machine for them and we saw great feedback and real usage on a daily basis. They were so excited to see how they decreased the paperwork hours and had more time to pay attention to the client's needs. They want to use the application as an example of automation and we find it more suitable as product development.</p>
 <h2 id="problem-1">Problem</h2>
 <p>Make a Console solution that can read a configurable setting (the folder path to be searched) from a file instead of being hardcoded into the application. Do not over-engineer the solution. Create and make it work, the easy way.</p>
 <h2 id="technical-analysis-2">Technical analysis</h2>
-<p>Creating a configuration file with all the settings that a client can particularly change. For now, we have just the directory path, along with the config. We have added also a class that manages the reading operation to move the reading operation</p>
-<p>The reason that we put the setting into a configuration file and not make 2 applications is to have an easy way to maintain the same application for 2 clients. Also, later, the client may want to read from 2 different folders?</p>
-<p>The impact on the solution is minimal. Just create a new class that knows how to read from a config file and retrieve the name of the folder as a property.</p>
+<p>Creating a configuration file with all the settings that a client can particularly change. For now, we have just the directory path, along with the config file. We have added a class that manages the settings operation and uset it in a typed format to have the config related settings in one place.</p>
+<p>The reason that we put the setting into a configuration file and not make 2 applications is to have an easy way to maintain the same application for 2 clients. The impact on the solution is minimal. Just create a new class that knows how to read from a config file and retrieve the name of the folder as a property.</p>
 <h2 id="code-2">Code</h2>
 <div class="sourceCode" id="cb3"><pre class="sourceCode csharp"><code class="sourceCode cs"><span id="cb3-1"><a href="#cb3-1"></a><span class="dt">var</span> settings = Settings.<span class="fu">From</span>(<span class="st">&quot;app.json&quot;</span>);</span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="dt">var</span> directoryToSearch= settings.<span class="fu">DocumentSLocation</span>;</span></code></pre></div>
@@ -308,17 +309,19 @@
 <h2 id="transform-to-product">Transform to product</h2>
 <p><strong>Making a Graphical User Interface</strong></p>
 <hr />
-<p>At our Digital Transformation Center Department, we have recurring meetings with clients that are part of our continuous iterative process to identify things that need to be improved. In one of the meetups that we hosted on our desk, we invited the financial department to leave feedback on the process that we helped. We talked about how the process evolved and how by adopting Digital Solutions decreased manual work. The presentation ended up with some Q&amp;A and several clients they were interested to have the application installed. At that point, we realized that this is a missing point in the current market and we planned to develop a product around this. At this point, we had a validated idea by the market and we decided to evolve based on the client's needs. Selling the application to multiple clients means to have configurable the word extracting and location of the documents. We ended up creating a GUI to allow the user to configure himself with the automation parameters. This was a valuable feature for our users since most of them could be non-technical. Transfer the ownership of the paths from the config file to a more appropriate user interface.</p>
+<p>At our Digital Transformation Center Department, we have recurring meetings with clients that are part of our continuous iterative process to identify things that need to be improved. In one of the meetups that we hosted on our desk, we invited the financial department to leave feedback on the process that we helped. We talked about how the process evolved and how by adopting Digital Solutions, we decreased the manual work.</p>
+<p>The presentation ended up with some Q&amp;A and several clients they were interested to have the application installed. At that point, we realized that this is a missing point in the current market and we planned to develop a product around this. At this point, we had a validated idea by a consistend number of users and we decided to evolve based on the client's needs.</p>
+<p>Selling the application to multiple clients means to have configurable the word extracting and location of the documents. We ended up creating a GUI to allow the user to configure himself with the automation parameters. This was a valuable feature for our users since most of them could be non-technical. Transfer the ownership of the paths from the config file to a more appropriate user interface.</p>
 <h2 id="problem-2">Problem</h2>
 <p>Modify the existing solution to support both Console and GUI.</p>
 <h2 id="technical-analysis-3">Technical analysis</h2>
 <p>For both applications, we have the same functionality: reading files from the hard disk and reading settings. We do not want to copy-paste code and become un-maintainable, so we want to share code source from a console application to the GUI application.</p>
-<p>Because the user works now with network folders that cannot be available always, we need to perform some modifications to alert the user for problems. In our case we have the user interface for showing :</p>
+<p>Because the user works now with network folders that cannot be available always, we need to perform some modifications to alert the user for problems. In our case we have the user interface for showing:</p>
 <ul>
 <li>the progress of the operations</li>
-<li>Adding logging for knowing what happens if an error occurs</li>
-<li>Adding exception handling to not crash the application</li>
-<li>Handle edge cases of the user saving configuration (assert that user have not entered any folder / maybe list what documents have been successfully processed and whatnot)</li>
+<li>adding logging for knowing what happens if an error occurs</li>
+<li>adding exception handling to not crash the application</li>
+<li>handle edge cases of the user saving configuration (assert that user have not entered any folder, list what documents have been successfully processed, etc)</li>
 </ul>
 <p>From a solution with a single project, we have now a solution with 3 projects:</p>
 <ul>
@@ -368,7 +371,7 @@
 <h2 id="problem-3">Problem</h2>
 <p>Starting from the solution, add support for reading either from a folder, either from a zip file.</p>
 <h2 id="technical-analysis-4">Technical analysis</h2>
-<p>Changing the business core requires refactoring which usually involves regression testing. Before every refactoring is started, we need to define the supported test scenarios from the business perspective. This is a list that usually includes inputs, appropriate action, and the expected output. The easiest way to achieve this is to add unit tests which do the checking automatically.</p>
+<p>Changing the business core requires refactoring, which usually involves regression testing. Before every refactoring is started, we need to define the supported test scenarios from the business perspective. This is a list that usually includes inputs, appropriate action, and the expected output. The easiest way to achieve this is to add unit tests which do the checking automatically.</p>
 <p>Altering pretty much the entire core adds some regression risks. To compensate for that, we will add tests (unit and/or integration and/or component and/or system) which verifies the already old behavior and the new one. The tests will make sure that our core (reading and parsing) outputs the expected output using various file systems. We will add a new project for unit/component test and we will reference the business core project and inject different components (in our case, file system). This core modification will also impact other projects, including GUI and console applications. In our case, we want to make sure that the contract parsing success if we use both file systems.</p>
 <p>We already identified the operations that need to be abstract, so let’s write the interfaces that allow this:</p>
 <ol>
@@ -395,7 +398,7 @@
 <p><strong>Download code</strong></p>
 <p>Code at <a href="https://ignatandrei.github.io/console_to_saas/sources/Chapter05.zip"><img src="https://ignatandrei.github.io/console_to_saas/Chapter05.svg" alt="Chapter05" /></a></p>
 <h2 id="homework">Homework</h2>
-<p>There are a few issues that you could encounter to transform this code example in production. The WordContractExtractor depends on the IFileSystem. The latter one is the state (it keeps the source files). While it is ok to have a state which is read-only (multiple requests will not alter the state), you could have concurrency problems if the files are written there. In this case, the IFileSystem has only methods for reading. Your homework is to modify the WordContractExtractor to be consistent and use the IFileSystem for writing.</p>
+<p>There are a few issues that you could encounter to transform this code example in production. The <strong>WordContractExtractor</strong> depends on the IFileSystem. The latter one is the state (it keeps the source files). While it is ok to have a state which is read-only (multiple requests will not alter the state), you could have concurrency problems if the files are written there. In this case, the IFileSystem has only methods for reading. Your homework is to modify the WordContractExtractor to be consistent and use the IFileSystem for writing.</p>
 <p>Your task is to:</p>
 <ul>
 <li>add a function for writing in the IFileSystem that receives a Stream and it writes the content to the file system.</li>
@@ -421,11 +424,15 @@
 <h2 id="organizing-source-code">Organizing source code</h2>
 <p>There are two approaches to this problem: create separate branches for each client or use a single branch and make the product behave differently.</p>
 <h3 id="create-different-branches">Create different branches</h3>
-<p>So, we have our main code in master, and we will create a separate branch for each client. This is an easy task, but let’s see what are the consequences <em>Advantages</em></p>
+<p>So, we have our main code in master, and we will create a separate branch for each client. This is an easy task, but let’s see what are the consequences:</p>
+<p><em>Advantages</em></p>
 <ol>
 <li>Creating a separate branch is no effort</li>
 <li>Best way to separate behavior and replicate bugs</li>
-<li>It is easy to implement a new different feature for each client <em>Problems</em></li>
+<li>It is easy to implement a new different feature for each client</li>
+</ol>
+<p><em>Problems</em></p>
+<ol>
 <li><del>IF</del> When a bug appears, it should be replicated on every client. This could be done by either have a single master and replicating to each branch</li>
 <li>writing the bug solving code on every branch</li>
 <li>Same with a new feature that many clients want.</li>
