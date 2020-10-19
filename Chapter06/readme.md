@@ -14,14 +14,15 @@ There is no perfect or easy solution, so let’s make a comparison and see which
 There are two approaches to this problem: create separate branches for each client or use a single branch and make the product behave differently.
 
 ### Create different branches
-So, we have our main code in master, and we will create a separate branch for each client. This is an easy task, but let’s see what are the consequences
+So, we have our main code in master, and we will create a separate branch for each client. This is an easy task, but let’s see what are the consequences:
+
 *Advantages*
 1. Creating a separate branch is no effort
 1. Best way to separate behavior and replicate bugs
 1. It is easy to implement a new different feature for each client
+
 *Problems*
-1. ~~IF~~  When a bug appears, it should be replicated on every client. This could be done by either 
-have a single master and replicating to each branch
+1. ~~IF~~  When a bug appears, it should be replicated on every client. This could be done by either have a single master and replicating to each branch
 1. writing the bug solving code on every branch
 1. Same with a new feature that many clients want.
 1. The master branch will not have defined behavior. It will contain all the features merged, thus we should treat it as a new client, but with all features on.

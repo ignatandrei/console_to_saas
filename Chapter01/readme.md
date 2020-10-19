@@ -10,9 +10,9 @@ True story: one day my boss came and he asked me to discuss how can we help our 
 Make an application that reads all word documents from a folder, parses, and outputs the contents to Excel. Create and make it work, the easy way. You can find sample data in the folder data in the GitHub project.
 
 ## Technical analysis
-After putting some brainstorming and analyzing the constraint we ended up developing a solution that reads from a folder share and continues the process without any human intervention. This would allow us to have all our employees to continue their work simultaneously with less effort than before. To speed up the things, we decided to go with a minimal setup
+After putting some brainstorming and analyzing the constraint we ended up developing a solution that reads from a folder share and continues the process without any human intervention. This would allow us to have all our employees to continue their work simultaneously with less effort than before. The final setup was:
 - prototype solution in a console app
-- use [NPOI](https://github.com/dotnetcore/NPOI) library for handling Word document reading. The decision is simply based on preference. [ClosedXML](https://github.com/ClosedXML/ClosedXML) is another options. However, we have chosen to go with an approach that doesn't require to have the Microsoft Office installed. Limiting the dependencies is generally a good approach and in our case, it was easier also.
+- use [NPOI](https://github.com/dotnetcore/NPOI) library for handling Word document reading. The decision is simply based on preference. However [ClosedXML](https://github.com/ClosedXML/ClosedXML) is another valid option too. Our main focus was to remove any dependency of Microsoft Office, so our program to not require to have it installed while running. Limiting the dependencies is generally a good approach because it makes the testing easier.
 
 We wrapped everything in the same project, just to make sure it works and to keep our focus on delivering. Everything we put in the main file of the console app, and we have chosen C# because we were the most comfortable and were able to fulfill our requirements in a minimum amount of time.
 
@@ -40,8 +40,7 @@ Code at [![Chapter01](https://ignatandrei.github.io/console_to_saas/Chapter01.sv
 
 How to create a menu for the console app - https://github.com/migueldeicaza/gui.cs
 
-When reading files on the hard disk, you should understand if you want to enumerate all files or just see if there are any files.
-Read about the difference between IEnumerable and array (e.g. Directory.EnumerateFiles vs Directory.GetFiles) - https://www.codeproject.com/Articles/832189/List-vs-IEnumerable-vs-IQueryable-vs-ICollection-v
+When reading files on the hard disk, you should understand if you want to enumerate all files or just those that match a path. Read about the difference between IEnumerable and array (e.g. Directory.EnumerateFiles vs Directory.GetFiles) - https://www.codeproject.com/Articles/832189/List-vs-IEnumerable-vs-IQueryable-vs-ICollection-v
 
 
 

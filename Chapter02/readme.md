@@ -4,18 +4,19 @@
 ## Adapt to the financial department last tweaks
 
 ----
-We installed our console app on one of the computers of an employee in the financial department, we set it up and we let it run. After a few days, we had some bug fixing and some new requests that came in. We saw an enthusiastic behavior on our colleagues by using our solution and that was our first real feedback that we were resolving a customer pain. We anticipated that we will get more feedback and to track what we have done we needed a source control. After a few iterations, we had our financial department happy and we are ready with our first MVP.
+We installed our console app on one of the computers of an employee in the financial department, we set it up and we let it run. After a few days, we had some bug fixing and some new requests that came in. We saw an enthusiastic behavior on our colleagues by using our solution and that was our first real feedback that we were resolving a customer pain. We anticipated that our product will not be perfect (so more feedback will be considered) and to do tracking of what we did, we set up needed a source control. After a few iterations, we had our financial department happy and we are ready with our first MVP.
 
 ## Problem 
 Try to refactor the solution from Chapter 1 to extract the business logic (i.e. transforming Word files into an Excel file) into a separate file.
 
 ## Technical analysis
-As a starting point, we decided to have 2 separate projects:
-- a business logic
+As a starting point, we decided to go beyond a separate file, hence we ended up to have 2 separate projects:
+- a business logic (that can contain the core logic)
 - the host (in our case the console app)
 
 We decide to have this approach because it keeps a well balanced effort between value and time, and allows the flexibility to ensure [separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns).
-We went with creating the **WordContractExtractor** where we handle all the Word related file formats. Here we moved the usage of the NPOI library and we make sure that the expected format is according to our requirements.
+We went with creating the **WordContractExtractor** class, where we handle all the Word related file formats. Here we moved the usage of the NPOI library and we make sure that the expected format is according to our requirements.
+
 Hence, our solution looks now like:
 - all the file conversion resides in a single place
 - the main program file is more simple

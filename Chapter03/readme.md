@@ -5,7 +5,8 @@
 **Sharing code source + settings for client**
 
 ----
-It has been a few months since our financial department is using the application and they were happy with it. On a morning coffee break where we were discussing the new automation trends, they mention the tool that we developed. The sales department was willing to see since they had themselves some similar situation.
+It has been a few months since our financial department is using the application and they were happy with it. On a morning coffee break where we were discussing the new automation trends, and among them our tool was mentioned. The sales department was willing to see in action, since they had themselves some similar situation.
+
 We configured and deployed on a separate machine for them and we saw great feedback and real usage on a daily basis. They were so excited to see how they decreased the paperwork hours and had more time to pay attention to the client's needs.
 They want to use the application as an example of automation and we find it more suitable as product development.
 
@@ -15,11 +16,9 @@ Make a Console solution that can read a configurable setting (the folder path to
 
 ## Technical analysis
 
-Creating a configuration file with all the settings that a client can particularly change. For now, we have just the directory path, along with the config. We have added also a class that manages the reading operation to move the reading operation
+Creating a configuration file with all the settings that a client can particularly change. For now, we have just the directory path, along with the config file. We have added a class that manages the settings operation and uset it in a typed format to have the config related settings in one place.
 
-The reason that we put the setting into a configuration file and not make 2 applications is to have an easy way to maintain the same application for 2 clients. Also, later, the client may want to read from 2 different folders?
-
-The impact on the solution is minimal. Just create a new class that knows how to read from a config file and retrieve the name of the folder as a property.
+The reason that we put the setting into a configuration file and not make 2 applications is to have an easy way to maintain the same application for 2 clients. The impact on the solution is minimal. Just create a new class that knows how to read from a config file and retrieve the name of the folder as a property.
 
 ## Code
 

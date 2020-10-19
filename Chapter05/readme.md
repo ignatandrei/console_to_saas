@@ -11,7 +11,7 @@ A client who was interested mentioned that they were using zip files for backup 
 Starting from the solution, add support for reading either from a folder, either from a zip file.
 
 ## Technical analysis
-Changing the business core requires refactoring which usually involves regression testing. Before every refactoring is started, we need to define the supported test scenarios from the business perspective. This is a list that usually includes inputs, appropriate action, and the expected output. The easiest way to achieve this is to add unit tests which do the checking automatically. 
+Changing the business core requires refactoring, which usually involves regression testing. Before every refactoring is started, we need to define the supported test scenarios from the business perspective. This is a list that usually includes inputs, appropriate action, and the expected output. The easiest way to achieve this is to add unit tests which do the checking automatically. 
 
 Altering pretty much the entire core adds some regression risks. To compensate for that, we will add tests (unit and/or integration and/or component and/or system) which verifies the already old behavior and the new one. The tests will make sure that our core (reading and parsing) outputs the expected output using various file systems. We will add a new project for unit/component test and we will reference the business core project and inject different components (in our case, file system).
 This core modification will also impact other projects, including GUI and console applications.
@@ -46,7 +46,7 @@ extractor.Start();
 Code at [![Chapter05](https://ignatandrei.github.io/console_to_saas/Chapter05.svg)](https://ignatandrei.github.io/console_to_saas/sources/Chapter05.zip)
 
 ## Homework
-There are a few issues that you could encounter to transform this code example in production. The WordContractExtractor depends on the IFileSystem. The latter one is the state (it keeps the source files). While it is ok to have a state which is read-only (multiple requests will not alter the state), you could have concurrency problems if the files are written there. In this case, the IFileSystem has only methods for reading. Your homework is to modify the WordContractExtractor to be consistent and use the IFileSystem for writing. 
+There are a few issues that you could encounter to transform this code example in production. The **WordContractExtractor** depends on the IFileSystem. The latter one is the state (it keeps the source files). While it is ok to have a state which is read-only (multiple requests will not alter the state), you could have concurrency problems if the files are written there. In this case, the IFileSystem has only methods for reading. Your homework is to modify the WordContractExtractor to be consistent and use the IFileSystem for writing. 
 
 Your task is to:
 - add a function for writing in the IFileSystem that receives a Stream and it writes the content to the file system.
