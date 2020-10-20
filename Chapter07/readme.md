@@ -123,10 +123,10 @@ One implementation method is using WebHooks and for .NET please see https://docs
 
 ## Continuous Integration/Continuous Delivery
 Having continuous integration helps to minimize the time to discover code errors. This is useful when the team has any size since you can establish in the integration systems some quality controls rules that need to be passed after each developer does a code modification. The typical steps in a CI system are:
-Ensuring application is building successfully
-Ensuring tests pass successfully (unit tests, integration tests)
-Create the deployment package for the application
-Deploy on a UAT environment (continuous delivery)
+- ensuring application is building successfully
+- ensuring tests pass successfully (unit tests, integration tests)
+- create the deployment package for the application
+- deploy on a UAT environment (continuous delivery)
 
 There are many CI/CD systems (that you can run on your computer or in the cloud) such as:
 
