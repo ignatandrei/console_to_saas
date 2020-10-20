@@ -98,7 +98,7 @@
 <li><a href="#console-to-saas">Console to SAAS</a>
 <ul>
 <li><a href="#on-premise-solution">On premise solution</a></li>
-<li><a href="#scaling">Scaling</a></li>
+<li><a href="#as-a-service">As a service</a></li>
 <li><a href="#download-the-book-for-free">Download the book for free</a></li>
 <li><a href="#source-codes">Source codes</a></li>
 <li><a href="#how-the-chapters-are-organized">How the chapters are organized</a></li>
@@ -179,7 +179,7 @@
 <hr />
 <h1 id="console-to-saas">Console to SAAS</h1>
 <p><strong>How to transform a Proof Of Concept application to a Software As A Service product</strong></p>
-<p>This book will guide you step-by-step how you can build a scalable product from a <a href="https://en.wikipedia.org/wiki/Proof_of_concept">proof of concept</a> to a production ready <a href="https://en.wikipedia.org/wiki/Software_as_a_service">SAAS</a>. Any development done will start from a business need: this will make things clear for the team what is the impact of the delivery. You will see different arhitecture patterns for <a href="https://en.wikipedia.org/wiki/Separation_of_concerns">separation of concerns</a> and why some of them fit well and some of them not. Everything will happen incrementally and the product development history will be easy to be seen by analyzing commits. To have our finished product, we will see the two development directions:</p>
+<p>This book will guide you step-by-step how you can build a scalable product from a <a href="https://en.wikipedia.org/wiki/Proof_of_concept">proof of concept</a> to a production ready <a href="https://en.wikipedia.org/wiki/Software_as_a_service">SAAS</a>. Any development done will start from a business need: this will make things clear for the team what is the impact of the delivery. You will see different arhitecture patterns for <a href="https://en.wikipedia.org/wiki/Separation_of_concerns">separation of concerns</a> and why some of them fit well and some of them not. Everything will happen incrementally and the product development history will be easy to be seen by analyzing commits. To have our finished product, we will have two development directions:</p>
 <h2 id="on-premise-solution">On premise solution</h2>
 <ul>
 <li>how the idea get a shape</li>
@@ -189,15 +189,14 @@
 <li>unit and integration testing</li>
 <li>extending functionalities</li>
 </ul>
-<h2 id="scaling">Scaling</h2>
+<h2 id="as-a-service">As a service</h2>
 <ul>
+<li>transforming to a web application</li>
 <li>authentication</li>
-<li>load testing</li>
-<li>profiling and optimisations</li>
+<li>possible arhitectures</li>
 <li>continuous deployment</li>
 <li>tight coupled microservices</li>
 <li>messaging systems / loose coupled microservices</li>
-<li>third party integrations</li>
 </ul>
 <h2 id="download-the-book-for-free">Download the book for free</h2>
 <p>You can find the code source at <a href="https://github.com/ignatandrei/console_to_saas">https://github.com/ignatandrei/console_to_saas</a></p>
@@ -538,7 +537,13 @@
 <h2 id="exposing-events-to-other-apps">Exposing events to other apps</h2>
 <p>You may need to link with other services when an event in your application happens (contract is parsed, contract summary is created). This is a problem usually resolved by adopting an event bus architecture (see microservices). While this is not the best way to solve this problem production-ready (it has a lot of security breaches), you could create a service that exposes just some of these events. One functionality that you may like to implement is to hook to a service which creates a notification when your contract has been created. There are many cloud providers that allow this like IFTTT or Zapier. One implementation method is using WebHooks and for .NET please see <a href="https://docs.microsoft.com/en-us/aspnet/webhooks/">https://docs.microsoft.com/en-us/aspnet/webhooks/</a></p>
 <h2 id="continuous-integrationcontinuous-delivery">Continuous Integration/Continuous Delivery</h2>
-<p>Having continuous integration helps to minimize the time to discover code errors. This is useful when the team has any size since you can establish in the integration systems some quality controls rules that need to be passed after each developer does a code modification. The typical steps in a CI system are: Ensuring application is building successfully Ensuring tests pass successfully (unit tests, integration tests) Create the deployment package for the application Deploy on a UAT environment (continuous delivery)</p>
+<p>Having continuous integration helps to minimize the time to discover code errors. This is useful when the team has any size since you can establish in the integration systems some quality controls rules that need to be passed after each developer does a code modification. The typical steps in a CI system are:</p>
+<ul>
+<li>ensuring application is building successfully</li>
+<li>ensuring tests pass successfully (unit tests, integration tests)</li>
+<li>create the deployment package for the application</li>
+<li>deploy on a UAT environment (continuous delivery)</li>
+</ul>
 <p>There are many CI/CD systems (that you can run on your computer or in the cloud) such as:</p>
 <ul>
 <li><a href="https://docs.microsoft.com/en-us/azure/devops-project/azure-devops-project-github">https://docs.microsoft.com/en-us/azure/devops-project/azure-devops-project-github</a></li>
