@@ -67,24 +67,24 @@ jobs:
       - name: generate odt
         uses: docker://pandoc/latex:2.9
         with: # needs a README in your repo root!
-          args: "cover.md README.md Chapter01/readme.md Chapter02/readme.md  Chapter03/readme.md Chapter04/readme.md Chapter05/readme.md Chapter06/readme.md Chapter07/readme.md   --standalone -f gfm -t odt  --toc -o output/output.odt --metadata title=CLI/Console2SAAS"
+          args: "cover.md README.md Chapter01/readme.md Chapter02/readme.md  Chapter03/readme.md Chapter04/readme.md Chapter05/readme.md Chapter06/readme.md Chapter07/readme.md conclusions.md --standalone -f gfm -t odt  --toc -o output/output.odt --metadata title=CLI/Console2SAAS"
 
       
       - name: generate epub
         uses: docker://pandoc/latex:2.9
         with: # needs a README in your repo root!
-          args: "cover.md README.md Chapter01/readme.md Chapter02/readme.md  Chapter03/readme.md Chapter04/readme.md Chapter05/readme.md Chapter06/readme.md  Chapter07/readme.md --standalone -f gfm -t epub  --toc -o output/output.epub --metadata title=CLI/Console2SAAS"
+          args: "cover.md README.md Chapter01/readme.md Chapter02/readme.md  Chapter03/readme.md Chapter04/readme.md Chapter05/readme.md Chapter06/readme.md Chapter07/readme.md conclusions.md --standalone -f gfm -t epub  --toc -o output/output.epub --metadata title=CLI/Console2SAAS"
 
       - name: generate docx
         uses: docker://pandoc/latex:2.9
         with: # needs a README in your repo root!
-          args: "cover.md README.md Chapter01/readme.md Chapter02/readme.md  Chapter03/readme.md Chapter04/readme.md Chapter05/readme.md Chapter06/readme.md  Chapter07/readme.md --standalone -f gfm -t docx  --toc -o output/output.docx --metadata title=CLI/Console2SAAS"
+          args: "cover.md README.md Chapter01/readme.md Chapter02/readme.md  Chapter03/readme.md Chapter04/readme.md Chapter05/readme.md Chapter06/readme.md  Chapter07/readme.md conclusions.md --standalone -f gfm -t docx  --toc -o output/output.docx --metadata title=CLI/Console2SAAS"
 
       - name: generate html
         uses: docker://pandoc/latex:2.9
         with: # needs a README in your repo root!
           #args: "--standalone --output=output/README.html README.md"
-          args: "cover.md README.md Chapter01/readme.md Chapter02/readme.md  Chapter03/readme.md Chapter04/readme.md Chapter05/readme.md Chapter06/readme.md  Chapter07/readme.md  --standalone -f gfm -t html  --include-in-header=header.txt --toc -o output/output.html --metadata title=CLI/Console2SAAS"
+          args: "cover.md README.md Chapter01/readme.md Chapter02/readme.md  Chapter03/readme.md Chapter04/readme.md Chapter05/readme.md Chapter06/readme.md  Chapter07/readme.md  conclusions.md --standalone -f gfm -t html  --include-in-header=header.txt --toc -o output/output.html --metadata title=CLI/Console2SAAS"
 
       - uses: actions/upload-artifact@master
         with:
