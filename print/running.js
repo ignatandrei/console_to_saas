@@ -18,6 +18,6 @@ exports.footer = {
             return "";
         }
         
-        return "<small><span style='float:right'>" + pageNum + " / " + numPages + "</span></small>";
+        return "<small>Page <span style='float:right'>" + pageNum + " / " + numPages + "</span></small>";
     }
 }

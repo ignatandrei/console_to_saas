@@ -1,10 +1,7 @@
 
 
 # Chapter 07
-## Switching to web
-**Developing a SAAS product**
-
------
+## Switching to web - SAAS product
 
 Dealing with multiple clients adds complexity that must be handled, and there are several challenges:
 - Keep track of the configuration/version of the app of each client 
