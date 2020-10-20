@@ -14,7 +14,7 @@ After putting some brainstorming and analyzing the constraint we ended up develo
 - prototype solution in a console app
 - use [NPOI](https://github.com/dotnetcore/NPOI) library for handling Word document reading. The decision is simply based on preference. However [ClosedXML](https://github.com/ClosedXML/ClosedXML) is another valid option too. Our main focus was to remove any dependency of Microsoft Office, so our program to not require to have it installed while running. Limiting the dependencies is generally a good approach because it makes the testing easier.
 
-We wrapped everything in the same project, just to make sure it works and to keep our focus on delivering. Everything we put in the main file of the console app, and we have chosen C# because we were the most comfortable and were able to fulfill our requirements in a minimum amount of time.
+We wrapped up everything in the same project, just to make sure it works and to keep our focus on delivering. We put everything in the main file of the console app, and we have chosen C# because we were the most comfortable and were able to fulfill our requirements in a minimum amount of time.
 
 ## Code
 ```csharp
