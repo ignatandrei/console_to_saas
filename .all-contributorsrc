@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "dcostea",
+      "name": "Daniel Costea",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/15055082?v=4",
+      "profile": "http://www.apexcode.ro",
+      "contributions": [
+        "content"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "console_to_saas",
+  "projectOwner": "ignatandrei",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
