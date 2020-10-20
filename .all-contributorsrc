@@ -20,5 +20,6 @@
   "projectOwner": "ignatandrei",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "skipCi": true
+  "skipCi": true,
+  "badgeTemplate": "<a href='#contributors'><img sec='https://img.shields.io/badge/all_contributors-<%= contributors.length %>-orange.svg?style=flat-square' /></a>"
 }
