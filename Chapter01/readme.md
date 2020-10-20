@@ -24,6 +24,7 @@ string folderWithWordDocs = Console.ReadLine();
 foreach (string file in Directory.GetFiles(folderWithWordDocs, "*.docx"))
 {        
     //omitted code for clarity
+    XWPFDocument document = new XWPFDocument(File.OpenRead(file));
     var contractorDetails = ExactContractorDetails(document.Tables[0]);
     allContractors.Add(contractorDetails);
 }
