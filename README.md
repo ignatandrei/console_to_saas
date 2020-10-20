@@ -15,14 +15,14 @@ To have our finished product, we will see the two development directions:
 - componentization / testing / refactoring
 - unit and integration testing
 - extending functionalities 
-## Scaling
+## As a service
+- transforming to a web application
 - authentication
-- load testing
-- profiling and optimisations
+- possible arhitectures
 - continuous deployment
 - tight coupled microservices
 - messaging systems / loose coupled microservices
-- third party integrations
+
 
 ## Download the book for free 
 

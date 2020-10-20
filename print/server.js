@@ -50,7 +50,9 @@ var mdDocs = [
     "../1-break.md",
     "../Chapter06/readme.md",
     "../1-break.md",
-    "../Chapter07/readme.md"
+    "../Chapter07/readme.md",
+    "../1-break.md",
+    "../conclusions.md"
   ],
   bookPath = "../book-raw.pdf";
 

@@ -11,3 +11,7 @@ Chapter 1:
 
 7. Mock vs Fakes vs Stubs: https://martinfowler.com/articles/mocksArentStubs.html -->
 
+
+
+- load testing
+- profiling and optimisations
