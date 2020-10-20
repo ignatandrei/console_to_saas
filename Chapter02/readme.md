@@ -4,7 +4,7 @@
 ## Adapt to the financial department last tweaks
 
 ----
-We installed our console app on one of the computers of an employee in the financial department, we set it up and we let it run. After a few days, we had some bug fixing and some new requests that came in. We saw an enthusiastic behavior on our colleagues by using our solution and that was our first real feedback that we were resolving a customer pain. We anticipated that our product will not be perfect (so more feedback will be considered) and to do tracking of what we did, we set up needed a source control. After a few iterations, we had our financial department happy and we are ready with our first MVP.
+We installed our console app on one of the computers of an employee in the financial department, we set it up and we let it run. After a few days, we had some bug fixing and some new requests that came in. We saw an enthusiastic behavior on our colleagues by using our solution and that was our first real feedback that we were resolving a customer pain. We anticipated that our product will not be perfect (so more feedback will be considered) and to do tracking of what we did, we set up needed a source control. After a few iterations, we had our financial department happy and we are ready with our first MVP (minimum viable product).
 
 ## Problem 
 Try to refactor the solution from Chapter 1 to extract the business logic (i.e. transforming Word files into an Excel file) into a separate file.
@@ -31,7 +31,7 @@ To help the versioning we added a source control. We have chosen GIT since it is
 var wordExtractor = new WordContractExtractor(folderWithWordDocs);
 wordExtractor.ExtractToFile(excelResultsFile);
 ```
-Now, all we need to do is to use the class and pass the needed parameters. In this case, the file path is the only dependent requirement. This path can come from a config file or from a user pick action. The only check we could add is to make sure it is writeable. We can add this check before executing the program or we can just handle separately the exception and display to the user a message. We will see that later in the next chapters.
+Now, all we need to do is to use the class and pass the needed parameters. In this case, the file path is the only dependent requirement. This path can come from a config file or from a user pick action. The only check we could add is to make sure it is writeable. We can add this check before executing the program or we can just handle separately the exception and display a message to the user. We will see that later in the next chapters.
 
 **Download code**
 Code at [![Chapter02](https://ignatandrei.github.io/console_to_saas/Chapter02.svg)](https://ignatandrei.github.io/console_to_saas/sources/Chapter02.zip)
