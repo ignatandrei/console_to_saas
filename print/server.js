@@ -58,7 +58,8 @@ var options = {
   remarkable: {
       html: true,
       breaks: true
-  }
+  },
+  runningsPath: 'running.js'
 }
 
 function generateBook() {
