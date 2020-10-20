@@ -1,4 +1,7 @@
 
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 _________________
 
 # Console to SAAS
@@ -71,3 +74,22 @@ You can ask him any .NET related question – he will be glad to answer – if h
 
 I am a certified teaching UiPath Developer & Architect and co-founder at Automation Pill where we help companies to optimize their costs by automating repetitive, mundane tasks. Holding training courses has always attracted me and I really enjoy a curious audience to whom I can interact with and challenge with fun practical exercises 
 
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="http://www.apexcode.ro"><img src="https://avatars3.githubusercontent.com/u/15055082?v=4" width="100px;" alt=""/><br /><sub><b>Daniel Costea</b></sub></a><br /><a href="#content-dcostea" title="Content">🖋</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
