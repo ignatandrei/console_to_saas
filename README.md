@@ -9,9 +9,14 @@ _________________
 # Console to SAAS
 **How to transform a Proof Of Concept application to a Software As A Service product**
 
-This book will guide you step-by-step to build a scalable product from a [proof of concept](https://en.wikipedia.org/wiki/Proof_of_concept) to production ready [SAAS](https://en.wikipedia.org/wiki/Software_as_a_service). 
-Any development done will start from a business need: this will make things clear for the team what is the impact of the delivery.
-You will see different architecture patterns for [separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns) and why some of them fit well and some of them not. Everything will happen incrementally and the product development history will be easy to be seen by analyzing commits.
+This book will guide you step-by-step to build a scalable product from a [proof of concept](https://en.wikipedia.org/wiki/Proof_of_concept) to production-ready [SAAS](https://en.wikipedia.org/wiki/Software_as_a_service). Any development done will start from a business need: this will make things clear for the team what is the impact of the delivery. 
+
+You will see different architecture patterns for [separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns) and why some of them fit well and some of them not. Everything will happen incrementally and the product development history will be easy to be seen by analyzing commits. 
+
+Every chapter is a progressive journey with some specific challenges that will be overcome by specific programming best practices.
+
+This can be considered as a .NET tutorial, that demonstrates the versatility of the platform to create different types of applications (CLI, Desktop & Website).
+
 To have our finished product, we will see the two development directions:
 ## On premise solution
 - how the idea gets a shape
@@ -74,7 +79,7 @@ You can ask him any .NET related question – he will be glad to answer – if h
 
 **Daniel Tila** - is a systems engineer master degree in system architecture and 10+ years of experience. I worked on airplane engine software, train security doors to bank payment and printing systems. 
 
-I am a certified teaching UiPath Developer & Architect and co-founder at Automation Pill where we help companies to optimize their costs by automating repetitive, mundane tasks. Holding training courses has always attracted me and I really enjoy a curious audience to whom I can interact with and challenge with fun practical exercises 
+He has more than 10 years of experinece in the .NET programming environment. He designed from application that are facilitating communication between bank, printing services to airplaine engines. How, he is a certified trainer in UiPath and co-founder at Automation Pill where we help companies to optimize their costs by automating repetitive, mundane tasks. 
 
 
 ## Contributors ✨
