@@ -77,9 +77,9 @@ He is also a consultant, author, speaker, www.adces.ro community leader and http
 
 You can ask him any .NET related question – he will be glad to answer – if he knows the answer. If not, he will learn.
 
-**Daniel Tila** - is a systems engineer master degree in system architecture and 10+ years of experience. I worked on airplane engine software, train security doors to bank payment and printing systems. 
+**Daniel Tila** - is a systems engineer master degree in system architecture and 10+ years of experience. He worked on airplane engine software, train security doors to bank payment and printing systems. 
 
-He has more than 10 years of experinece in the .NET programming environment. He designed from application that are facilitating communication between bank, printing services to airplaine engines. How, he is a certified trainer in UiPath and co-founder at Automation Pill where we help companies to optimize their costs by automating repetitive, mundane tasks. 
+He has more than 10 years of experinece in the .NET programming environment. He designed from application that are facilitating communication between bank, printing services to airplaine engines. How, he is a certified trainer in UiPath and co-founder at Automation Pill, a company that helps organization to optimize their costs by automating repetitive, mundane tasks. 
 
 
 ## Contributors ✨
