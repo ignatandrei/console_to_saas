@@ -76,6 +76,9 @@ Code at [![Chapter04](https://ignatandrei.github.io/console_to_saas/Chapter04.sv
 
 ## Further reading
 
+
+Logging: https://nlog-project.org/  , https://serilog.net/ 
+
 .NET Core 3.0 Windows application (WPF, WinForms): https://docs.microsoft.com/en-us/dotnet/core/whats-new/dotnet-core-3-0
 
 MultiTier architecture: https://en.wikipedia.org/wiki/Multitier_architecture
