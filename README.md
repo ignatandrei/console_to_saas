@@ -47,6 +47,8 @@ You can read it offline by downloading the
 3. [Epub](https://ignatandrei.github.io/console_to_saas/consoleToSaas.epub.html)
 4. [ODT](https://ignatandrei.github.io/console_to_saas/consoleToSaas.odt.html)
 
+Also, if you want to support us, you can buy this book from Amazon https://www.amazon.com/dp/B08N56SD4D .
+
 ## Source codes
 
 You can find the source code at [Console2SAAS](https://github.com/ignatandrei/console_to_saas/) or after each chapter.
